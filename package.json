@@ -1,7 +1,7 @@
 {
   "name": "buyback-world",
-  "version": "0.0.0",
-  "description": "Small description for buyback-world goes here",
+  "version": "0.0.1",
+  "description": "We buy your old phone with cash in NYC",
   "private": true,
   "directories": {
     "doc": "doc",
