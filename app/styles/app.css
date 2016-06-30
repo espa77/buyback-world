@@ -29,8 +29,14 @@
 
 .device {
     padding:2em;
+    margin:2em;
 }
 
 .img_device {
+    padding: 0.2em;
     height: 200px;
+}
+
+.device:hover {
+    border: 2px solid #009926;
 }
