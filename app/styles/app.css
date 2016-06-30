@@ -1,0 +1,36 @@
+.header_container {
+    height: 10em;
+    background-color: #009926;
+}
+
+.header {
+    padding-top:1.8em;
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: center;
+}
+
+.header a {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 0.4em;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.navigation {
+
+}
+
+.device_listing {
+    display: flex;
+}
+
+.device {
+    padding:2em;
+}
+
+.img_device {
+    height: 200px;
+}

@@ -19,5 +19,6 @@ devices = [{
 export default Ember.Route.extend({
     model() {
         return devices;
+        // return this.store.findAll('device');
     }
 });
