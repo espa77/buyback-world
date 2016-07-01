@@ -14,10 +14,9 @@ module.exports = function(environment) {
     },
 
     APP: {
-      firebase: 'buyback-world.firebaseIO.com'
-      // Here you can pass flags/options to your application instance
-      // when it is created
-    }
+
+    },
+
   };
 
   if (environment === 'development') {

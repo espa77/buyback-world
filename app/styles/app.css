@@ -1,12 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,900,700);
+
+html {
+    font-family: 'Roboto', 'OpenSans', serif;
+}
+
+.header_container, .footer_container {
+    position:absolute;
+    left:0;
+    padding:0;
+    min-width:100%;
+}
+
 .header_container {
-    height: 10em;
+    height: 10%;
+    top: 0;
     background-color: #009926;
 }
 
 .header {
-    padding-top:1.8em;
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: baseline;
     align-content: center;
 }
@@ -19,8 +32,15 @@
     text-decoration: none;
 }
 
-.navigation {
-
+.body {
+    padding-top: 5.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5.5%;
+    display:flex;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;
 }
 
 .device_listing {
@@ -40,4 +60,29 @@
 
 .device:hover {
     border: 2px solid #009926;
+}
+
+.footer_container {
+    height: 10%;
+    bottom:0;
+    background-color: #009926;
+}
+
+.footer {
+    padding-top:2%;
+    display:flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.navigation {
+    color: #FFF;
+    width: 50%;
+    display:flex;
+    justify-content: space-around;
+}
+
+.navigation a {
+    color: #FFF;
+    text-decoration: none;
 }
