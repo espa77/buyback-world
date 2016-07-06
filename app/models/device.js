@@ -1,6 +1,6 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
-// import { belongsTo, hasMany } from 'ember-data/relationships';
+import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
     device_type: attr('string'),
@@ -8,6 +8,6 @@ export default Model.extend({
     network: attr('string'),
     size: attr('number'),
     image: attr('string'),
-    price_cents: attr('number')
+    price_cents: attr('number'),
+    brand: belongsTo('brand')
 });
-

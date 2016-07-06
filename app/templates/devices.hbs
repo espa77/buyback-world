@@ -1,0 +1,13 @@
+<h1>all devices page</h1>
+  <div class="device_listing">
+    {{#each unique as |device|}}
+      <div class="device">
+        <div class="device_title">
+          <h3>{{device.device_type}}</h3>
+        </div>
+        <div class="device_images">
+          <img src="../images/{{device.image}}" class="img_device" />
+        </div>
+      </div>
+    {{/each}}
+  </div>
