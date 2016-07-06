@@ -17,6 +17,18 @@
   <body>
 
     {{content-for "body"}}
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyDyVgWSXasmmHvtfWHLASYZMjkTByiRp_E",
+        authDomain: "buy-back-world.firebaseapp.com",
+        databaseURL: "https://buy-back-world.firebaseio.com",
+        storageBucket: "buy-back-world.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
 
     <script src="assets/vendor.js"></script>
     <script src="assets/buyback-world.js"></script>
