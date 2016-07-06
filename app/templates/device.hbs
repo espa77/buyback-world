@@ -2,10 +2,11 @@
     {{#each model as |device|}}
         <div class="device">
             <div class="device_title">
-                <h3>{{device.name}}</h3>
+                <h3>{{device.device_type}}</h3>
             </div>
             <div class="device_images">
-                <img src={{device.image}} class="img_device" />
+                <h3>{{device.network}}</h3>
+                <img src="http://www.fillmurray.com/g/300/300" class="img_device" />
             </div>
         </div>
     {{/each}}

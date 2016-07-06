@@ -3,8 +3,8 @@ import attr from 'ember-data/attr';
 // import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
-    name: attr('string'),
-    model: attr('string'),
+    device_type: attr('string'),
+    device_model: attr('string'),
     network: attr('string'),
     size: attr('number'),
     image: attr('string'),
