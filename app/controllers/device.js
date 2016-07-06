@@ -1,8 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    type: Ember.computed.mapBy('device_type', 'id'),
-    uniqueType: Ember.computed.uniq('device_type')
+    unique: Em.computed('model', function() {
+        var uniqueObjects = [];
+        this.get('model').forEach(function(item) {
+            if (!uniqueObjects.isAny('device_type', item.get('device_type'))) {
+                uniqueObjects.addObject(item);
+            }
+        });
+        return uniqueObjects;
+    })
 
 });
 
