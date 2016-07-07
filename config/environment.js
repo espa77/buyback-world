@@ -1,31 +1,34 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
-  var ENV = {
-    modulePrefix: 'buyback-world',
-    environment: environment,
-    baseURL: '/',
-    locationType: 'auto',
+    var ENV = {
 
-    // Initialize Firebase
-    apiKey: "AIzaSyDyVgWSXasmmHvtfWHLASYZMjkTByiRp_E",
-    authDomain: "buy-back-world.firebaseapp.com",
-    databaseURL: "https://buy-back-world.firebaseio.com",
-    storageBucket: "buy-back-world.appspot.com",
+        modulePrefix: 'buyback-world',
+        environment: environment,
+        baseURL: '/',
+        locationType: 'auto',
+        contentSecurityPolicy: {
+            'default-src': "'none'",
+            'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+            'font-src': ["'self'", "http://fonts.gstatic.com"],
+            'connect-src': ["'self'", "http://localhost:3000/api/devices"],
+            'img-src': "'self'",
+            'report-uri': "'localhost'",
+            'media-src': "'self'",
+            'style-src': ["'self'", "'unsafe-inline'", "http://fonts.googleapis.com"],
+            'data': "'img-src'"
+        },
 
+        EmberENV: {
+            FEATURES: {
+                // Here you can enable experimental features on an ember canary build
+                // e.g. 'with-controller': true
+            }
+        },
 
-    EmberENV: {
-      FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-      }
-    },
+        APP: {}
 
-    APP: {
-
-    },
-
-  };
+    };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

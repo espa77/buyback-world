@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('device');
+  this.route('device_type', { path: '/:device_type' });
 });
 
 export default Router;
