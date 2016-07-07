@@ -16,4 +16,8 @@
     </div>
   {{/each}}
 
+<div class="device-selector">
+    {{#each unique as |device|}}
+        {{device-selector device_type=device.device_type image=device.image}}
+    {{/each}}
 </div>

@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('device');
   this.route('device_type', { path: '/:device_type' });
   this.route('device-price');
+  this.route('page-not-found', { path: '/*wildcard' });
 });
 
 export default Router;

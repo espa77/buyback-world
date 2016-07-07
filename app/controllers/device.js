@@ -10,10 +10,14 @@ export default Ember.Controller.extend({
     });
     return uniqueObjects;
   }),
-  actions: {
-    changeGroupValue(val) {
-      this.set('groupValue', val);
-      this.send('submit');
-    }
-  }
+    deviceModel: Ember.computed('model', function(){
+        var availableModels = [];
+        this.get('model').forEach(function(item) {
+            if (!availableModels.isAny('device_model', item.get('device_model'))) {
+                availableModels.addObject(item);
+            }
+        });
+        return availableModels;
+    })
+
 });
