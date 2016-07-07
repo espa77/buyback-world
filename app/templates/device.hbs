@@ -1,19 +1,19 @@
 <div class="device_listing">
-    {{#each unique as |device|}}
-        <div class="device">
-        {{#paper-radio-group groupValue=groupValue onChange=(action 'changeGroupValue') as |group|}}
-            {{#group.paper-radio }}
-                <div class="device_images">
-                    <img src="assets/images/{{device.image}}" class="img_device" />
-                </div>
-            {{/group.paper-radio}}
-
-        {{/paper-radio-group}}
-            <div class="device_title">
-                <h3>{{device.device_type}}</h3>
-            </div>
-
+  {{#each unique as |device|}}
+    <div class="device">
+    {{#paper-radio-group groupValue=groupValue onChange=(action 'changeGroupValue') as |group|}}
+      {{#group.paper-radio }}
+        <div class="device_images">
+          <img src="assets/images/{{device.image}}" class="img_device" />
         </div>
-    {{/each}}
-</div>
+      {{/group.paper-radio}}
 
+    {{/paper-radio-group}}
+      <div class="device_title">
+        <h3>{{device.device_type}}</h3>
+      </div>
+
+    </div>
+  {{/each}}
+
+</div>

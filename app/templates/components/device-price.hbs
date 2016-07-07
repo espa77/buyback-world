@@ -1,0 +1,16 @@
+<div class="device-price">
+	<h1>Let's get you CASH!</h1>
+		<h3>Enter your name and a phone number you can be reached at within the hour, and we'll call to set up where and when to meet to buy back your device.</h3>
+			<div layout="" layout-sm="row">
+				{{paper-input flex=100 icon="person" label="Name" value=name onChange=(action (mut name)) required=true errorMessages=(hash required="Name is required.")}}
+			</div>
+
+			<div layout="" layout-sm="row">
+			  {{paper-input flex=100 icon="phone" label="Phone" value=phone type="text" onChange=(action (mut phone)) required=true errorMessages=(hash required="Phone number is required.")}}
+			</div> 
+
+			<div class="layout-column">
+			  {{#paper-button raised=true }} Get PAID! {{/paper-button}}
+			</div>
+
+</div>
