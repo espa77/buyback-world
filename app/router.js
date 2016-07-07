@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('contact');
   this.route('device');
   this.route('device_type', { path: '/:device_type' });
+  this.route('page-not-found', { path: '/*wildcard' });
 });
 
 export default Router;

@@ -10,4 +10,3 @@ export default Model.extend({
     image: attr('string'),
     price_cents: attr('number')
 });
-
