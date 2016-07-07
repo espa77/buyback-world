@@ -9,7 +9,13 @@ export default Ember.Controller.extend({
             }
         });
         return uniqueObjects;
-    })
+    }),
+    actions: {
+        changeGroupValue(val) {
+            this.set('groupValue', val);
+            this.send('submit');
+        }
+    }
 });
 
 
