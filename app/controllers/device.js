@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
     }),
     actions: {
         groupValue(val) {
-            alert("device-controller");
+            console.log("device-controller");
         }
     }
 

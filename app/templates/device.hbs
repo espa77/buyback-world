@@ -1,11 +1,11 @@
 <div class="device-selector">
     {{#each unique as |device|}}
-        {{device-selector action=(action "groupValue") device_type=device.device_type image=device.image}}
+        {{device-selector send=(action 'groupValue') device_type=device.device_type image=device.image}}
     {{/each}}
 </div>
 
 
 
 <div class="device-model">
-    {{device-model action=groupValue}}
+    {{device-model action=(action 'groupValue')}}
 </div>
