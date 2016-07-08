@@ -4,11 +4,13 @@ export default Ember.Component.extend({
     actions: {
         changeGroupValue(val) {
             this.set('groupValue', val);
-            this.send('submitDeviceType', val);
+            this.send('groupValue', val);
         },
-        submitDeviceType(val) {
-            this.set('device_type', val);
+        groupValue(val) {
             console.log(val);
         }
+    },
+    groupValue() {
+        throw new Error ("You must select a device to continue")
     }
 });

@@ -1,5 +1,11 @@
 <div class="device-selector">
     {{#each unique as |device|}}
-        {{device-selector device_type=device.device_type image=device.image}}
+        {{device-selector action=(action "groupValue") device_type=device.device_type image=device.image}}
     {{/each}}
+</div>
+
+
+
+<div class="device-model">
+    {{device-model action=groupValue}}
 </div>

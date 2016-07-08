@@ -18,6 +18,11 @@ export default Ember.Controller.extend({
             }
         });
         return availableModels;
-    })
+    }),
+    actions: {
+        groupValue(val) {
+            alert("device-controller");
+        }
+    }
 
 });
