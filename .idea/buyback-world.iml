@@ -8,13 +8,13 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests/unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests/integration" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/bower_components" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="buyback-world node_modules" level="project" />
-    <orderEntry type="library" name="node_modules buyback-world" level="project" />
-    <orderEntry type="library" name="bower_components buyback-world" level="project" />
   </component>
 </module>

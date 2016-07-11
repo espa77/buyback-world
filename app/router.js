@@ -8,7 +8,11 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('about');
   this.route('contact');
-  this.route('device');
+  this.route('device', function() {
+    this.route('mod', function() {
+      this.route('network');
+    });
+  });
   this.route('page-not-found', { path: '/*wildcard' });
 });
 

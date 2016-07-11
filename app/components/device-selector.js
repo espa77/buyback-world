@@ -1,13 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
     actions: {
-        changeGroupValue(val) {
-            this.set('groupValue', val);
-            this.send('groupValue', val);
+        changeDeviceValue(deviceVal) {
+            this.set('groupValue', deviceVal);
+            this.send(deviceVal);
         }
     },
-    groupValue() {
+    changeDeviceValue() {
         throw new Error ("You must select a device to continue");
     }
 });

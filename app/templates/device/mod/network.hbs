@@ -1,0 +1,6 @@
+<div class="device-network">
+    <h3>Device Network Component</h3>
+    {{#each uniqueNetwork as |network|}}
+        {{device-network send=(action 'networkValue') network=network.network image=network.image}}
+    {{/each}}
+</div>

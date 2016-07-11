@@ -1,0 +1,7 @@
+<div class="device-model">
+    <h3>Device Model Componet</h3>
+    {{#each uniqueModel as |uniqueModel|}}
+        {{device-model deviceVal send=(action 'modelValue') device_model=uniqueModel.device_model image=uniqueModel.image}}
+    {{/each}}
+</div>
+ {{outlet}}

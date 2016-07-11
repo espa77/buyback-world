@@ -1,11 +1,16 @@
 <div class="device-selector">
-    {{#each unique as |device|}}
-        {{device-selector send=(action 'groupValue') device_type=device.device_type image=device.image}}
+    <h3>Device Selector Component</h3>
+    {{#each uniqueDevice as |device|}}
+        {{device-selector send=(action 'deviceValue') device_type=device.device_type image=device.image}}
     {{/each}}
 </div>
 
+{{outlet}}
 
-
-<div class="device-model">
-    {{device-model action=(action 'groupValue')}}
+{{#if selectedDevice}}
+<div class="selected-device">
+    {{#each selectedDevice as |device|}}
+        {{device}}
+    {{/each}}
 </div>
+{{/if}}

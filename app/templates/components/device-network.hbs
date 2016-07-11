@@ -1,0 +1,10 @@
+{{#paper-radio-group groupValue=groupValue onChange=(action 'changeNetworkValue') as |group|}}
+    {{#group.paper-radio value=network}}
+        <div class="device_images">
+            <img src="assets/images/{{image}}" class="img_device" />
+        </div>
+        <div class="device_title">
+            <h3>{{network}}</h3>
+        </div>
+    {{/group.paper-radio}}
+{{/paper-radio-group}}
