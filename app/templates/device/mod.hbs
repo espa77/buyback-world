@@ -1,7 +1,11 @@
-<div class="device-model">
-    <h3>Device Model Componet</h3>
+{{#if userSelectedModel}}
+    <div class="user-selection" id="model">Model: {{selectedDevice.model}}</div>
+{{else}}
+<div class="device-model selector">
     {{#each uniqueModel as |uniqueModel|}}
         {{device-model deviceVal send=(action 'modelValue') device_model=uniqueModel.device_model image=uniqueModel.image}}
     {{/each}}
 </div>
- {{outlet}}
+{{/if}}
+
+{{outlet}}

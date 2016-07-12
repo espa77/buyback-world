@@ -1,8 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    selectedDevice: Ember.inject.service('selected-device'),
-
+    
     actions: {
         changeModelValue(modelVal) {
             this.set('groupValue', modelVal);

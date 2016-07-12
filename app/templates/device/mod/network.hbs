@@ -1,6 +1,9 @@
-<div class="device-network">
-    <h3>Device Network Component</h3>
+{{#if userSelectedNetwork}}
+    <div class="user-selection" id="network">Network:{{selectedDevice.network}}</div>
+{{else}}
+<div class="device-network selector">
     {{#each uniqueNetwork as |network|}}
         {{device-network send=(action 'networkValue') network=network.network image=network.image}}
     {{/each}}
 </div>
+{{/if}}

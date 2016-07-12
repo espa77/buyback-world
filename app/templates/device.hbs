@@ -1,16 +1,11 @@
-<div class="device-selector">
-    <h3>Device Selector Component</h3>
+{{#if userSelectedDevice}}
+    <div class="user-selection" id="type">{{selectedDevice.device}} Selected!</div>
+{{else}}
+<div class="device-type selector">
     {{#each uniqueDevice as |device|}}
         {{device-selector send=(action 'deviceValue') device_type=device.device_type image=device.image}}
     {{/each}}
 </div>
+{{/if}}
 
 {{outlet}}
-
-{{#if selectedDevice}}
-<div class="selected-device">
-    {{#each selectedDevice as |device|}}
-        {{device}}
-    {{/each}}
-</div>
-{{/if}}

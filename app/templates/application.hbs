@@ -10,6 +10,14 @@
 
 <div class="body">
     {{outlet}}
+
+    {{#if userSelectedDevice}}
+        <div class="selected-device">
+            {{#each selectedDevice as |device|}}
+                {{device}}
+            {{/each}}
+        </div>
+    {{/if}}
 </div>
 
 <div class="footer_container">

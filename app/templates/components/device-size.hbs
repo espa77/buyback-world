@@ -1,0 +1,10 @@
+{{#paper-radio-group groupValue=groupValue onChange=(action 'changeSizeValue') as |group|}}
+    {{#group.paper-radio value=size}}
+        <div class="device_images">
+            <img src="assets/images/{{image}}" class="img_device" />
+        </div>
+        <div class="device_size {{size}}">
+            {{size}}&nbsp;&nbsp;GB
+        </div>
+    {{/group.paper-radio}}
+{{/paper-radio-group}}

@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     selectedDevice: Ember.inject.service('selected-device'),
+
+    userSelectedModel: false,
+    
     uniqueModel: Ember.computed('model', 'selectedDevice', function(){
         let val = this.get('selectedDevice').device_attributes.get('firstObject');
         var model = this.get('model');
@@ -18,9 +21,8 @@ export default Ember.Controller.extend({
     actions: {
         modelValue(modelVal) {
             this.get('selectedDevice').addModel(modelVal);
-            this.get('uniqueModel').clear();
+            this.set('userSelectedModel', true);
             this.transitionToRoute('device.mod.network');
-            
         }
     }
 });

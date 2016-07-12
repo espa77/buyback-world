@@ -2,8 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,900,700);
 
 html {
+  height: auto;
+  min-height: 100%;
+  position: relative;
   font-family: 'Roboto', 'OpenSans', serif;
 }
+
 
 .header_container, .footer_container {
   position:absolute;
@@ -13,7 +17,7 @@ html {
 }
 
 .header_container {
-  height: 10%;
+  height: 80px;
   top: 0;
   background-color: #009926;
 }
@@ -41,8 +45,21 @@ html {
   align-content: center;
 }
 
-.device-selector {
+.user-selection {
   display: flex;
+}
+
+.final-device-selection {
+  margin: 5rem;
+}
+
+.selector {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hidden-component .selector {
+  display: none;
 }
 
 .device {
@@ -61,9 +78,11 @@ html {
 }
 
 .footer_container {
-  height: 10%;
+  position: absolute;
+  height: 80px;
   bottom:0;
   background-color: #009926;
+  overflow: hidden;
 }
 
 .footer {

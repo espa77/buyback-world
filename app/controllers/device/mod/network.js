@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     selectedDevice: Ember.inject.service('selected-device'),
+    
+    userSelectedNetwork: false,
+    
     uniqueNetwork: Ember.computed('model', 'selected-device', function(){
         let netval = this.get('selectedDevice').device_attributes.get('lastObject');
         var model = this.get('model');
@@ -17,8 +20,8 @@ export default Ember.Controller.extend({
     actions: {
         networkValue(networkVal) {
             this.get('selectedDevice').addNetwork(networkVal);
-            this.get('uniqueNetwork').clear();
-            this.get('selectedDevice').show();
+            this.set('userSelectedNetwork', true);
+            this.transitionToRoute('price');
         }
     }
 });
