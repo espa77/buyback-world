@@ -39,7 +39,7 @@ export default Ember.Service.extend({
     },
     removeNetwork(item) {
         this.get('device_attributes').removeObject(item);
-        this.set('network', null)
+        this.set('network', null);
     },
     addSize(item) {
         this.get('device_attributes').pushObject(item);

@@ -1,7 +1,7 @@
 {{#if userNotSelectedSize}}
 <div class="device-size selector">
     {{#each uniquePrice as |device|}}
-        {{device-size send=(action 'sizeValue') image=device.image size=device.size}}
+        {{device-size send=(action 'sizeValue') image=device.image size=device.size price=device.price}}
     {{/each}}
 </div>
 {{/if}}

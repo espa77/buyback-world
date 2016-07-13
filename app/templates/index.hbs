@@ -4,3 +4,36 @@
         <p>We buy your used device for cash in NYC</p>
     </div>
 </div>
+{{#if userSelectedDevice}}
+    <div class="user-selection" id="type">{{selectedDevice.device}} Selected!</div>
+{{else}}
+    <div class="device-type selector">
+        <h2><em>What do you want to sell?</em></h2>
+        {{device}}
+        {{#each uniqueDevice as |device|}}
+            {{device-selector send=(action 'deviceValue') device_type=device.device_type image=device.image}}
+        {{/each}}
+    </div>
+{{/if}}
+
+{{#if userSelectedModel}}
+    <div class="user-selection" id="model">Model: {{selectedDevice.model}}</div>
+{{else}}
+    <div class="device-model selector">
+        {{#each uniqueModel as |uniqueModel|}}
+            {{device-model deviceVal send=(action 'modelValue') device_model=uniqueModel.device_model image=uniqueModel.image}}
+        {{/each}}
+    </div>
+{{/if}}
+
+{{#if userSelectedNetwork}}
+    <div class="user-selection" id="network">Network:{{selectedDevice.network}}</div>
+{{else}}
+    <div class="device-network selector">
+        {{#each uniqueNetwork as |network|}}
+            {{device-network send=(action 'networkValue') network=network.network image=network.image}}
+        {{/each}}
+    </div>
+{{/if}}
+
+
