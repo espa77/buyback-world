@@ -1,11 +1,9 @@
 @import 'ember-paper';
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,900,700);
 
 html {
   height: auto;
   min-height: 100%;
   position: relative;
-  font-family: 'Roboto', 'OpenSans', serif;
 }
 
 
@@ -19,7 +17,7 @@ html {
 .header_container {
   height: 80px;
   top: 0;
-  background-color: #009926;
+  background-color: rgba(7, 153, 7, 0.18);
 }
 
 .header {
@@ -30,7 +28,7 @@ html {
 }
 
 .header a {
-  color: #FFF;
+  color: #0629ff;
   text-decoration: none;
 }
 
@@ -45,12 +43,22 @@ html {
   align-content: center;
 }
 
+#index-text {
+ text-align: center;
+}
+
+#device-selection-text {
+  justify-content: center;
+  text-align: center;
+
+}
+
 .user-selection {
   display: flex;
 }
 
 .final-device-selection {
-  margin: 5rem;
+  margin: 3rem;
 }
 
 .selector {
@@ -65,7 +73,7 @@ html {
 .device {
   padding:2em;
   margin:2em;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 .img_device {
@@ -74,14 +82,19 @@ html {
 }
 
 .device:hover {
-  border: 2px solid #009926;
+  border: 1px solid rgba(26, 131, 255, 0.47);
+}
+
+.condition_list {
+  list-style: none;
+  padding: 0;
 }
 
 .footer_container {
   position: absolute;
   height: 80px;
   bottom:0;
-  background-color: #009926;
+  background-color: rgba(7, 153, 7, 0.18);
   overflow: hidden;
 }
 
@@ -93,13 +106,13 @@ html {
 }
 
 .navigation {
-  color: #FFF;
+  color: #0629ff;
   width: 50%;
   display:flex;
   justify-content: space-around;
 }
 
 .navigation a {
-  color: #FFF;
+  color: #0629ff;
   text-decoration: none;
 }
