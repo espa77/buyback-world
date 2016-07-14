@@ -1,19 +1,25 @@
 {{#if userNotSelectedSize}}
 <div class="device-size selector">
     <h3>Choose Size:</h3>
-    {{#each uniqueSize as |dev|}}
+    {{#each sizeSelection as |dev|}}
         {{device-size send=(action 'sizeValue') size=dev.size price=dev.price}}
     {{/each}}
 </div>
 {{else}}
     <h3>Size You Selected:</h3>
+    <br>
     {{selectedDevice.size}}
 {{/if}}
+
+
+{{device-condition send=(action 'conditionValue')}}
+
 
 
 {{#each devicePrice as |device|}}
     {{device-price send=(action 'priceValue') image=device.image size=device.size price=device.price_cents}}
 {{/each}}
+
 
 <div class="final-device-selection">
     My device:
