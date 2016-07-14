@@ -1,0 +1,11 @@
+{{#paper-select placeholder="Condition Normal" value=condition onChange=(action 'changeConditionValue')}}
+
+        {{#paper-option value=condition}}
+            <ul class="condition_list">
+                <li>Normal</li>
+                <li>Broken</li>
+                <li>No Power</li>
+            </ul>
+        {{/paper-option}}
+
+{{/paper-select}}

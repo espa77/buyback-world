@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
- 
+
     actions: {
       changeNetworkValue(networkVal) {
             this.set('groupValue', networkVal);

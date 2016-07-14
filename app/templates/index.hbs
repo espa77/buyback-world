@@ -1,39 +1,42 @@
-<div class="index">
-    <div class="index_text">
+<div class="layout-column flex" id="index">
+    <div class="flex" id="index-text">
         <h1>Welcome to BuyBack World</h1>
         <p>We buy your used device for cash in NYC</p>
     </div>
+
+    {{#if userSelectedDevice}}
+        <div class="user-selection" id="type">{{selectedDevice.device}} Selected!</div>
+    {{else}}
+        <div class="layout-row layout-md-column" id="device-selection-text">
+            <h2><em>What do you want to sell?</em></h2>
+
+        </div>
+        <div class="device-type selector">
+            {{#each uniqueDevice as |device|}}
+                {{device-selector send=(action 'deviceValue') device_type=device.device_type image=device.image}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if userSelectedModel}}
+        <div class="user-selection" id="model">{{selectedDevice.model}}</div>
+    {{else}}
+        <div class="device-model selector">
+            {{#each uniqueModel as |uniqueModel|}}
+                {{device-model deviceVal send=(action 'modelValue') device_model=uniqueModel.device_model image=uniqueModel.image}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if userSelectedNetwork}}
+        <div class="user-selection" id="network">{{selectedDevice.network}}</div>
+    {{else}}
+        <div class="device-network selector">
+            {{#each uniqueNetwork as |network|}}
+                {{device-network send=(action 'networkValue') network=network.network image=network.network_image}}
+            {{/each}}
+        </div>
+    {{/if}}
 </div>
-{{#if userSelectedDevice}}
-    <div class="user-selection" id="type">{{selectedDevice.device}} Selected!</div>
-{{else}}
-    <div class="device-type selector">
-        <h2><em>What do you want to sell?</em></h2>
-        {{device}}
-        {{#each uniqueDevice as |device|}}
-            {{device-selector send=(action 'deviceValue') device_type=device.device_type image=device.image}}
-        {{/each}}
-    </div>
-{{/if}}
-
-{{#if userSelectedModel}}
-    <div class="user-selection" id="model">Model: {{selectedDevice.model}}</div>
-{{else}}
-    <div class="device-model selector">
-        {{#each uniqueModel as |uniqueModel|}}
-            {{device-model deviceVal send=(action 'modelValue') device_model=uniqueModel.device_model image=uniqueModel.image}}
-        {{/each}}
-    </div>
-{{/if}}
-
-{{#if userSelectedNetwork}}
-    <div class="user-selection" id="network">Network:{{selectedDevice.network}}</div>
-{{else}}
-    <div class="device-network selector">
-        {{#each uniqueNetwork as |network|}}
-            {{device-network send=(action 'networkValue') network=network.network image=network.image}}
-        {{/each}}
-    </div>
-{{/if}}
 
 

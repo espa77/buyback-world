@@ -7,11 +7,10 @@ export default Ember.Controller.extend({
     finalDevice: null,
 
     userSizes: Ember.observer('selectedDevice.size', function(){
-        let selected = this.get('selectedDevice');
-        return selected;
+        return this.get('selectedDevice.size');
     }),
 
-    uniqueSize: Ember.computed('model', 'selectedDevice', function(){
+    sizeSelection: Ember.computed('model', 'selectedDevice', function(){
         let typeval = this.get('selectedDevice').device_attributes[0];
         let modval = this.get('selectedDevice').device_attributes[1];
         let netval = this.get('selectedDevice').device_attributes[2];
@@ -53,6 +52,9 @@ export default Ember.Controller.extend({
             this.get('selectedDevice').addSize(sizeVal);
             this.set('userNotSelectedSize', false);
 
+        },
+        conditionValue(conditionVal) {
+            console.log(conditionVal);
         },
         priceValue(priceVal) {
             console.log(priceVal);

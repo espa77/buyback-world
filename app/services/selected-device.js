@@ -6,14 +6,14 @@ export default Ember.Service.extend({
     device: null,
     model: null,
     network: null,
-    size: null,
+    size: 16,
     condition: "normal",
+    price: null,
 
     init() {
         this._super(...arguments);
         this.set('device_attributes', []);
     },
-
     addDevice(item) {
         this.get('device_attributes').pushObject(item);
         let device = this.get('device_attributes');
@@ -58,6 +58,15 @@ export default Ember.Service.extend({
     removeCondition(item) {
         this.get('device_attributes').removeObject(item);
         this.set('condition', null);
+    },
+    addPrice(item) {
+        this.get('device_attributes').addObject(item);
+        let device = this.get('device_attributes');
+        this.set('price', device[5]);
+    },
+    removePrice(item) {
+        this.get('device_attributes').removeObject(item);
+        this.set('price', null);
     },
     show() {
         let device = this.get('device_attributes');

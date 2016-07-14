@@ -1,0 +1,11 @@
+<div class="name_input">
+    {{paper-input label="Name" value=name onChange=(action (mut name)) icon="person"}}
+</div>
+
+<div class="phone_input">
+    {{paper-input placeholder="Phone Number" type="text" value=phone onChange=(action (mut phone)) icon="phone"}}
+</div>
+
+<div class="sell_button">
+    {{#paper-button raised=true onClick=(action "sellDevice")}}Get Cash{{/paper-button}}
+</div>
