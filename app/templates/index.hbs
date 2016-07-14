@@ -33,7 +33,7 @@
     {{else}}
         <div class="device-network selector">
             {{#each uniqueNetwork as |network|}}
-                {{device-network send=(action 'networkValue') network=network.network image=network.image}}
+                {{device-network send=(action 'networkValue') network=network.network image=network.network_image}}
             {{/each}}
         </div>
     {{/if}}
