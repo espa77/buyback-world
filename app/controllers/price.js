@@ -41,6 +41,7 @@ export default Ember.Controller.extend({
             .filterBy('device_model', userModel)
             .filterBy('network', userNetwork)
             .filterBy('size', parseInt(userSize));
+            debugger;
         return finalDevice;
     }),
 

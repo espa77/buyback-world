@@ -6,8 +6,8 @@
     {{/each}}
 </div>
 {{else}}
-    <h3>Size You Selected:</h3>
-    {{selectedDevice.size}}
+    <h3>Your {{selectedDevice.model}} has {{selectedDevice.size}}GB of memory.</h3>
+    
 {{/if}}
 
 
@@ -16,10 +16,7 @@
 {{/each}}
 
 <div class="final-device-selection">
-    My device:
-        {{selectedDevice.device}}
-        {{selectedDevice.model}}
-        {{selectedDevice.network}}
-        {{selectedDevice.size}}
-        {{selectedDevice.condition}}
+    <p>Your device is a {{selectedDevice.device}} {{selectedDevice.model}} </p>
+    <p>with {{selectedDevice.size}}GB of memory set up on the {{selectedDevice.network}} network </p>
+    <p>and it's in {{selectedDevice.condition}} condition.</p>
     </div>

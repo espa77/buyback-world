@@ -8,7 +8,7 @@ export default Ember.Component.extend({
             this.send(deviceVal);
         }
     },
-    changeDeviceValue() {
-        throw new Error ("You must select a device to continue");
+    	changeDeviceValue() {
+        	throw new Error ("You must select a device to continue");
     }
 });

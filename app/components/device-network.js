@@ -3,12 +3,13 @@ import Ember from 'ember';
 export default Ember.Component.extend({
  
     actions: {
-        changeNetworkValue(networkVal) {
+      changeNetworkValue(networkVal) {
             this.set('groupValue', networkVal);
             this.send(networkVal);
         }
     },
-    changeNetworkValue() {
-        throw new Error ("You must select a network to continue");
+
+    	changeNetworkValue() {
+        	throw new Error ("You must select a network to continue");
     }
 });
