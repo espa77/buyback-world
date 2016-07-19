@@ -1,11 +1,15 @@
-{{#paper-select placeholder="Condition Normal" value=condition onChange=(action 'changeConditionValue')}}
+<div class="condition">
+    <p>What condition is your device in?</p>
+    {{#paper-radio-group model=conditionVal groupValue=groupValue onChange=(action 'changeConditionValue') as |group|}}
+        {{#group.paper-radio value=conditionVal id=conditionVal }}
+            normal
+        {{/group.paper-radio}}
+        {{#group.paper-radio value="broken" }}
+            broken
+        {{/group.paper-radio}}
+        {{#group.paper-radio value="broken no power" }}
+            broken - no power
+        {{/group.paper-radio}}
+    {{/paper-radio-group}}
+</div>
 
-        {{#paper-option value=condition}}
-            <ul class="condition_list">
-                <li>Normal</li>
-                <li>Broken</li>
-                <li>No Power</li>
-            </ul>
-        {{/paper-option}}
-
-{{/paper-select}}

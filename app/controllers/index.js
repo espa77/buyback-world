@@ -32,10 +32,10 @@ export default Ember.Controller.extend({
     }),
 
     uniqueNetwork: Ember.computed('model', 'selected-device', function(){
-        let netval = this.get('selectedDevice').device_attributes.get('lastObject');
+        let modval = this.get('selectedDevice').device_attributes.get('lastObject');
         var model = this.get('model');
         var uniqueNetworks = [];
-        var filteredNetworks = model.filterBy('device_model', netval );
+        var filteredNetworks = model.filterBy('device_model', modval );
         filteredNetworks.forEach(function(el){
             if (!uniqueNetworks.isAny('network', el.get('network'))) {
                 uniqueNetworks.pushObject(el);

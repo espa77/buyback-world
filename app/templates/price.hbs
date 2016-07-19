@@ -11,8 +11,13 @@
     {{selectedDevice.size}}
 {{/if}}
 
-
-{{device-condition send=(action 'conditionValue')}}
+{{#if conditionValNotSet}}
+    {{device-condition send=(action 'conditionValue')}}
+{{else}}
+    <h3>Condition You Selected:</h3>
+    <br>
+    {{selectedDevice.condition}}
+{{/if}}
 
 
 

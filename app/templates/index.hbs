@@ -1,29 +1,27 @@
 <div class="layout-column flex" id="index">
     <div class="flex" id="index-text">
-        <h1>Welcome to BuyBack World</h1>
-        <p>We buy your used device for cash in NYC</p>
+        <p><em>We buy your used device for cash in NYC</em></p>
     </div>
 
-    {{#if userSelectedDevice}}
-        <div class="user-selection" id="type">{{selectedDevice.device}} Selected!</div>
+    {{#if userSelectedDevice }}
+        <h3>picked</h3>
     {{else}}
         <div class="layout-row layout-md-column" id="device-selection-text">
             <h2><em>What do you want to sell?</em></h2>
-
         </div>
         <div class="device-type selector">
             {{#each uniqueDevice as |device|}}
-                {{device-selector send=(action 'deviceValue') device_type=device.device_type image=device.image}}
+                {{device-selector send=(action 'deviceValue') id=device.id device_type=device.device_type image=device.image}}
             {{/each}}
         </div>
     {{/if}}
 
-    {{#if userSelectedModel}}
+    {{#if userSelectedModel }}
         <div class="user-selection" id="model">{{selectedDevice.model}}</div>
     {{else}}
         <div class="device-model selector">
             {{#each uniqueModel as |uniqueModel|}}
-                {{device-model deviceVal send=(action 'modelValue') device_model=uniqueModel.device_model image=uniqueModel.image}}
+                {{device-model deviceVal send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
             {{/each}}
         </div>
     {{/if}}
@@ -33,7 +31,7 @@
     {{else}}
         <div class="device-network selector">
             {{#each uniqueNetwork as |network|}}
-                {{device-network send=(action 'networkValue') network=network.network image=network.image}}
+                {{device-network send=(action 'networkValue') network=network.network }}
             {{/each}}
         </div>
     {{/if}}
