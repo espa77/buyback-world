@@ -1,8 +1,8 @@
 <div class="device">
     {{#paper-radio-group groupValue=groupValue onChange=(action 'changeModelValue') as |group|}}
         {{#group.paper-radio value=device_model}}
-            <div class="device_images">
-                <img src="assets/images/{{image}}" class="img_device" />
+            <div data-id={{id}} class="device_images">
+                <img src="assets/images/{{image}}" class="img_device" alt="{{image}}"/>
             </div>
             <div class="device_title">
                 <h3>{{device_model}}</h3>

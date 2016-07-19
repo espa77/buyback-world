@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     selectedDevice: Ember.inject.service('selected-device'),
 
+    conditionValNotSet: true,
     userNotSelectedSize: true,
     finalDevice: null,
 
@@ -53,6 +54,8 @@ export default Ember.Controller.extend({
 
         },
         conditionValue(conditionVal) {
+            this.get('selectedDevice').addCondition(conditionVal);
+            this.set('conditionValNotSet', false);
             console.log(conditionVal);
         },
         priceValue(priceVal) {

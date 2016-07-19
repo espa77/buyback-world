@@ -1,5 +1,18 @@
 @import 'ember-paper';
 
+@keyframes slide-up {
+  from {
+    opacity: 0.3;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
 html {
   height: auto;
   min-height: 100%;
@@ -17,7 +30,7 @@ html {
 .header_container {
   height: 80px;
   top: 0;
-  background-color: rgba(7, 153, 7, 0.18);
+  background-color: #21ce99;
 }
 
 .header {
@@ -28,7 +41,7 @@ html {
 }
 
 .header a {
-  color: #0629ff;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -50,7 +63,6 @@ html {
 #device-selection-text {
   justify-content: center;
   text-align: center;
-
 }
 
 .user-selection {
@@ -63,7 +75,10 @@ html {
 
 .selector {
   display: flex;
+  align-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
+  padding-bottom: 5%;
 }
 
 .hidden-component .selector {
@@ -71,9 +86,28 @@ html {
 }
 
 .device {
-  padding:2em;
-  margin:2em;
+  margin: 1.5em;
+  padding: 1em;
   border: 1px solid transparent;
+  transition: all 0.3s ease;
+  //-webkit-animation-name: slide-up;
+  //animation-name: slide-up;
+  //-webkit-animation-duration: 1s;
+  //animation-duration: 1s;
+  //-webkit-animation-fill-mode: both;
+  //animation-fill-mode: both;
+}
+
+.device:hover img {
+  opacity:0.8;
+  -webkit-transform: translate3d(0, -3%, 0);
+  transform: translate3d(0, -3%, 0);
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.device .md-ink-ripple {
+  display: none;
 }
 
 .img_device {
@@ -81,8 +115,14 @@ html {
   height: 200px;
 }
 
+.img_network {
+  padding: 2em;
+  min-width: 100px;
+  height: 50px;
+}
+
 .device:hover {
-  border: 1px solid rgba(26, 131, 255, 0.47);
+  border: 1px solid #21ce99;
 }
 
 .condition_list {
@@ -94,7 +134,7 @@ html {
   position: absolute;
   height: 80px;
   bottom:0;
-  background-color: rgba(7, 153, 7, 0.18);
+  background-color: #21ce99;
   overflow: hidden;
 }
 
@@ -106,13 +146,13 @@ html {
 }
 
 .navigation {
-  color: #0629ff;
+  color: #fff;
   width: 50%;
   display:flex;
   justify-content: space-around;
 }
 
 .navigation a {
-  color: #0629ff;
+  color: #fff;
   text-decoration: none;
 }

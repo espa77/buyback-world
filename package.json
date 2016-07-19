@@ -43,7 +43,9 @@
     "ember-paper": "1.0.0-alpha.1",
     "ember-power-select": "1.0.0-alpha.14",
     "ember-resolver": "^2.0.3",
+    "liquid-fire": "0.24.1",
     "loader.js": "^4.0.1",
     "lodash-es": "3.10.1"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,11 +1,40 @@
 {{#paper-radio-group groupValue=groupValue onChange=(action 'changeNetworkValue') as |group|}}
     {{#group.paper-radio value=network}}
-       <div class="device_images">
-            <img src="assets/images/{{network_image}}" class="img_device" />
+
+        <div class="device_images">
+            {{#if att }}
+                <img src="assets/images/{{networkImage.att}}" class="img_network"/>
+                <div class="device_title">
+                    <h3>{{network}}</h3>
+                </div>
+
+            {{else if sprint }}
+                <img src="assets/images/{{networkImage.sprint}}" class="img_network"/>
+                <div class="device_title">
+                    <h3>{{network}}</h3>
+                </div>
+
+            {{else if tMobile }}
+                <img src="assets/images/{{networkImage.tMobile}}" class="img_network"/>
+                <div class="device_title">
+                    <h3>{{network}}</h3>
+                </div>
+
+            {{else if verizon }}
+                <img src="assets/images/{{networkImage.verizon}}" class="img_network"/>
+                <div class="device_title">
+                    <h3>{{network}}</h3>
+                </div>
+
+            {{else if other }}
+                <img src="assets/images/{{networkImage.other}}" class="img_network"/>
+                <div class="device_title">
+                    <h3>{{network}}</h3>
+                </div>
+            {{/if}}
+
         </div>
-        <div class="device_title">
-            <h3>{{network}}</h3>
-        </div>
+
     {{/group.paper-radio}}
 {{/paper-radio-group}}
 

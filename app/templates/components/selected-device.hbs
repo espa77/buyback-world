@@ -1,0 +1,16 @@
+<div class="user-selection layout-column flex-xs flex-gt-xs-50">
+    {{#paper-card as |card|}}
+        {{#card.title as |title|}}
+            {{#title.text as |text|}}
+                {{#text.headline}}You've selected{{/text.headline}}
+                {{#text.subhead}}{{/text.subhead}}
+            {{/title.text}}
+            {{title.media size="sm" src="tomster-9918e85a7f1a28c78b484c34cbe88579.png" alt="Tomster" title="Tomster"}}
+        {{/card.title}}
+        {{#card.actions class="layout-column"}}
+            {{#paper-button raised=true onClick=(action "newDevice")}}Select New Device{{/paper-button}}
+            {{#paper-button raised=true onClick=(action "newModel")}}Select New Model{{/paper-button}}
+            {{#paper-button raised=true onClick=(action "newNetwork")}}Select New Network{{/paper-button}}
+        {{/card.actions}}
+    {{/paper-card}}
+</div>
