@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
+
     device_attributes: null,
 
     device: null,
@@ -16,8 +17,7 @@ export default Ember.Service.extend({
     },
     addDevice(item) {
         this.get('device_attributes').pushObject(item);
-        let device = this.get('device_attributes');
-        this.set('device', device[0]);
+        this.set('device', item);
     },
     removeDevice(item) {
         this.get('device_attributes').removeObject(item);
@@ -25,8 +25,7 @@ export default Ember.Service.extend({
     },
     addModel(item) {
         this.get('device_attributes').pushObject(item);
-        let device = this.get('device_attributes');
-        this.set('model', device[1]);
+        this.set('model', item);
     },
     removeModel(item) {
         this.get('device_attributes').removeObject(item);
@@ -34,8 +33,7 @@ export default Ember.Service.extend({
     },
     addNetwork(item) {
         this.get('device_attributes').pushObject(item);
-        let device = this.get('device_attributes');
-        this.set('network', device[2]);
+        this.set('network', item);
     },
     removeNetwork(item) {
         this.get('device_attributes').removeObject(item);
@@ -43,26 +41,23 @@ export default Ember.Service.extend({
     },
     addSize(item) {
         this.get('device_attributes').pushObject(item);
-        let device = this.get('device_attributes');
-        this.set('size', device[3]);
+        this.set('size', item);
     },
     removeSize(item) {
         this.get('device_attributes').removeObject(item);
         this.set('size', null);
     },
     addCondition(item) {
-        this.get('device_attributes').addObject(item);
-        let device = this.get('device_attributes');
-        this.set('condition', device[4]);
+        this.get('device_attributes').pushObject(item);
+        this.set('condition', item);
     },
     removeCondition(item) {
         this.get('device_attributes').removeObject(item);
         this.set('condition', null);
     },
     addPrice(item) {
-        this.get('device_attributes').addObject(item);
-        let device = this.get('device_attributes');
-        this.set('price', device[5]);
+        this.get('device_attributes').pushObject(item);
+        this.set('price', item);
     },
     removePrice(item) {
         this.get('device_attributes').removeObject(item);

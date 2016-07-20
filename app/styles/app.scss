@@ -60,7 +60,7 @@ html {
  text-align: center;
 }
 
-#device-selection-text {
+#device-selection-text, #model-selection-text, #network-selection-text{
   justify-content: center;
   text-align: center;
 }
@@ -110,6 +110,10 @@ html {
   display: none;
 }
 
+.device-network .md-ink-ripple {
+  display: none;
+}
+
 .img_device {
   padding: 0.2em;
   height: 200px;
@@ -156,3 +160,4 @@ html {
   color: #fff;
   text-decoration: none;
 }
+

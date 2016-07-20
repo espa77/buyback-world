@@ -27,12 +27,9 @@
 
 
 <div class="final-device-selection">
-    My device:
-        {{selectedDevice.device}}
-        {{selectedDevice.model}}
-        {{selectedDevice.network}}
-        {{selectedDevice.size}}
-        {{selectedDevice.condition}}
+    {{#each finalDevice as |device|}}
+        {{selected-device reloadDevice=(action 'refreshDeviceFromPrice') reloadModel=(action 'refreshModelFromPrice') reloadNetwork=(action 'refreshNetwork') image=device.image}}
+    {{/each}}
     </div>
 
 {{name-phone}}

@@ -5,19 +5,36 @@ export default Ember.Controller.extend({
 
     conditionValNotSet: true,
     userNotSelectedSize: true,
-    finalDevice: null,
+
+    finalDevice: Ember.computed('selectedDevice', function() {
+        if (this.get('selectedDevice')) {
+            let typeval = this.get('selectedDevice.device');
+            let modval = this.get('selectedDevice.model');
+            let netval = this.get('selectedDevice.network');
+            let size = this.get('selectedDevice.size');
+                if (size === null) {
+                    size = "16";
+                }
+            let dataModel = this.get('model');
+            let filtered = dataModel.filterBy('device_type', typeval)
+                .filterBy('device_model', modval)
+                .filterBy('network', netval)
+                .filterBy('size', size);
+            return filtered;
+        }
+    }),
 
     userSizes: Ember.observer('selectedDevice.size', function(){
         return this.get('selectedDevice.size');
     }),
 
     sizeSelection: Ember.computed('model', 'selectedDevice', function(){
-        let typeval = this.get('selectedDevice').device_attributes[0];
-        let modval = this.get('selectedDevice').device_attributes[1];
-        let netval = this.get('selectedDevice').device_attributes[2];
-        let model = this.get('model');
+        let typeval = this.get('selectedDevice').device;
+        let modval = this.get('selectedDevice').model;
+        let netval = this.get('selectedDevice').network;
+        let dataModel = this.get('model');
         var deviceSize = [];
-        let filtered = model.filterBy('device_type', typeval )
+        let filtered = dataModel.filterBy('device_type', typeval )
             .filterBy('device_model', modval)
             .filterBy('network', netval);
         filtered.forEach(function(size){
@@ -60,6 +77,15 @@ export default Ember.Controller.extend({
         },
         priceValue(priceVal) {
             console.log(priceVal);
+        },
+        refreshDeviceFromPrice(deviceVal) {
+            this.transitionToRoute('index');
+        },
+        refreshModelFromPrice(modelVal) {
+            this.transitionToRoute('index');
+        },
+        refreshNetwork(networkVal) {
+            this.transitionToRoute('index');
         }
     }
 

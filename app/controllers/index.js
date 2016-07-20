@@ -7,6 +7,12 @@ export default Ember.Controller.extend({
     userSelectedModel: true,
     userSelectedNetwork: true,
 
+    finalDevice: Ember.computed('userSelectedDevice', function() {
+        if (this.get('userSelectedDevice')) {
+            return this.get('uniqueDevice').filterBy('device_type', this.get('userSelectedDevice'));
+        }
+    }),
+
     uniqueDevice: Ember.computed('model', function () {
         var model = this.get('model');
         var uniqueObjects = [];
@@ -18,8 +24,8 @@ export default Ember.Controller.extend({
         return uniqueObjects;
     }),
 
-    uniqueModel: Ember.computed('model', 'selectedDevice', function(){
-        let val = this.get('selectedDevice').device_attributes.get('firstObject');
+    uniqueModel: Ember.computed('model', 'userSelectedDevice', function(){
+        let val = this.get('userSelectedDevice');
         var model = this.get('model');
         var uniqueModels = [];
         var filteredModels = model.filterBy('device_type', val );
@@ -31,11 +37,11 @@ export default Ember.Controller.extend({
         return uniqueModels;
     }),
 
-    uniqueNetwork: Ember.computed('model', 'selected-device', function(){
-        let modval = this.get('selectedDevice').device_attributes.get('lastObject');
-        var model = this.get('model');
+    uniqueNetwork: Ember.computed('model', 'userSelectedModel', function(){
+        let modval = this.get('userSelectedModel');
+        var dataModel = this.get('model');
         var uniqueNetworks = [];
-        var filteredNetworks = model.filterBy('device_model', modval );
+        var filteredNetworks = dataModel.filterBy('device_model', modval );
         filteredNetworks.forEach(function(el){
             if (!uniqueNetworks.isAny('network', el.get('network'))) {
                 uniqueNetworks.pushObject(el);
@@ -47,17 +53,28 @@ export default Ember.Controller.extend({
     actions: {
         deviceValue(deviceVal) {
             this.get('selectedDevice').addDevice(deviceVal);
-            this.set('userSelectedDevice', true);
+            this.set('userSelectedDevice', deviceVal);
             this.set('userSelectedModel', false);
+        },
+        refreshDevice(deviceVal) {
+            this.set('userSelectedDevice', false);
+            this.get('selectedDevice').removeDevice(deviceVal);
+            this.set('userSelectedModel', true);
+            this.set('userSelectedNetwork', true);
         },
         modelValue(modelVal) {
             this.get('selectedDevice').addModel(modelVal);
-            this.set('userSelectedModel', true);
+            this.set('userSelectedModel', modelVal);
             this.set('userSelectedNetwork', false);
+        },
+        refreshModel(modelVal) {
+            this.set('userSelectedModel', false);
+            this.get('selectedDevice').removeModel(modelVal);
+            this.set('userSelectedNetwork', true);
         },
         networkValue(networkVal) {
             this.get('selectedDevice').addNetwork(networkVal);
-            this.set('userSelectedNetwork', true);
+            this.set('userSelectedNetwork', networkVal);
             this.transitionToRoute('price');
         }
     }
