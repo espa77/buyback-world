@@ -7,7 +7,7 @@ export default Ember.Service.extend({
     device: null,
     model: null,
     network: null,
-    size: 16,
+    size: null,
     condition: "normal",
     price: null,
 
@@ -48,11 +48,9 @@ export default Ember.Service.extend({
         this.set('size', null);
     },
     addCondition(item) {
-        this.get('device_attributes').pushObject(item);
         this.set('condition', item);
     },
-    removeCondition(item) {
-        this.get('device_attributes').removeObject(item);
+    removeCondition() {
         this.set('condition', null);
     },
     addPrice(item) {
@@ -68,6 +66,12 @@ export default Ember.Service.extend({
         console.log(device);
     },
     empty() {
-        this.get('device_attributes').clear();
+        this.set('device', null);
+        this.set('model', null);
+        this.set('network', null);
+        this.set('size', null);
+        this.set('condition', "normal");
+        this.set('price', null);
+        this.set('device_attributes', []);
     }
 });

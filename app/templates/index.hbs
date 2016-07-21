@@ -18,9 +18,7 @@
         </div>
     {{/if}}
 
-    {{#if userSelectedModel }}
-
-    {{else}}
+    {{#if userDeviceChanged}}
         <div class="layout-row layout-md-column" id="model-selection-text">
             <h2><em>What model?</em></h2>
         </div>
@@ -31,9 +29,7 @@
         </div>
     {{/if}}
 
-    {{#if userSelectedNetwork}}
-
-    {{else}}
+    {{#if userModelChanged}}
         <div class="layout-row layout-md-column" id="network-selection-text">
             <h2><em>Choose your Network</em></h2>
         </div>

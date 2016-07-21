@@ -1,4 +1,4 @@
-<div class="user-selection layout-column flex-xs flex-gt-xs-50">
+<div class="user-selection layout-column flex-xs">
     {{#paper-card as |card|}}
         {{#card.title as |title|}}
             {{#title.text as |text|}}
@@ -10,6 +10,10 @@
                 {{#if selectedDevice.network}}
                     {{#text.subhead}}Network: {{selectedDevice.network}}{{/text.subhead}}
                 {{/if}}
+                {{#if selectedDevice.size}}
+                    {{#text.subhead}}Size: {{selectedDevice.size}} GB{{/text.subhead}}
+                {{/if}}
+                {{#text.subhead}}Condition: {{selectedDevice.condition}}{{/text.subhead}}
 
             {{/title.text}}
             {{#title.media size="sm"}}
@@ -19,12 +23,15 @@
             {{/title.media}}
             {{/card.title}}
         {{#card.actions}}
-            {{#paper-button raised=true onClick=(action "newDevice")}}Select New Device{{/paper-button}}
-            {{#if selectedDevice.model}}
-                {{#paper-button raised=true onClick=(action "newModel")}}Select New Model{{/paper-button}}
-            {{/if}}
             {{#if selectedDevice.network}}
-                {{#paper-button raised=true onClick=(action "newNetwork")}}Select New Network{{/paper-button}}
+                {{#paper-button raised=true onClick=(action "goBack")}}Go Back{{/paper-button}}
+            {{else}}
+                {{#if selectedDevice.device}}
+                    {{#paper-button raised=true onClick=(action "newDevice")}}Select New Device{{/paper-button}}
+                {{/if}}
+                {{#if selectedDevice.model}}
+                    {{#paper-button raised=true onClick=(action "newModel")}}Select New Model{{/paper-button}}
+                {{/if}}
             {{/if}}
             {{/card.actions}}
     {{/paper-card}}
