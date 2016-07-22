@@ -8,9 +8,7 @@
             {{selected-device reloadDevice=(action 'refreshDevice') reloadModel=(action 'refreshModel') image=device.image}}
         {{/each}}
     {{else}}
-        <div class="layout-row layout-md-column" id="device-selection-text">
-            <h2><em>What do you want to sell?</em></h2>
-        </div>
+        {{index-device}}
         <div class="device-type selector">
             {{#each uniqueDevice as |device|}}
                 {{device-selector send=(action 'deviceValue') id=device.id device_type=device.device_type image=device.image}}

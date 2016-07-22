@@ -34,19 +34,25 @@ html {
 .header_container {
   height: 80px;
   top: 0;
-  background-color: color($primary, 'A700');
-}
-
-.header {
   display:flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   align-content: center;
 }
 
+.header {
+
+}
+
 .header a {
-  color: #fff;
+  color: color($primary, 'A700');
+  letter-spacing: 2px;
   text-decoration: none;
+}
+
+.site-title {
+  font-size: 36px;
+  font-weight: 700;
 }
 
 .body {
@@ -64,7 +70,13 @@ html {
  text-align: center;
 }
 
-#device-selection-text, #model-selection-text, #network-selection-text{
+#device-selection-text {
+  text-align: center;
+  display: inherit;
+  margin: 0 auto;
+}
+
+#model-selection-text, #network-selection-text{
   justify-content: center;
   text-align: center;
 }
