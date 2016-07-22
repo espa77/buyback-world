@@ -1,38 +1,41 @@
-{{#if userNotSelectedSize}}
-<div class="device-size selector">
-    <h3>Choose Size:</h3>
-    {{#each sizeSelection as |dev|}}
-        {{device-size send=(action 'sizeValue') size=dev.size price=dev.price}}
-    {{/each}}
-</div>
-{{else}}
-    <h3>Size You Selected:</h3>
-    <br>
-    {{selectedDevice.size}}
-{{/if}}
+<div class="layout-column flex">
+    <div class="price layout-row layout-xs-column flex">
+        <div class="final-device-selection flex">
+        {{#each finalDevice as |device|}}
+            {{selected-device reloadIndex=(action 'startOver') image=device.image}}
+        {{/each}}
+        </div>
 
-{{#if conditionValNotSet}}
-    {{device-condition send=(action 'conditionValue')}}
-{{else}}
-    <h3>Condition You Selected:</h3>
-    <br>
-    {{selectedDevice.condition}}
-{{/if}}
-
-
-
-{{#each devicePrice as |device|}}
-    {{device-price send=(action 'priceValue') image=device.image size=device.size price=device.price_cents}}
-{{/each}}
-
-
-<div class="final-device-selection">
-    My device:
-        {{selectedDevice.device}}
-        {{selectedDevice.model}}
-        {{selectedDevice.network}}
-        {{selectedDevice.size}}
-        {{selectedDevice.condition}}
+        <div class="device-size flex">
+            {{#if userNotSelectedSize}}
+                <h3>Choose Different Size:</h3>
+                {{#each sizeSelection as |dev|}}
+                    {{device-size send=(action 'sizeValue') size=dev.size price=dev.price}}
+                {{/each}}
+            {{/if}}
+        </div>
+        <div class="device-condition flex">
+            {{#if conditionValNotSet}}
+                {{device-condition send=(action 'conditionValue')}}
+            {{/if}}
+        </div>
     </div>
 
-{{name-phone}}
+    <div class="flex">
+        <div class="price-condition layout-row layout-xs-column flex">
+
+
+            <div class="device-price flex">
+                {{#each devicePrice as |device|}}
+                    {{device-price send=(action 'priceValue') image=device.image size=device.size price=device.price_cents}}
+                {{/each}}
+            </div>
+
+
+
+            <div class="name-phone flex">
+                {{name-phone}}
+            </div>
+        </div>
+    </div>
+</div>

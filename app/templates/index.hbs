@@ -3,8 +3,10 @@
         <p><em>We buy your used device for cash in NYC</em></p>
     </div>
 
-    {{#if userSelectedDevice }}
-        <h3>picked</h3>
+    {{#if userSelectedDevice}}
+        {{#each finalDevice as |device|}}
+            {{selected-device reloadDevice=(action 'refreshDevice') reloadModel=(action 'refreshModel') image=device.image}}
+        {{/each}}
     {{else}}
         <div class="layout-row layout-md-column" id="device-selection-text">
             <h2><em>What do you want to sell?</em></h2>
@@ -16,9 +18,10 @@
         </div>
     {{/if}}
 
-    {{#if userSelectedModel }}
-        <div class="user-selection" id="model">{{selectedDevice.model}}</div>
-    {{else}}
+    {{#if userDeviceChanged}}
+        <div class="layout-row layout-md-column" id="model-selection-text">
+            <h2><em>What model?</em></h2>
+        </div>
         <div class="device-model selector">
             {{#each uniqueModel as |uniqueModel|}}
                 {{device-model deviceVal send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
@@ -26,9 +29,10 @@
         </div>
     {{/if}}
 
-    {{#if userSelectedNetwork}}
-        <div class="user-selection" id="network">{{selectedDevice.network}}</div>
-    {{else}}
+    {{#if userModelChanged}}
+        <div class="layout-row layout-md-column" id="network-selection-text">
+            <h2><em>Choose your Network</em></h2>
+        </div>
         <div class="device-network selector">
             {{#each uniqueNetwork as |network|}}
                 {{device-network send=(action 'networkValue') network=network.network }}

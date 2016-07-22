@@ -1,3 +1,7 @@
+$primary: "teal";
+$accent: "purple";
+$warn: "brown";
+
 @import 'ember-paper';
 
 @keyframes slide-up {
@@ -30,7 +34,7 @@ html {
 .header_container {
   height: 80px;
   top: 0;
-  background-color: #21ce99;
+  background-color: color($primary, 'A700');
 }
 
 .header {
@@ -60,7 +64,7 @@ html {
  text-align: center;
 }
 
-#device-selection-text {
+#device-selection-text, #model-selection-text, #network-selection-text{
   justify-content: center;
   text-align: center;
 }
@@ -100,13 +104,17 @@ html {
 
 .device:hover img {
   opacity:0.8;
-  -webkit-transform: translate3d(0, -3%, 0);
-  transform: translate3d(0, -3%, 0);
+  -webkit-transform: translate3d(0, -1%, 0);
+  transform: translate3d(0, -1%, 0);
   transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
 }
 
 .device .md-ink-ripple {
+  display: none;
+}
+
+.device-network .md-ink-ripple {
   display: none;
 }
 
@@ -122,7 +130,15 @@ html {
 }
 
 .device:hover {
-  border: 1px solid #21ce99;
+  border: 1px solid color($accent, 'A200');
+}
+
+.user-selection {
+
+}
+
+.liquid-container {
+  width: 100%;
 }
 
 .condition_list {
@@ -134,7 +150,7 @@ html {
   position: absolute;
   height: 80px;
   bottom:0;
-  background-color: #21ce99;
+  background-color: color($primary, 'A700');
   overflow: hidden;
 }
 
@@ -156,3 +172,4 @@ html {
   color: #fff;
   text-decoration: none;
 }
+
