@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     selectedDevice: Ember.inject.service('selected-device'),
+    // ajax: Ember.inject.service(),
 
     conditionValNotSet: true,
     userNotSelectedSize: true,
@@ -71,6 +72,25 @@ export default Ember.Controller.extend({
         return finalDevice;
     }),
 
+    nameOnQuote: Ember.computed('name-phone', 'name', function(){
+        debugger;
+        let name = this.get('name');
+    }),
+
+    phoneOnQuote: Ember.computed('name-phone', 'phone', function(){
+        let phone = this.get('phone');
+    }),
+
+    quote: Ember.computed('finalDevice.{device_type,device_model,network,size,price_cents}', 'nameOnQuote.{name}', 'phoneOnQuote.{phone}', function(){
+        let device = this.get('finalDevice.device_type');
+        let model = this.get('finalDevice.device_model');
+        let network = this.get('finalDevice.network');
+        let size = this.get('finalDevice.size');
+        let price_cents = this.get('finalDevice.price_cents');
+        let name = this.get('nameOnQuote.name');
+        let phone = this.get('nameOnQuote.phone');
+    }),
+
     actions: {
         sizeValue(sizeVal) {
             this.get('selectedDevice').addSize(sizeVal);
@@ -84,13 +104,44 @@ export default Ember.Controller.extend({
         priceValue(priceVal) {
             console.log(priceVal);
         },
+        nameValue(nameVal){
+            this.get('selectedDevice').addName(nameVal);
+            this.set('nameValNotSet', false);
+        },
+        phoneValue(phoneVal){
+            this.get('selectedDevice').addPhone(phoneVal);
+            this.set('phoneValNotSet', false);
+        },
 
         startOver() {
             this.set('conditionValNotSet', true);
             this.set('userNotSelectedSize', true);
             this.transitionToRoute('index');
             this.get('selectedDevice').empty();
-        }
-    }
+        },
 
+        quoted(){
+            var quote = this.store.createRecord('quote');
+            quote.save().then(()=> {
+                this.transitionTo('thanks');
+                }).catch(()=> {
+                alert("couldn't save quote.");
+            });
+        },
+        // quoted(){
+        //     return this.get('ajax').request('/quote', {
+        //         method: 'POST',
+        //         data:{
+        //             device: "this.get('selectedDevice.device')",
+        //             model: "this.get('selectedDevice.model')",
+        //             network: "this.get('selectedDevice.network')",
+        //             size: "this.get('selectedDevice.size')",
+        //             condition: "this.get('selectedDevice.condition')",
+        //             price: "this.get('selectedDevice.price_cents')",
+        //             name: "this.get('selectedDevice.name')",
+        //             phone: "this.get('selectedDevice.phone')"
+        //         }
+        //     });
+        // }
+    }
 });

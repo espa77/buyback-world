@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('about');
   this.route('contact');
+  this.route('thanks');
   this.route('device', function() {
     this.route('mod', function() {
       this.route('network');
