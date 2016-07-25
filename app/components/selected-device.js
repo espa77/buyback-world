@@ -3,8 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     selectedDevice: Ember.inject.service('selected-device'),
 
-
-
     actions: {
         newDevice() {
             let deviceVal = this.get('selectedDevice.device');

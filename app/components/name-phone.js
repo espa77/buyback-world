@@ -1,26 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    actions: {
-        sellDevice(){
-            console.log("sell button clicked");
-        }
-    }
+
+  actions: {
+  	changeNameValue(nameVal) {
+  		this.set('name', nameVal);
+  		this.send(nameVal);
+  	},
+
+  	changePhoneValue(phoneVal){
+  		this.set('phone', phoneVal);
+  		this.send(phoneVal);
+  	},
+  	quoted: function(){
+  		alert('Your device information has been submitted! A representative will contact you shortly to arrange final sale details.');
+  		this.sendAction('quoted');
+  	}
+  }
 });
-
-
-// {{#paper-select placeholder="Select Condition" value=conditionVal onChange=(action 'changeConditionValue')}}
-// {{#each condition.value as |condition|}}
-// {{#paper-option value=condition}}
-// {{ condition }}
-// {{/paper-option}}
-// {{/each}}
-// {{/paper-select}}
-
-
-
-// willRender() {
-//     this.set('condition', {
-//         value: ['normal', 'broken', 'no power']
-//     });
-// },
