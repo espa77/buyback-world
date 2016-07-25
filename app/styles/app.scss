@@ -106,6 +106,7 @@ html {
   padding: 1em;
   border: 1px solid transparent;
   transition: all 0.3s ease;
+  justify-content: center;
   //-webkit-animation-name: slide-up;
   //animation-name: slide-up;
   //-webkit-animation-duration: 1s;
@@ -124,6 +125,21 @@ html {
 
 .device .md-ink-ripple {
   display: none;
+}
+
+.device * .md-label {
+  margin-left:0;
+}
+
+.md-label span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.device_title {
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .device-network .md-ink-ripple {
