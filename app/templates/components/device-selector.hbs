@@ -1,4 +1,4 @@
-<div class="device">
+<div class="device" id={{device_type}}>
     {{#paper-radio-group groupValue=groupValue onChange=(action 'changeDeviceValue') as |group|}}
         {{#group.paper-radio value=device_type}}
             <div data-id={{id}} class="device_images">

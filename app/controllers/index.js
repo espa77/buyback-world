@@ -1,24 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
     selectedDevice: Ember.inject.service('selected-device'),
 
-    userSelectedDevice: Ember.computed('selectedDevice.device', function() {
-        return this.get('selectedDevice.device');
-    }),
-
-    refresh: Ember.observer('selectedDevice.device_attributes', function() {
-        if (this.get('selectedDevice.device_attributes').length === 0) {
+    refresh: Ember.observer('selectedDevice.device_attributes.device', function() {
+        if (this.get('selectedDevice.device_attributes.device') === false) {
             this.set('userSelectedDevice', false);
         }
     }),
 
-    userDeviceChanged: Ember.computed('selectedDevice.device_attributes.length', function(){
-        return this.get('selectedDevice.device_attributes.length') === 1;
+    userSelectedDevice: Ember.computed('selectedDevice.device_attributes.device', function() {
+        return this.get('selectedDevice.device_attributes.device');
     }),
 
-    userModelChanged: Ember.computed('selectedDevice.device_attributes.length', function(){
-        return this.get('selectedDevice.device_attributes.length') === 2;
+    userDeviceChanged: Ember.computed('selectedDevice.device_attributes.device', function(){
+        return this.get('selectedDevice.device_attributes.device');
+    }),
+
+    userSelectedModel: Ember.computed('selectedDevice.device_attributes.model', function(){
+        return this.get('selectedDevice.device_attributes.model');
     }),
 
 

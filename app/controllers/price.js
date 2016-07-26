@@ -69,11 +69,11 @@ export default Ember.Controller.extend({
         if (userCondition === "broken no power") {
             this.set('finalDevice.firstObject.price_cents', price / 4);
         }
+        this.get('selectedDevice').addPrice(price);
         return finalDevice;
     }),
 
     nameOnQuote: Ember.computed('name-phone', 'name', function(){
-        debugger;
         let name = this.get('name');
     }),
 
@@ -104,15 +104,6 @@ export default Ember.Controller.extend({
         priceValue(priceVal) {
             console.log(priceVal);
         },
-        nameValue(nameVal){
-            this.get('selectedDevice').addName(nameVal);
-            this.set('nameValNotSet', false);
-        },
-        phoneValue(phoneVal){
-            this.get('selectedDevice').addPhone(phoneVal);
-            this.set('phoneValNotSet', false);
-        },
-
         startOver() {
             this.set('conditionValNotSet', true);
             this.set('userNotSelectedSize', true);
@@ -121,7 +112,12 @@ export default Ember.Controller.extend({
         },
 
         quoted(){
-            var quote = this.store.createRecord('quote');
+            if (this.get('selectedDevice.device_attributes.size') === null) {
+                this.set('selectedDevice.device_attributes.size', 16);
+            }
+            let finalDevice = this.get('selectedDevice.device_attributes'),
+                quote = this.store.createRecord('quote', finalDevice);
+
             quote.save().then(()=> {
                 this.transitionTo('thanks');
                 }).catch(()=> {

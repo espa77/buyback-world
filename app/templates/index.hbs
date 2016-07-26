@@ -1,13 +1,16 @@
 <div class="layout-column flex" id="index">
-    <div class="flex" id="index-text">
-        <p><em>We buy your used device for cash in NYC</em></p>
+    {{#unless userSelectedDevice}}
+    <div class="flex index-text">
+        {{index-text}}
     </div>
+    {{/unless}}
 
     {{#if userSelectedDevice}}
         {{#each finalDevice as |device|}}
             {{selected-device reloadDevice=(action 'refreshDevice') reloadModel=(action 'refreshModel') image=device.image}}
         {{/each}}
     {{else}}
+        <hr>
         {{index-device}}
         <div class="device-type selector">
             {{#each uniqueDevice as |device|}}
@@ -15,8 +18,10 @@
             {{/each}}
         </div>
     {{/if}}
+    <hr>
 
-    {{#if userDeviceChanged}}
+    {{#if userSelectedDevice}}
+        {{#unless userSelectedModel}}
         <div class="layout-row layout-md-column" id="model-selection-text">
             <h2><em>What model?</em></h2>
         </div>
@@ -25,9 +30,10 @@
                 {{device-model deviceVal send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
             {{/each}}
         </div>
+        {{/unless}}
     {{/if}}
 
-    {{#if userModelChanged}}
+    {{#if userSelectedModel}}
         <div class="layout-row layout-md-column" id="network-selection-text">
             <h2><em>Choose your Network</em></h2>
         </div>

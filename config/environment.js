@@ -11,7 +11,7 @@ module.exports = function(environment) {
             'default-src': "'none'",
             'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
             'font-src': ["'self'", "http://fonts.gstatic.com"],
-            'connect-src': ["'self'", "http://localhost:3000/api"],
+            'connect-src': ["'self'", "http://localhost:3000/api", "http://localhost:3000/api/devices", "http://localhost:3000/api/quotes"],
             'img-src': "'self'",
             'report-uri': "'localhost'",
             'media-src': "'self'",

@@ -1,9 +1,19 @@
 <div class="name_input">
-    {{paper-input label="Name" value=name onChange=(action 'changeNameValue') icon="person"}}
+    {{paper-input label="Name"
+    value=name
+    onChange=(action (mut name))
+    required=true
+    errorMessages=(hash required="Name is required.")
+    icon="person"}}
 </div>
 
 <div class="phone_input">
-    {{paper-input placeholder="Phone Number" type="text" value=phone onChange=(action 'changePhoneValue') icon="phone"}}
+    {{paper-input label="Phone Number"
+    value=phone
+    onChange=(action (mut phone))
+    required=true
+    errorMessages=(hash required="Phone Number is required.")
+    icon="phone"}}
 </div>
 
 <div class="sell_button">
