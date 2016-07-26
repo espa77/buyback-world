@@ -81,12 +81,12 @@ export default Ember.Controller.extend({
         let phone = this.get('phone');
     }),
 
-    quote: Ember.computed('finalDevice.{device_type,device_model,network,size,price_cents}', 'nameOnQuote.{name}', 'phoneOnQuote.{phone}', function(){
-        let device = this.get('finalDevice.device_type');
-        let model = this.get('finalDevice.device_model');
+    quote: Ember.computed('finalDevice.{device,model,network,size,price}', 'nameOnQuote.{name}', 'phoneOnQuote.{phone}', function(){
+        let device = this.get('finalDevice.device');
+        let model = this.get('finalDevice.device');
         let network = this.get('finalDevice.network');
         let size = this.get('finalDevice.size');
-        let price_cents = this.get('finalDevice.price_cents');
+        let price = this.get('finalDevice.price');
         let name = this.get('nameOnQuote.name');
         let phone = this.get('nameOnQuote.phone');
     }),
@@ -115,6 +115,7 @@ export default Ember.Controller.extend({
             if (this.get('selectedDevice.device_attributes.size') === null) {
                 this.set('selectedDevice.device_attributes.size', 16);
             }
+
             let finalDevice = this.get('selectedDevice.device_attributes'),
                 quote = this.store.createRecord('quote', finalDevice);
 
