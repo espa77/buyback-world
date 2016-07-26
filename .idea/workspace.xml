@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="54ad2e9b-36b4-44dd-a5e3-183b77ce4368" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/app-header.js" afterPath="$PROJECT_DIR$/app/components/app-header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/device-model.js" afterPath="$PROJECT_DIR$/app/components/device-model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/device-selector.js" afterPath="$PROJECT_DIR$/app/components/device-selector.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/index-device.js" afterPath="$PROJECT_DIR$/app/components/index-device.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/name-phone.js" afterPath="$PROJECT_DIR$/app/components/name-phone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/index.js" afterPath="$PROJECT_DIR$/app/controllers/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/price.js" afterPath="$PROJECT_DIR$/app/controllers/price.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/selected-device.js" afterPath="$PROJECT_DIR$/app/services/selected-device.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/app.scss" afterPath="$PROJECT_DIR$/app/styles/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/device-selector.hbs" afterPath="$PROJECT_DIR$/app/templates/components/device-selector.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/name-phone.hbs" afterPath="$PROJECT_DIR$/app/templates/components/name-phone.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.hbs" afterPath="$PROJECT_DIR$/app/templates/index.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environment.js" afterPath="$PROJECT_DIR$/config/environment.js" />
     </list>
     <ignored path="buyback-world.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="selected-device.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="selected-device.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/services/selected-device.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1936">
-              <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+            <state relative-caret-position="330">
+              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -85,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="price.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="price.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/price.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2530">
-              <caret line="115" column="70" selection-start-line="115" selection-start-column="70" selection-end-line="115" selection-end-column="70" />
+            <state relative-caret-position="-242">
+              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -98,8 +88,8 @@
       <file leaf-file-name="name-phone.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/name-phone.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="3" />
+            <state relative-caret-position="374">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -191,12 +181,12 @@
         <option value="$PROJECT_DIR$/app/templates/components/device-selector.hbs" />
         <option value="$PROJECT_DIR$/app/styles/app.scss" />
         <option value="$PROJECT_DIR$/app/templates/components/name-phone.hbs" />
-        <option value="$PROJECT_DIR$/app/components/name-phone.js" />
         <option value="$PROJECT_DIR$/config/environment.js" />
-        <option value="$PROJECT_DIR$/app/services/selected-device.js" />
         <option value="$PROJECT_DIR$/app/templates/index.hbs" />
         <option value="$PROJECT_DIR$/app/controllers/index.js" />
+        <option value="$PROJECT_DIR$/app/services/selected-device.js" />
         <option value="$PROJECT_DIR$/app/controllers/price.js" />
+        <option value="$PROJECT_DIR$/app/components/name-phone.js" />
       </list>
     </option>
   </component>
@@ -442,12 +432,12 @@
       <workItem from="1468849094025" duration="17319000" />
       <workItem from="1468935254947" duration="22924000" />
       <workItem from="1469020528863" duration="39017000" />
-      <workItem from="1469195927175" duration="28846000" />
+      <workItem from="1469195927175" duration="31918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286139000" />
+    <option name="totallyTimeSpent" value="289211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2300" y="-1417" width="1978" height="1352" extended-state="0" />
@@ -787,14 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/name-phone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/components/name-phone.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -838,14 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/selected-device.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1936">
-          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -864,8 +838,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/price.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2530">
-          <caret line="115" column="70" selection-start-line="115" selection-start-column="70" selection-end-line="115" selection-end-column="70" />
+        <state relative-caret-position="-242">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/name-phone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/selected-device.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding />
         </state>
       </provider>
