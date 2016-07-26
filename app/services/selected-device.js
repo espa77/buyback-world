@@ -79,10 +79,11 @@ export default Ember.Service.extend({
         this.set('device_attributes.name', item);
         this.set('name', item);
     },
+
     addPhone(item){
-        this.set('device_attributes.name', item);
-        this.set('phone', item);
-    },
+       this.set('device_attributes.phone', item);
+       this.set('phone', item);
+   },
     show() {
         return this.get('device_attributes');
     },

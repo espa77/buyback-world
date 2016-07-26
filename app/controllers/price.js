@@ -95,7 +95,6 @@ export default Ember.Controller.extend({
         sizeValue(sizeVal) {
             this.get('selectedDevice').addSize(sizeVal);
             this.set('userNotSelectedSize', false);
-
         },
         conditionValue(conditionVal) {
             this.get('selectedDevice').addCondition(conditionVal);
@@ -115,29 +114,13 @@ export default Ember.Controller.extend({
             if (this.get('selectedDevice.device_attributes.size') === null) {
                 this.set('selectedDevice.device_attributes.size', 16);
             }
-            let finalDevice = this.get('selectedDevice.device_attributes'),
-                quote = this.store.createRecord('quote', finalDevice);
-
+            let finalDevice = this.get('selectedDevice.device_attributes');
+            var quote = this.store.createRecord('quote', finalDevice);
             quote.save().then(()=> {
                 this.transitionTo('thanks');
                 }).catch(()=> {
                 alert("couldn't save quote.");
             });
         },
-        // quoted(){
-        //     return this.get('ajax').request('/quote', {
-        //         method: 'POST',
-        //         data:{
-        //             device: "this.get('selectedDevice.device')",
-        //             model: "this.get('selectedDevice.model')",
-        //             network: "this.get('selectedDevice.network')",
-        //             size: "this.get('selectedDevice.size')",
-        //             condition: "this.get('selectedDevice.condition')",
-        //             price: "this.get('selectedDevice.price_cents')",
-        //             name: "this.get('selectedDevice.name')",
-        //             phone: "this.get('selectedDevice.phone')"
-        //         }
-        //     });
-        // }
     }
 });
