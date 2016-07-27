@@ -188,6 +188,29 @@ hr {
   letter-spacing: 1px;
 }
 
+#model-change-text {
+  padding-top: 0;
+  padding-bottom: 2em;
+  margin: 0 auto;
+  width: 50%;
+}
+
+#model-change-text h3 {
+  padding-bottom: 1em;
+  margin: 0 auto;
+}
+
+.no-model {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  margin: 0 auto;
+}
+
+.no-model h3 {
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+
 .device-network .md-ink-ripple {
   display: none;
 }

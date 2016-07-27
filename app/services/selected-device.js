@@ -31,8 +31,8 @@ export default Ember.Service.extend({
         this.set('device_attributes.device', item);
         this.set('device', item);
     },
-    removeDevice(item) {
-        this.get('device_attributes.device').removeObject(item);
+    removeDevice() {
+        this.set('device_attributes.device', null);
         this.set('device', null);
     },
     addModel(item) {
@@ -40,7 +40,7 @@ export default Ember.Service.extend({
         this.set('model', item);
     },
     removeModel(item) {
-        this.get('device_attributes.model').removeObject(item);
+        this.set('device_attributes.model', null);
         this.set('model', null);
     },
     addNetwork(item) {
@@ -48,7 +48,7 @@ export default Ember.Service.extend({
         this.set('network', item);
     },
     removeNetwork(item) {
-        this.get('device_attributes.network').removeObject(item);
+        this.set('device_attributes.network', null);
         this.set('network', null);
     },
     addSize(item) {
@@ -56,7 +56,7 @@ export default Ember.Service.extend({
         this.set('size', item);
     },
     removeSize(item) {
-        this.get('device_attributes.size').removeObject(item);
+        this.set('device_attributes.size', null);
         this.set('size', null);
     },
     addCondition(item) {
@@ -64,7 +64,7 @@ export default Ember.Service.extend({
         this.set('condition', item);
     },
     removeCondition(item) {
-        this.get('device_attributes.condition').removeObject(item);
+        this.set('device_attributes.condition', null);
         this.set('condition', null);
     },
     addPrice(item) {
@@ -72,14 +72,13 @@ export default Ember.Service.extend({
         this.set('price', item);
     },
     removePrice(item) {
-        this.get('device_attributes.price').removeObject(item);
+        this.set('device_attributes.price', null);
         this.set('price', null);
     },
     addName(item){
         this.set('device_attributes.name', item);
         this.set('name', item);
     },
-
     addPhone(item){
        this.set('device_attributes.phone', item);
        this.set('phone', item);

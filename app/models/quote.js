@@ -7,7 +7,7 @@ export default Model.extend({
 	model: attr('string'),
 	network: attr('string'),
 	size: attr('number'),
-	price: attr('number'),
+	price: attr('dollars'),
 	condition: attr('string'),
 	name: attr('string'),
 	phone: attr('string')

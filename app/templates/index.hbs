@@ -20,29 +20,8 @@
     {{/if}}
     <hr>
 
-    {{#if userSelectedDevice}}
-        {{#unless userSelectedModel}}
-        <div class="layout-row layout-md-column" id="model-selection-text">
-            <h2><em>What model?</em></h2>
-        </div>
-        <div class="device-model selector">
-            {{#each uniqueModel as |uniqueModel|}}
-                {{device-model deviceVal send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
-            {{/each}}
-        </div>
-        {{/unless}}
-    {{/if}}
+    {{liquid-outlet}}
 
-    {{#if userSelectedModel}}
-        <div class="layout-row layout-md-column" id="network-selection-text">
-            <h2><em>Choose your Network</em></h2>
-        </div>
-        <div class="device-network selector">
-            {{#each uniqueNetwork as |network|}}
-                {{device-network send=(action 'networkValue') network=network.network }}
-            {{/each}}
-        </div>
-    {{/if}}
 </div>
 
 

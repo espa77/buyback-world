@@ -1,0 +1,10 @@
+{{#if uniqueNetwork}}
+    <div class="layout-row layout-md-column" id="network-selection-text">
+        <h2><em>Choose your Network</em></h2>
+    </div>
+    <div class="device-network selector">
+       {{#each uniqueNetwork as |network|}}
+           {{device-network send=(action 'networkValue') network=network.network }}
+       {{/each}}
+    </div>
+{{/if}}

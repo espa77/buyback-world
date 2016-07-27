@@ -40,19 +40,6 @@ export default Ember.Controller.extend({
         return uniqueObjects;
     }),
 
-    uniqueModel: Ember.computed('model', 'userSelectedDevice', function(){
-        let val = this.get('userSelectedDevice');
-        var model = this.get('model');
-        var uniqueModels = [];
-        var filteredModels = model.filterBy('device_type', val );
-        filteredModels.forEach(function(element){
-            if (!uniqueModels.isAny('device_model', element.get('device_model'))) {
-                uniqueModels.pushObject(element);
-            }
-        });
-        return uniqueModels;
-    }),
-
     uniqueNetwork: Ember.computed('model', 'selectedDevice.model', function(){
         let modval = this.get('selectedDevice.model');
         var dataModel = this.get('model');
@@ -70,6 +57,7 @@ export default Ember.Controller.extend({
         deviceValue(deviceVal) {
             this.get('selectedDevice').addDevice(deviceVal);
             this.set('userSelectedDevice', deviceVal);
+            this.transitionToRoute('mod');
         },
         refreshDevice(deviceVal, modelVal) {
             this.set('userSelectedDevice', null);
@@ -77,9 +65,6 @@ export default Ember.Controller.extend({
             if (modelVal) {
                 this.get('selectedDevice').removeModel(modelVal);
             }
-        },
-        modelValue(modelVal) {
-            this.get('selectedDevice').addModel(modelVal);
         },
         refreshModel(modelVal) {
             this.get('selectedDevice').removeModel(modelVal);

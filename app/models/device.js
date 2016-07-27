@@ -9,5 +9,5 @@ export default Model.extend({
     network_image: attr('string'),
     size: attr('number'),
     image: attr('string'),
-    price_cents: attr('number')
+    price_cents: attr('dollars')
 });

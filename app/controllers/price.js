@@ -61,7 +61,7 @@ export default Ember.Controller.extend({
             .filterBy('size', userSize);
         let price = finalDevice[0].get('price_cents');
         if (userCondition === "normal") {
-            this.set('finalDevice.firstObject.price_cents', price / 100);
+            this.set('finalDevice.firstObject.price_cents', price / 1);
         }
         if (userCondition === "broken") {
             this.set('finalDevice.firstObject.price_cents', price / 2);

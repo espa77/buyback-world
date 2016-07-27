@@ -9,10 +9,8 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('thanks');
-  this.route('device', function() {
-    this.route('mod', function() {
-      this.route('network');
-    });
+  this.route('mod', function() {
+    this.route('network');
   });
   this.route('page-not-found', { path: '/*wildcard' });
   this.route('price');
