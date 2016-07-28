@@ -1,13 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    
-    didInsertElement: function(){
-        Ember.run.scheduleOnce('afterRender', this, function(){
-            let findSixteen = document.getElementsByClassName("16");
-            this.$(findSixteen).parents('.md-default-theme').addClass('md-checked');
-        });
-    },
+    attributeBindings: ['name'],
+    name: 'size',
+
     actions: {
         changeSizeValue(sizeVal) {
             this.set('groupValue', sizeVal);

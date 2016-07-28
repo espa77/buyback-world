@@ -3,10 +3,14 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     selectedDevice: Ember.inject.service('selected-device'),
 
-    uniqueModel: Ember.computed('model', 'selectedDevice.device', function(){
-        let val = this.get('selectedDevice.device');
-        var model = this.get('model');
-        var uniqueModels = [];
+    uniqueModel: Ember.computed('model', 'selectedDevice.device_attributes.device', function(){
+        let val = this.get('selectedDevice.device_attributes.device'),
+            model = this.get('model'),
+            uniqueModels = [];
+        if (val === null) {
+            val = "iPhone";
+            this.set('selectedDevice.device_attributes.device', val);
+        }
         var filteredModels = model.filterBy('device_type', val );
         filteredModels.forEach(function(element){
             if (!uniqueModels.isAny('device_model', element.get('device_model'))) {
@@ -18,7 +22,7 @@ export default Ember.Controller.extend({
     actions: {
         modelValue(modelVal) {
             this.get('selectedDevice').addModel(modelVal);
-            this.transitionToRoute('mod.network');
+            this.transitionToRoute('network');
         },
         refreshModel(modelVal) {
             this.get('selectedDevice').removeModel(modelVal);

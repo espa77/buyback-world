@@ -1,7 +1,5 @@
 {{#paper-radio-group groupValue=groupValue onChange=(action 'changeSizeValue') as |group|}}
-    {{#group.paper-radio value=size}}
-        <div class="device_size {{size}}">
-            <h3>{{size}}&nbsp;&nbsp;GB</h3>
-        </div>
+    {{#group.paper-radio name="size" value=size}}
+        {{size}} GB
     {{/group.paper-radio}}
 {{/paper-radio-group}}

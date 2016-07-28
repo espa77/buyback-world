@@ -3,33 +3,33 @@
         {{#card.title as |title|}}
             {{#title.text as |text|}}
                 {{#text.headline}}You've selected{{/text.headline}}
-                {{#text.subhead}}Device: {{selectedDevice.device}}{{/text.subhead}}
-                {{#if selectedDevice.model}}
-                    {{#text.subhead}}Model: {{selectedDevice.model}}{{/text.subhead}}
+                {{#text.subhead}}Device: {{selectedDevice.device_attributes.device}}{{/text.subhead}}
+                {{#if selectedDevice.device_attributes.model}}
+                    {{#text.subhead}}Model: {{selectedDevice.device_attributes.model}}{{/text.subhead}}
                 {{/if}}
-                {{#if selectedDevice.network}}
-                    {{#text.subhead}}Network: {{selectedDevice.network}}{{/text.subhead}}
+                {{#if selectedDevice.device_attributes.network}}
+                    {{#text.subhead}}Network: {{selectedDevice.device_attributes.network}}{{/text.subhead}}
                 {{/if}}
-                {{#if selectedDevice.size}}
-                    {{#text.subhead}}Size: {{selectedDevice.size}} GB{{/text.subhead}}
+                {{#if selectedDevice.device_attributes.size}}
+                    {{#text.subhead}}Size: {{selectedDevice.device_attributes.size}} GB{{/text.subhead}}
                 {{/if}}
-                {{#text.subhead}}Condition: {{selectedDevice.condition}}{{/text.subhead}}
+                {{#text.subhead}}Condition: {{selectedDevice.device_attributes.condition}}{{/text.subhead}}
 
             {{/title.text}}
             {{#title.media size="sm"}}
                 <div class="card-media">
-                    <img src="assets/images/{{image}}" alt="{{selectedDevice.device}}" title="{{selectedDevice.device}}" />
+                    <img src="assets/images/{{image}}" alt="{{selectedDevice.device_attributes.device}}" title="{{selectedDevice.device}}" />
                 </div>
             {{/title.media}}
             {{/card.title}}
         {{#card.actions}}
-            {{#if selectedDevice.network}}
+            {{#if selectedDevice.device_attributes.network}}
                 {{#paper-button raised=true onClick=(action "goBack")}}Go Back{{/paper-button}}
             {{else}}
-                {{#if selectedDevice.device}}
+                {{#if selectedDevice.device_attributes.device}}
                     {{#paper-button raised=true onClick=(action "newDevice")}}Select New Device{{/paper-button}}
                 {{/if}}
-                {{#if selectedDevice.model}}
+                {{#if selectedDevice.device_attributes.model}}
                     {{#paper-button raised=true onClick=(action "newModel")}}Select New Model{{/paper-button}}
                 {{/if}}
             {{/if}}

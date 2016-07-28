@@ -1,12 +1,4 @@
-<div class="device">
-    {{#paper-radio-group groupValue=groupValue onChange=(action 'changePriceValue') as |group|}}
-        {{#group.paper-radio value=device_type}}
-            <div class="device_images">
-                <img src="assets/images/{{image}}" class="img_device" />
-            </div>
-        {{/group.paper-radio}}
-    {{/paper-radio-group}}
-            <div class="device_price">
-                Value:{{paper-icon "attach-money"}}{{price}}
-            </div>
-</div>
+ <div class="device_price">
+     Value:{{paper-icon "attach-money"}}{{selectedDevice.device_attributes.price}}
+ </div>
+

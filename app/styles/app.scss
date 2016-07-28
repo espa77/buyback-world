@@ -21,6 +21,7 @@ html {
   height: auto;
   min-height: 100%;
   position: relative;
+  background: none;
 }
 
 
@@ -59,13 +60,22 @@ html {
 
 .body {
   padding-top: 5.5%;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 5.5%;
   display:flex;
   justify-content: center;
   align-items: baseline;
   align-content: center;
+  background: none;
+}
+
+#index {
+  background: -webkit-linear-gradient(color($primary, '200'), rgba(226, 244, 243, 0.49), rgba(0,0,0,0));
+  background: -o-linear-gradient(color($primary, '200'), rgba(226, 244, 243, 0.49), rgba(0,0,0,0));
+  background: -moz-linear-gradient(color($primary, '200'), rgba(226, 244, 243, 0.49), rgba(0,0,0,0));
+  background: linear-gradient(color($primary, '200'), rgba(226, 244, 243, 0.49), rgba(0,0,0,0));
+
 }
 
 .index-text {
@@ -89,17 +99,21 @@ html {
 hr {
   display: flex;
   position: relative;
-  padding: 0;
-  margin: 8px auto;
+  overflow: visible;
+  padding-top: 1em;
+  width: 1000%;
+  margin-left: -500%;
   height: 0;
-  width: 100%;
   max-height: 0;
   font-size: 1px;
   line-height: 0;
   clear: both;
   border: none;
   border-top: 1px solid color($primary, 'A700');
-  border-bottom: 1px solid #ffffff;
+}
+
+.index-bottom-buttons {
+
 }
 
 #device-selection-text {
@@ -111,6 +125,14 @@ hr {
 #model-selection-text, #network-selection-text{
   justify-content: center;
   text-align: center;
+}
+
+.device-network selector {
+  padding-bottom: 5em;
+}
+
+.reset-button {
+  padding-bottom: 5em;
 }
 
 .user-selection {
@@ -126,12 +148,20 @@ hr {
   align-content: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding-bottom: 5%;
-  background-color: #fff;
+  padding-bottom: 2%;
+
 }
 
-.hidden-component .selector {
-  display: none;
+.buttons .md-button {
+  width: 200px;
+  height: 80px;
+  font-size: 24px;
+}
+
+#iphone-button .md-fab {
+  width: 170px;
+  height: 170px;
+  font-size: 24px;
 }
 
 .device {
@@ -140,7 +170,6 @@ hr {
   margin-left: 1.5em;
   margin-bottom: 1.5em;
   padding: 1em;
-  border: 1px solid transparent;
   justify-content: center;
   //-webkit-animation-name: slide-up;
   //animation-name: slide-up;
@@ -150,16 +179,21 @@ hr {
   //animation-fill-mode: both;
 }
 
-#iPhone {
-
+#iphone-button {
+  text-align: center;
+  padding-bottom: 2%;
 }
 
-#Galaxy {
-
+#ipad-button {
+  padding-left: 10%;
+  padding-right: 15%;
+  padding-top:6%;
 }
 
-#iPad {
-
+#samsung-button {
+  padding-left: 15%;
+  padding-right: 10%;
+  padding-top:6%;
 }
 
 .device:hover img {
@@ -169,12 +203,12 @@ hr {
   -webkit-transition: all 0.2s ease;
 }
 
-.device .md-ink-ripple {
-  display: none;
-}
-
 .device * .md-label {
   margin-left:0;
+}
+
+.device * .md-container {
+  display: none;
 }
 
 .md-label span {
@@ -186,6 +220,29 @@ hr {
 .device_title {
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+.index-bottom {
+  padding-bottom: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-bottom h1 {
+  text-align: center;
+}
+
+#simple-easy {
+  padding-bottom: 3em;
+  text-align: center;
+}
+
+#timer, #appointment, #get-paid {
+  padding-right: 6.7em;
+}
+
+md-icon.md-default-theme, md-icon {
+  color: color($primary, 'A700');
 }
 
 #model-change-text {
@@ -224,10 +281,6 @@ hr {
   padding: 2em;
   min-width: 100px;
   height: 50px;
-}
-
-.device:hover {
-  border: 1px solid color($accent, 'A200');
 }
 
 .user-selection {

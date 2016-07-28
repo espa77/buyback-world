@@ -15,6 +15,8 @@ export default Ember.Component.extend({
     actions: {
         changeConditionValue(conditionVal) {
             this.set('groupValue', conditionVal);
+            let findNormal = document.getElementById("normal");
+            this.$(findNormal).removeClass('md-checked');
             this.send(conditionVal);
         }
     }

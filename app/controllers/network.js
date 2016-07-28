@@ -19,6 +19,10 @@ export default Ember.Controller.extend({
         networkValue(networkVal) {
             this.get('selectedDevice').addNetwork(networkVal);
             this.transitionToRoute('price');
+        },
+        startOver() {
+            this.get('selectedDevice').empty();
+            this.transitionToRoute('index');
         }
     }
 });

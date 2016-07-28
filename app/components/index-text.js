@@ -10,7 +10,7 @@ export default Ember.Component.extend({
                 centerIndex = Math.floor(chars.length / 2),
                 i;
             for (i = 0; i < chars.length; i++) {
-                tl.from(chars[i], 1, {x:(i - centerIndex) * 60, opacity:0, ease:Power2.easeOut}, i * 0.05);
+                tl.from(chars[i], 1, {x:(i - centerIndex) * 60, opacity:0, ease:Power2.easeOut}, i * 0.08);
             }
             return tl;
     }

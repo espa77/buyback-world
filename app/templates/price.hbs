@@ -7,32 +7,27 @@
         </div>
 
         <div class="device-size flex">
-            {{#if userNotSelectedSize}}
-                <h3>Choose Different Size:</h3>
-                {{#each sizeSelection as |dev|}}
-                    {{device-size send=(action 'sizeValue') size=dev.size price=dev.price}}
-                {{/each}}
-            {{/if}}
+            <h3>Choose Different Size:</h3>
+            {{#each sizeSelection as |dev|}}
+                {{device-size send=(action 'sizeValue') size=dev.size}}
+            {{/each}}
         </div>
         <div class="device-condition flex">
-            {{#if conditionValNotSet}}
+            {{#unless conditionValSet}}
                 {{device-condition send=(action 'conditionValue')}}
-            {{/if}}
+            {{else}}
+                {{device-condition send=(action 'resetCondition')}}
+            {{/unless}}
         </div>
     </div>
 
     <div class="flex">
         <div class="price-condition layout-row layout-xs-column flex">
-
-
             <div class="device-price flex">
                 {{#each devicePrice as |device|}}
-                    {{device-price send=(action 'priceValue') image=device.image size=device.size price=device.price_cents}}
+                    {{device-price}}
                 {{/each}}
             </div>
-
-
-
             <div class="name-phone flex">
                 {{name-phone quoted='quoted'}}
             </div>

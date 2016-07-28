@@ -4,17 +4,16 @@ export default Ember.Controller.extend({
     selectedDevice: Ember.inject.service('selected-device'),
     // ajax: Ember.inject.service(),
 
-    conditionValNotSet: true,
-    userNotSelectedSize: true,
+    conditionValSet: false,
 
-    finalDevice: Ember.computed('sizeSelection', 'selectedDevice', function() {
-        if (this.get('selectedDevice')) {
-            let typeval = this.get('selectedDevice.device');
-            let modval = this.get('selectedDevice.model');
-            let netval = this.get('selectedDevice.network');
-            let dataModel = this.get('model');
-            let size = this.get('sizeSelection.firstObject.size');
-            this.set('selectedDevice.size', size);
+    finalDevice: Ember.computed('sizeSelection', 'selectedDevice.device_attributes', function() {
+        if (this.get('selectedDevice.device_attributes.device')) {
+            let typeval = this.get('selectedDevice.device_attributes.device'),
+                modval = this.get('selectedDevice.device_attributes.model'),
+                netval = this.get('selectedDevice.device_attributes.network'),
+                dataModel = this.get('model'),
+                size = this.get('sizeSelection.firstObject.size');
+            this.set('selectedDevice.device_attributes.size', size);
             let filtered = dataModel.filterBy('device_type', typeval)
                 .filterBy('device_model', modval)
                 .filterBy('network', netval)
@@ -27,10 +26,10 @@ export default Ember.Controller.extend({
         return this.get('selectedDevice.size');
     }),
 
-    sizeSelection: Ember.computed('model', 'selectedDevice', function(){
-        let typeval = this.get('selectedDevice').device;
-        let modval = this.get('selectedDevice').model;
-        let netval = this.get('selectedDevice').network;
+    sizeSelection: Ember.computed('model', 'selectedDevice.device_attributes', function(){
+        let typeval = this.get('selectedDevice.device_attributes').device;
+        let modval = this.get('selectedDevice.device_attributes').model;
+        let netval = this.get('selectedDevice.device_attributes').network;
         let dataModel = this.get('model');
         var deviceSize = [];
         let filtered = dataModel.filterBy('device_type', typeval )
@@ -44,32 +43,28 @@ export default Ember.Controller.extend({
         return deviceSize;
     }),
 
-    devicePrice: Ember.computed('model', 'selectedDevice.condition', 'selectedDevice', function(){
-        let userDevice = this.get('selectedDevice.device');
-        let userModel = this.get('selectedDevice.model');
-        let userNetwork = this.get('selectedDevice.network');
-        var userSize = this.get('selectedDevice.size');
-        let userCondition = this.get('selectedDevice.condition');
+    devicePrice: Ember.computed('model', 'selectedDevice.device_attributes.condition', 'selectedDevice.device_attributes.size', function(){
+        let userDevice = this.get('selectedDevice.device_attributes.device'),
+            userModel = this.get('selectedDevice.device_attributes.model'),
+            userNetwork = this.get('selectedDevice.device_attributes.network'),
+            userSize = this.get('selectedDevice.device_attributes.size'),
+            userCondition = this.get('selectedDevice.device_attributes.condition');
         if (userSize === null) {
                 userSize = this.get('sizeSelection.firstObject.size');
-                this.set('selectedDevice.size', userSize);
+                this.set('selectedDevice.device_attributes.size', userSize);
             }
         var model = this.get('model');
         let finalDevice = model.filterBy('device_type', userDevice)
             .filterBy('device_model', userModel)
             .filterBy('network', userNetwork)
-            .filterBy('size', userSize);
-        let price = finalDevice[0].get('price_cents');
+            .filterBy('size', userSize),
+            price = finalDevice[0].get('price_cents');
         if (userCondition === "normal") {
-            this.set('finalDevice.firstObject.price_cents', price / 1);
-        }
+            this.get('selectedDevice').addPrice(price);        }
         if (userCondition === "broken") {
-            this.set('finalDevice.firstObject.price_cents', price / 2);
-        }
+            this.get('selectedDevice').addPrice(price/2);        }
         if (userCondition === "broken no power") {
-            this.set('finalDevice.firstObject.price_cents', price / 4);
-        }
-        this.get('selectedDevice').addPrice(price);
+            this.get('selectedDevice').addPrice(price/4);        }
         return finalDevice;
     }),
 
@@ -94,20 +89,19 @@ export default Ember.Controller.extend({
     actions: {
         sizeValue(sizeVal) {
             this.get('selectedDevice').addSize(sizeVal);
-            this.set('userNotSelectedSize', false);
         },
         conditionValue(conditionVal) {
             this.get('selectedDevice').addCondition(conditionVal);
-            this.set('conditionValNotSet', false);
+            this.set('conditionValSet', true);
         },
-        priceValue(priceVal) {
-            console.log(priceVal);
+        resetCondition(conditionVal) {
+            this.get('selectedDevice').addCondition(conditionVal);
         },
         startOver() {
             this.set('conditionValNotSet', true);
             this.set('userNotSelectedSize', true);
-            this.transitionToRoute('index');
             this.get('selectedDevice').empty();
+            this.transitionToRoute('index');
         },
 
         quoted(){

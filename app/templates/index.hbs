@@ -1,27 +1,57 @@
-<div class="layout-column flex" id="index">
-    {{#unless userSelectedDevice}}
-    <div class="flex index-text">
-        {{index-text}}
-    </div>
-    {{/unless}}
+ <div class="layout-column flex" id="index">
+     {{#unless userSelectedDevice}}
+         <div class="flex index-text">
+             {{index-text}}
+         </div>
+     {{/unless}}
 
-    {{#if userSelectedDevice}}
-        {{#each finalDevice as |device|}}
-            {{selected-device reloadDevice=(action 'refreshDevice') reloadModel=(action 'refreshModel') image=device.image}}
-        {{/each}}
-    {{else}}
-        <hr>
-        {{index-device}}
-        <div class="device-type selector">
-            {{#each uniqueDevice as |device|}}
-                {{device-selector send=(action 'deviceValue') id=device.id device_type=device.device_type image=device.image}}
-            {{/each}}
-        </div>
-    {{/if}}
-    <hr>
+     {{index-device}}
+
+     {{#unless userSelectedDevice}}
+         <div class="device-type selector">
+             {{device-selector send=(action 'deviceSelected')}}
+         </div>
+         <hr>
+     {{else}}
+         {{#if userSelectedDevice}}
+             <div class="device-type selector">
+                 {{device-selector send=(action 'deviceSelected')}}
+             </div>
+             <hr>
+         {{/if}}
+     {{/unless}}
+ </div>
+
 
     {{liquid-outlet}}
 
-</div>
+    {{#unless userSelectedDevice}}
+        <div class="index-bottom flex">
+        <h1>Simple and Easy</h1>
+        <div class="layout-row flex" id="simple-easy">
+            <div class="layout-column flex">
+                <h2>See your price in 30 seconds</h2>
+                <div class="paper-icon" id="timer">
+                    {{paper-icon "forward-30" size=128}}
+                </div>
+            </div>
+            <div class="flex">
+                <h2>Make appointment to sell</h2>
+                <div class="paper-icon" id="appointment">
+                    {{paper-icon "person-pin" size=128}}
+                </div>
+            </div>
+            <div class="flex">
+                <h2>Get Paid in as little as 1 hour</h2>
+                <div class="paper-icon" id="get-paid">
+                    {{paper-icon "monetization-on" size=128}}
+                </div>
+            </div>
+        </div>
+        </div>
+
+    {{/unless}}
+
+
 
 

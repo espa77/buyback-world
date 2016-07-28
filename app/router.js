@@ -9,11 +9,13 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('thanks');
-  this.route('mod', function() {
+  this.route('iphone');
+    this.route('ipad');
+    this.route('samsung');
     this.route('network');
-  });
-  this.route('page-not-found', { path: '/*wildcard' });
-  this.route('price');
+    this.route('price');
+    this.route('page-not-found', { path: '/*wildcard' });
 });
+
 
 export default Router;
