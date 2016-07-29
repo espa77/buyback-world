@@ -8,7 +8,7 @@ export default Ember.Component.extend({
             let deviceVal = this.get('selectedDevice.device');
             var modelVal = this.get('selectedDevice.model');
             if (this.get('selectedDevice.model')) {
-                var modelVal = (this.get('selectedDevice.model'));
+                modelVal = (this.get('selectedDevice.model'));
             }
             this.reloadDevice(deviceVal, modelVal);
         },

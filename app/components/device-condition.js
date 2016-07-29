@@ -1,23 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    selectedDevice: Ember.inject.service('selected-device'),
 
-    conditionVal: 'normal',
+    classNameBindings: ['layout'],
+    layout: 'flex layout-row'
 
-    didInsertElement: function(){
-        Ember.run.scheduleOnce('afterRender', this, function(){
-            let findNormal = document.getElementById("normal");
-            this.$(findNormal).addClass('md-checked');
-        });
-    },
-
-
-    actions: {
-        changeConditionValue(conditionVal) {
-            this.set('groupValue', conditionVal);
-            let findNormal = document.getElementById("normal");
-            this.$(findNormal).removeClass('md-checked');
-            this.send(conditionVal);
-        }
-    }
 });

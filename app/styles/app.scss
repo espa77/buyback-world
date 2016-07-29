@@ -16,6 +16,25 @@ $warn: "brown";
     transform: none;
   }
 }
+@media only screen and (min-width: 961px) {
+  .device-size {
+    width:40%;
+  }
+
+  .device-condition {
+    width:40%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .device-size {
+    width: 80%;
+  }
+
+  .device-condition {
+    width: 80%;
+  }
+}
 
 html {
   height: auto;
@@ -112,10 +131,6 @@ hr {
   border-top: 1px solid color($primary, 'A700');
 }
 
-.index-bottom-buttons {
-
-}
-
 #device-selection-text {
   text-align: center;
   display: inherit;
@@ -133,10 +148,6 @@ hr {
 
 .reset-button {
   padding-bottom: 5em;
-}
-
-.user-selection {
-  display: flex;
 }
 
 .final-device-selection {
@@ -284,7 +295,7 @@ md-icon.md-default-theme, md-icon {
 }
 
 .user-selection {
-
+  margin: 0 auto;
 }
 
 .liquid-container {
@@ -294,6 +305,31 @@ md-icon.md-default-theme, md-icon {
 .condition_list {
   list-style: none;
   padding: 0;
+}
+
+.device-price {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.device_price span {
+  font-weight: 300;
+}
+
+.size-condition {
+  padding-bottom: 2em;
+  margin: 0 auto;
+  width:95%;
+}
+
+.device-size {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.device-condition {
+  margin: 0 auto;
+  text-align:center;
 }
 
 .footer_container {
@@ -322,4 +358,5 @@ md-icon.md-default-theme, md-icon {
   color: #fff;
   text-decoration: none;
 }
+
 

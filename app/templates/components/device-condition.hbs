@@ -1,15 +1,8 @@
-<div class="condition">
-    <p><h3>Change condition?</h3></p>
-    {{#paper-radio-group model=conditionVal groupValue=groupValue onChange=(action 'changeConditionValue') as |group|}}
-        {{#group.paper-radio value=conditionVal id=conditionVal }}
-            normal
-        {{/group.paper-radio}}
-        {{#group.paper-radio value="broken" }}
-            broken
-        {{/group.paper-radio}}
-        {{#group.paper-radio value="broken no power" }}
-            broken - no power
-        {{/group.paper-radio}}
-    {{/paper-radio-group}}
-</div>
+ {{#paper-radio-group groupValue=selectedDevice.device_attributes.condition onChange=(action (mut selectedDevice.device_attributes.condition)) as |group|}}
+     {{#group.paper-radio value=condition}}
+         {{condition}}
+     {{/group.paper-radio}}
+ {{/paper-radio-group}}
+
+
 

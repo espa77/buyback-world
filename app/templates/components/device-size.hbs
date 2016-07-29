@@ -1,5 +1,6 @@
-{{#paper-radio-group groupValue=groupValue onChange=(action 'changeSizeValue') as |group|}}
-    {{#group.paper-radio name="size" value=size}}
+{{#paper-radio-group groupValue=selectedDevice.device_attributes.size onChange=(action (mut selectedDevice.device_attributes.size)) as |group|}}
+    {{#group.paper-radio value=size}}
         {{size}} GB
     {{/group.paper-radio}}
 {{/paper-radio-group}}
+

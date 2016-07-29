@@ -26,12 +26,12 @@ export default Ember.Controller.extend({
         return this.get('selectedDevice.size');
     }),
 
-    sizeSelection: Ember.computed('model', 'selectedDevice.device_attributes', function(){
-        let typeval = this.get('selectedDevice.device_attributes').device;
-        let modval = this.get('selectedDevice.device_attributes').model;
-        let netval = this.get('selectedDevice.device_attributes').network;
-        let dataModel = this.get('model');
-        var deviceSize = [];
+    sizeSelection: Ember.computed('model', 'selectedDevice.device_attributes.device', function(){
+        let typeval = this.get('selectedDevice.device_attributes.device'),
+            modval = this.get('selectedDevice.device_attributes.model'),
+            netval = this.get('selectedDevice.device_attributes.network'),
+            dataModel = this.get('model'),
+            deviceSize = [];
         let filtered = dataModel.filterBy('device_type', typeval )
             .filterBy('device_model', modval)
             .filterBy('network', netval);
@@ -42,6 +42,16 @@ export default Ember.Controller.extend({
         });
         return deviceSize;
     }),
+
+    conditionSelection: [
+        {
+            name: "normal"
+        }, {
+            name: "broken"
+        }, {
+            name: "broken no power"
+        }
+        ],
 
     devicePrice: Ember.computed('model', 'selectedDevice.device_attributes.condition', 'selectedDevice.device_attributes.size', function(){
         let userDevice = this.get('selectedDevice.device_attributes.device'),
@@ -69,22 +79,14 @@ export default Ember.Controller.extend({
     }),
 
     nameOnQuote: Ember.computed('name-phone', 'name', function(){
-        let name = this.get('name');
+        return this.get('name');
     }),
 
     phoneOnQuote: Ember.computed('name-phone', 'phone', function(){
-        let phone = this.get('phone');
+        return this.get('phone');
     }),
 
-    quote: Ember.computed('finalDevice.{device,model,network,size,price}', 'nameOnQuote.{name}', 'phoneOnQuote.{phone}', function(){
-        let device = this.get('finalDevice.device');
-        let model = this.get('finalDevice.device');
-        let network = this.get('finalDevice.network');
-        let size = this.get('finalDevice.size');
-        let price = this.get('finalDevice.price');
-        let name = this.get('nameOnQuote.name');
-        let phone = this.get('nameOnQuote.phone');
-    }),
+    quote: null,
 
     actions: {
         sizeValue(sizeVal) {
@@ -98,7 +100,7 @@ export default Ember.Controller.extend({
             this.get('selectedDevice').addCondition(conditionVal);
         },
         startOver() {
-            this.set('conditionValNotSet', true);
+            this.set('conditionValSet', false);
             this.set('userNotSelectedSize', true);
             this.get('selectedDevice').empty();
             this.transitionToRoute('index');

@@ -1,35 +1,39 @@
 <div class="layout-column flex">
-    <div class="price layout-row layout-xs-column flex">
+    <div class="layout-row layout-xs-column">
         <div class="final-device-selection flex">
-        {{#each finalDevice as |device|}}
-            {{selected-device reloadIndex=(action 'startOver') image=device.image}}
-        {{/each}}
-        </div>
-
-        <div class="device-size flex">
-            <h3>Choose Different Size:</h3>
-            {{#each sizeSelection as |dev|}}
-                {{device-size send=(action 'sizeValue') size=dev.size}}
+            {{#each finalDevice as |device|}}
+                {{selected-device reloadIndex=(action 'startOver') image=device.image}}
             {{/each}}
         </div>
-        <div class="device-condition flex">
-            {{#unless conditionValSet}}
-                {{device-condition send=(action 'conditionValue')}}
-            {{else}}
-                {{device-condition send=(action 'resetCondition')}}
-            {{/unless}}
+        <div class="flex">
+            <div class="price-condition layout-row layout-xs-column flex">
+                <div class="device-price flex">
+                    {{#each devicePrice as |device|}}
+                        {{device-price}}
+                    {{/each}}
+                </div>
+                <div class="name-phone flex">
+                    {{name-phone quoted='quoted'}}
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="flex">
-        <div class="price-condition layout-row layout-xs-column flex">
-            <div class="device-price flex">
-                {{#each devicePrice as |device|}}
-                    {{device-price}}
-                {{/each}}
+    <div class="size-condition layout-row layout-sm-column layout-xs-column flex">
+        <div class="device-size layout-column">
+            <h3>Choose Different Size:</h3>
+            <div class="layout-row flex">
+            {{#each sizeSelection as |dev|}}
+                {{device-size send=(action 'sizeValue') size=dev.size}}
+            {{/each}}
             </div>
-            <div class="name-phone flex">
-                {{name-phone quoted='quoted'}}
+        </div>
+        <div class="device-condition layout-column">
+            <h3>Change condition?</h3>
+            <div class="layout-row flex">
+                {{#each conditionSelection as |cond|}}
+                    {{device-condition send=(action 'conditionValue') condition=cond.name}}
+                {{/each}}
             </div>
         </div>
     </div>
