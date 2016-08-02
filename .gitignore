@@ -15,6 +15,7 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
-config/deploy.js
+/config/deploy.js
 
 workspace.xml
+tests/unit/routes/device/model/

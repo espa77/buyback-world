@@ -4,23 +4,6 @@
     <list default="true" id="54ad2e9b-36b4-44dd-a5e3-183b77ce4368" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/price.js" afterPath="$PROJECT_DIR$/app/controllers/price.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/router.js" afterPath="$PROJECT_DIR$/app/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/about.js" afterPath="$PROJECT_DIR$/app/routes/about.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/contact.js" afterPath="$PROJECT_DIR$/app/routes/contact.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/index.js" afterPath="$PROJECT_DIR$/app/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/ipad.js" afterPath="$PROJECT_DIR$/app/routes/ipad.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/iphone.js" afterPath="$PROJECT_DIR$/app/routes/iphone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/network.js" afterPath="$PROJECT_DIR$/app/routes/network.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes/samsung.js" afterPath="$PROJECT_DIR$/app/routes/samsung.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/app.scss" afterPath="$PROJECT_DIR$/app/styles/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/name-phone.hbs" afterPath="$PROJECT_DIR$/app/templates/components/name-phone.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.hbs" afterPath="$PROJECT_DIR$/app/templates/index.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/price.hbs" afterPath="$PROJECT_DIR$/app/templates/price.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/thanks.hbs" afterPath="$PROJECT_DIR$/app/templates/thanks.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/deploy.js" afterPath="$PROJECT_DIR$/config/deploy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ember-cli-build.js" afterPath="$PROJECT_DIR$/ember-cli-build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="buyback-world.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,11 +25,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="app.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/styles/app.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="763">
-                  <caret line="587" column="1" selection-start-line="587" selection-start-column="1" selection-end-line="587" selection-end-column="1" />
+                <state relative-caret-position="873">
+                  <caret line="592" column="1" selection-start-line="592" selection-start-column="1" selection-end-line="592" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -91,6 +74,16 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="462">
                   <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="308">
+                  <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -220,7 +213,6 @@
         <option value="$PROJECT_DIR$/app/components/app-header.js" />
         <option value="$PROJECT_DIR$/app/templates/contact.hbs" />
         <option value="$PROJECT_DIR$/app/templates/about.hbs" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/deploy.js" />
         <option value="$PROJECT_DIR$/ember-cli-build.js" />
         <option value="$PROJECT_DIR$/app/templates/index.hbs" />
@@ -241,6 +233,7 @@
         <option value="$PROJECT_DIR$/app/templates/network.hbs" />
         <option value="$PROJECT_DIR$/app/templates/thanks.hbs" />
         <option value="$PROJECT_DIR$/app/styles/app.scss" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -599,12 +592,12 @@
       <workItem from="1469625287259" duration="37747000" />
       <workItem from="1469796108982" duration="17794000" />
       <workItem from="1470071649221" duration="20285000" />
-      <workItem from="1470143767221" duration="6686000" />
+      <workItem from="1470143767221" duration="6845000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372123000" />
+    <option name="totallyTimeSpent" value="372282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2310" y="-1417" width="2130" height="1380" extended-state="0" />
@@ -780,14 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/about.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -877,7 +862,7 @@
         <state relative-caret-position="66">
           <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -887,7 +872,7 @@
         <state relative-caret-position="66">
           <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -897,7 +882,7 @@
         <state relative-caret-position="66">
           <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -907,7 +892,7 @@
         <state relative-caret-position="66">
           <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,7 +902,7 @@
         <state relative-caret-position="66">
           <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -943,7 +928,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1050,8 +1035,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="587" column="1" selection-start-line="587" selection-start-column="1" selection-end-line="587" selection-end-column="1" />
+        <state relative-caret-position="873">
+          <caret line="592" column="1" selection-start-line="592" selection-start-column="1" selection-end-line="592" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding />
         </state>
       </provider>
