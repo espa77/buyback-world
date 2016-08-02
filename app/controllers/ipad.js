@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    selectedDevice: Ember.inject.service('selected-device'),
+    selectedDevice: Ember.inject.service(),
 
     uniqueModel: Ember.computed('model', function(){
         let val = this.get('selectedDevice.device_attributes.device'),

@@ -245,12 +245,26 @@ hr {
   margin-bottom: 0;
 }
 
-#model-selection-text, #network-selection-text{
+#model-selection-text, #network-selection-text {
+  color: color($primary, '500');
   justify-content: center;
   text-align: center;
 }
 
-.device-network selector {
+#network-selection-text {
+  padding-top: 7rem;
+}
+
+
+.selector {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 2%;
+}
+
+.device-network {
   padding-bottom: 5em;
 }
 
@@ -259,15 +273,8 @@ hr {
 }
 
 .final-device-selection {
-  margin: 3rem;
-}
-
-.selector {
-  display: flex;
-  align-content: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding-bottom: 2%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .buttons .md-button {
@@ -378,7 +385,7 @@ md-icon.md-default-theme, .md-icon {
 
 .about-text {
   color: color($primary, '700');
-  text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px;
+  text-shadow: color($primary, 'A100') 0px 0px 1px,   color($primary, 'A100') 0px 0px 1px,   color($primary, 'A100') 0px 0px 1px;
   text-align: center;
 }
 
@@ -422,12 +429,20 @@ md-icon.md-default-theme, .md-icon {
   display: none;
 }
 
+.device-network .device_title {
+  font-weight: 100;
+  color: color($primary, '500');
+  text-align: center;
+  text-shadow: 0 0 1px #EEE, 0 0 2px #DDD;
+}
+
 .img_device {
   padding: 0.2em;
   height: 200px;
 }
 
 .img_network {
+  box-sizing: initial;
   padding: 2em;
   min-width: 100px;
   height: 50px;
@@ -441,22 +456,32 @@ md-icon.md-default-theme, .md-icon {
   width: 100%;
 }
 
+.price {
+  margin: 1rem;
+  padding-top:7rem;
+}
+
 .condition_list {
   list-style: none;
   padding: 0;
 }
 
-.device-price {
+.device_price {
   font-size: 64px;
-  font-weight: 700;
-}
-
-.device_price span {
   font-weight: 300;
 }
 
+.device_price span {
+  color: color($primary, '300');
+  font-weight: 700;
+}
+
+.price-page-top {
+  padding-bottom:1.5rem;
+}
 .size-condition {
-  padding-bottom: 2em;
+  padding-top:1.5rem;
+  padding-bottom: 2rem;
   margin: 0 auto;
   width:95%;
 }
@@ -469,6 +494,10 @@ md-icon.md-default-theme, .md-icon {
 .device-condition {
   margin: 0 auto;
   text-align:center;
+}
+
+.contact-page, .about-page {
+  margin-top: 5.5rem;
 }
 
 .navigation {

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-    selectedDevice: Ember.inject.service('selected-device'),
+    selectedDevice: Ember.inject.service(),
 
     userSelectedDevice: Ember.computed('selectedDevice.device_attributes.device', function() {
         return this.get('selectedDevice.device_attributes.device');
@@ -29,7 +29,7 @@ export default Ember.Controller.extend({
         deviceSelected(deviceVal) {
             let device = deviceVal.toLowerCase();
             if (device === "galaxy") {
-                this.transitionToRoute('samsung');
+                return this.transitionToRoute("samsung");
             }
             this.transitionToRoute(device);
         },

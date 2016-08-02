@@ -9,10 +9,17 @@
     </div>
     <nav>
         <ul>
-            <li><a {{action 'scrollToSell'}}>Sell My iPhone</a></li>
-            <li><a {{action 'scrollToSimple'}}>Simple and Easy</a></li>
-            <li><a {{action 'scrollToAbout'}}>About Us</a></li>
-            <li><a {{action 'scrollToContact'}}>Contact Us</a></li>
+            {{#if selectedDevice.device_attributes.device}}
+                <li>{{link-to 'Sell My iPhone' 'index'}}</li>
+                <li>{{link-to 'Simple and Easy' 'index'}}</li>
+                <li>{{link-to 'About Us' 'about'}}</li>
+                <li>{{link-to 'Contact Us' 'contact'}}</li>
+            {{else}}
+                <li><a {{action 'scrollToSell'}}>Sell My iPhone</a></li>
+                <li><a {{action 'scrollToSimple'}}>Simple and Easy</a></li>
+                <li><a {{action 'scrollToAbout'}}>About Us</a></li>
+                <li><a {{action 'scrollToContact'}}>Contact Us</a></li>
+            {{/if}}
         </ul>
     </nav>
 </div>

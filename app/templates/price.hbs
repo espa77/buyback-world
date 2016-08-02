@@ -1,24 +1,22 @@
-<div class="layout-column flex">
-    <div class="layout-row layout-xs-column">
+<div class="layout-column flex price">
+    <div class="layout-row layout-xs-column price-page-top">
         <div class="final-device-selection flex">
             {{#each finalDevice as |device|}}
                 {{selected-device reloadIndex=(action 'startOver') image=device.image}}
             {{/each}}
         </div>
-        <div class="flex">
-            <div class="price-condition layout-row layout-xs-column flex">
-                <div class="device-price flex">
-                    {{#each devicePrice as |device|}}
-                        {{device-price}}
-                    {{/each}}
-                </div>
-                <div class="name-phone flex">
-                    {{name-phone quoted='quoted'}}
-                </div>
-            </div>
-        </div>
-    </div>
 
+            <div class="device-price flex">
+                {{#each devicePrice as |device|}}
+                    {{device-price}}
+                {{/each}}
+            </div>
+            <div class="name-phone flex">
+                {{name-phone quoted='quoted'}}
+            </div>
+
+    </div>
+<hr>
     <div class="size-condition layout-row layout-sm-column layout-xs-column flex">
         <div class="device-size layout-column">
             <h3>Choose Different Size:</h3>
