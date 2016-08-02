@@ -10,11 +10,12 @@ Router.map(function() {
   this.route('contact');
   this.route('thanks');
   this.route('iphone');
-    this.route('ipad');
-    this.route('samsung');
-    this.route('network');
-    this.route('price');
-    this.route('page-not-found', { path: '/*wildcard' });
+  this.route('ipad');
+  this.route('samsung');
+  this.route('network');
+  this.route('price');
+  this.route('thanks');
+  this.route('page-not-found', { path: '/*wildcard' });
 });
 
 

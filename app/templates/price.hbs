@@ -1,3 +1,4 @@
+{{#if selectedDevice.device_attributes.network}}
 <div class="layout-column flex price">
     <div class="layout-row layout-xs-column price-page-top">
         <div class="final-device-selection flex">
@@ -14,7 +15,6 @@
             <div class="name-phone flex">
                 {{name-phone quoted='quoted'}}
             </div>
-
     </div>
 <hr>
     <div class="size-condition layout-row layout-sm-column layout-xs-column flex">
@@ -36,3 +36,4 @@
         </div>
     </div>
 </div>
+{{/if}}

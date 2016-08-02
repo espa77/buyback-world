@@ -86,6 +86,12 @@ header a {
   text-decoration: none;
 }
 
+#header-title {
+  @include small {
+    padding-left: 1%;
+  }
+}
+
 .open-nav {
   max-height: 400px !important;
   .mobile-toggle {
@@ -238,7 +244,10 @@ hr {
   text-align: center;
   display: inherit;
   margin: 0 auto;
-  color: color($accent, '700')
+  color: color($accent, '700');
+  @include small {
+    font-size: 28px;
+  }
 }
 
 #device-selection-text h3 {
@@ -281,27 +290,31 @@ hr {
   width: 200px;
   height: 80px;
   font-size: 24px;
+  @include small {
+    width: 150px;
+    height: 80px;
+    font-size: 18px;
+  }
 }
 
 #iphone-button .md-fab {
   width: 170px;
   height: 170px;
   font-size: 24px;
+  @include small {
+    width: 125px;
+    height: 125px;
+    font-size: 18px;
+  }
 }
 
 .device {
-  margin-top: 1.5em;
-  margin-right: 1.5em;
-  margin-left: 1.5em;
-  margin-bottom: 1.5em;
+  margin: 1.5em;
   padding: 1em;
   justify-content: center;
-  //-webkit-animation-name: slide-up;
-  //animation-name: slide-up;
-  //-webkit-animation-duration: 1s;
-  //animation-duration: 1s;
-  //-webkit-animation-fill-mode: both;
-  //animation-fill-mode: both;
+  @include small {
+    margin: 0.5rem;
+  }
 }
 
 #iphone-button {
@@ -313,6 +326,10 @@ hr {
   padding-left: 10%;
   padding-right: 15%;
   padding-top:6%;
+  @include small {
+    padding-left: 2%;
+    padding-right: 3%;
+  }
 }
 
 .md-button.md-raised:hover {
@@ -323,6 +340,10 @@ hr {
   padding-left: 15%;
   padding-right: 10%;
   padding-top:6%;
+  @include small {
+    padding-left: 2%;
+    padding-right: 3%;
+  }
 }
 
 .device:hover img {
@@ -346,15 +367,28 @@ hr {
   align-items: center;
 }
 
+.device-network .md-label {
+  @include small {
+    margin: 0 auto;
+  }
+}
+
 .device_title {
   font-weight: 700;
   letter-spacing: 1px;
+  @include small {
+    font-weight: 100;
+    font-size: 12px;
+  }
 }
 
 .index-bottom {
-  padding-bottom: 3em;
+  padding-bottom: 3rem;
   justify-content: center;
   align-items: center;
+  @include small {
+    padding-bottom: 2rem;
+  }
 }
 
 .index-bottom h1 {
@@ -364,10 +398,24 @@ hr {
 #simple-easy {
   padding-bottom: 3em;
   text-align: center;
+  @include small {
+    padding-bottom: 0;
+    display: block;
+  }
 }
 
 #timer, #appointment, #get-paid {
   padding-right: 6.7em;
+
+}
+
+#see-price-text h2, #appt-text h2, #paid-text h2 {
+  @include small {
+    font-size: 18px;
+    padding-top: 1.5rem;
+    padding-bottom:0;
+    margin-bottom:0.5rem;
+  }
 }
 
 md-icon.md-default-theme, .md-icon {
@@ -381,6 +429,9 @@ md-icon.md-default-theme, .md-icon {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  @include small {
+    height: 188px;
+  }
 }
 
 .about-text {
@@ -396,10 +447,16 @@ md-icon.md-default-theme, .md-icon {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  color: color($primary, '700');
+  text-shadow: color($primary, 'A100') 0px 0px 1px,   color($primary, 'A100') 0px 0px 1px,   color($primary, 'A100') 0px 0px 1px;
+  @include small {
+    height: 210px;
+  }
 }
 
 .contact-text ul {
   list-style: none;
+
 }
 
 #model-change-text {
@@ -407,6 +464,11 @@ md-icon.md-default-theme, .md-icon {
   padding-bottom: 2em;
   margin: 0 auto;
   width: 50%;
+  @include small {
+    display: block;
+    text-align: center;
+    width: 80%;
+  }
 }
 
 #model-change-text h3 {
@@ -439,6 +501,10 @@ md-icon.md-default-theme, .md-icon {
 .img_device {
   padding: 0.2em;
   height: 200px;
+  @include small {
+    height: 100px;
+    padding: 0;
+  }
 }
 
 .img_network {
@@ -484,6 +550,27 @@ md-icon.md-default-theme, .md-icon {
   padding-bottom: 2rem;
   margin: 0 auto;
   width:95%;
+  @include small {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+.size-condition .md-label span {
+  @include small {
+    color: color($primary, '700');
+    font-size: 8px;
+    font-weight: 500;
+  }
+}
+
+.sell_button {
+  text-align: center;
+}
+
+
+.sell_button .paper-button {
+  color: #EFEFEE!important;
 }
 
 .device-size {
@@ -498,6 +585,11 @@ md-icon.md-default-theme, .md-icon {
 
 .contact-page, .about-page {
   margin-top: 5.5rem;
+}
+
+.reset-button button a {
+  color: #EFEFEE;
+  text-decoration: none;
 }
 
 .navigation {

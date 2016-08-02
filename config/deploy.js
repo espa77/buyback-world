@@ -5,9 +5,21 @@ module.exports = function(deployTarget) {
     build: {
       'revision-data': {
         type: 'git-commit'
+      },
+      's3-index': {
+        accessKeyId: "AKIAI27X4XGRBRAV72JA",
+        secretAccessKey: "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",
+        bucket: "buybackers.ethansteiner.com",
+        region: "us-east-1",
+        allowOverwrite: true
+      },
+      's3': {
+        accessKeyId: "AKIAI27X4XGRBRAV72JA",
+        secretAccessKey: "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",
+        bucket: "buybackers.ethansteiner.com",
+        region: "us-east-1"
       }
     }
-    // include other plugin configuration that applies to all deploy targets here
   };
 
   if (deployTarget === 'development') {
@@ -22,7 +34,21 @@ module.exports = function(deployTarget) {
   }
 
   if (deployTarget === 'production') {
+
     ENV.build.environment = 'production';
+
+      ENV['s3-index'] = {
+          accessKeyId: 'AKIAI27X4XGRBRAV72JA',
+          secretAccessKey: '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',
+          bucket: 'buybackers.ethansteiner.com',
+          region: 'us-east-1'
+      },
+          ENV.s3 = {
+              accessKeyId: 'AKIAI27X4XGRBRAV72JA',
+              secretAccessKey: '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',
+              bucket: 'buybackers.ethansteiner.com',
+              region: 'us-east-1'
+          }
     // configure other plugins for production deploy target here
   }
 

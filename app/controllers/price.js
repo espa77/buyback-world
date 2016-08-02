@@ -2,9 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     selectedDevice: Ember.inject.service('selected-device'),
-    // ajax: Ember.inject.service(),
-
-    conditionValSet: false,
 
     finalDevice: Ember.computed('sizeSelection', 'selectedDevice.device_attributes', function() {
         if (this.get('selectedDevice.device_attributes.device')) {
@@ -94,18 +91,11 @@ export default Ember.Controller.extend({
         },
         conditionValue(conditionVal) {
             this.get('selectedDevice').addCondition(conditionVal);
-            this.set('conditionValSet', true);
-        },
-        resetCondition(conditionVal) {
-            this.get('selectedDevice').addCondition(conditionVal);
         },
         startOver() {
-            this.set('conditionValSet', false);
-            this.set('userNotSelectedSize', true);
             this.get('selectedDevice').empty();
             this.transitionToRoute('index');
         },
-
         quoted(){
             if (this.get('selectedDevice.device_attributes.size') === null) {
                 this.set('selectedDevice.device_attributes.size', 16);
@@ -113,7 +103,8 @@ export default Ember.Controller.extend({
             let finalDevice = this.get('selectedDevice.device_attributes');
             var quote = this.store.createRecord('quote', finalDevice);
             quote.save().then(()=> {
-                this.transitionTo('thanks');
+                this.get('selectedDevice').empty();
+                this.transitionToRoute('thanks');
                 }).catch(()=> {
                 alert("couldn't save quote.");
             });
