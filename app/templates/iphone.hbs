@@ -1,11 +1,11 @@
 {{#if uniqueModel}}
     {{#unless selectedDevice.device_attributes.model}}
         <div class="layout-row layout-md-column" id="model-selection-text">
-            <h2><em>What model?</em></h2>
+            <h2><em>What model iPhone are you selling?</em></h2>
         </div>
         <div class="device-model selector">
             {{#each uniqueModel as |uniqueModel|}}
-                {{device-model deviceVal send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
+                {{device-model send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
             {{/each}}
         </div>
         <div class="layout-row layout-md-column" id="model-change-text">

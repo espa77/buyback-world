@@ -1,6 +1,13 @@
 import Ember from 'ember';
 
-export default Ember.Service.extend({
+const {
+    Service,
+    get,
+    set
+} = Ember;
+
+
+export default Service.extend({
 
     device_attributes: {
         device: null,
@@ -15,61 +22,61 @@ export default Ember.Service.extend({
 
     init() {
         this._super(...arguments);
-        this.set('device_attributes.condition', "normal");
+        set(this, 'device_attributes.condition', "normal");
     },
     addDevice(item) {
-        this.set('device_attributes.device', item);
+        set(this, 'device_attributes.device', item);
     },
     removeDevice() {
-        this.set('device_attributes.device', null);
+        set(this, 'device_attributes.device', null);
     },
     addModel(item) {
-        this.set('device_attributes.model', item);
+        set(this, 'device_attributes.model', item);
     },
     removeModel() {
-        this.set('device_attributes.model', null);
+        set(this, 'device_attributes.model', null);
     },
     addNetwork(item) {
-        this.set('device_attributes.network', item);
+        set(this, 'device_attributes.network', item);
     },
     removeNetwork() {
-        this.set('device_attributes.network', null);
+        set(this, 'device_attributes.network', null);
     },
     addSize(item) {
-        this.set('device_attributes.size', item);
+        set(this, 'device_attributes.size', item);
     },
     removeSize() {
-        this.set('device_attributes.size', null);
+        set(this, 'device_attributes.size', null);
     },
     addCondition(item) {
-        this.set('device_attributes.condition', item);
+        set(this, 'device_attributes.condition', item);
     },
     removeCondition() {
-        this.set('device_attributes.condition', null);
+        set(this, 'device_attributes.condition', null);
     },
     addPrice(item) {
-        this.set('device_attributes.price', item);
+        set(this, 'device_attributes.price', item);
     },
     removePrice() {
-        this.set('device_attributes.price', null);
+        set(this, 'device_attributes.price', null);
     },
     addName(item){
-        this.set('device_attributes.name', item);
+        set(this, 'device_attributes.name', item);
     },
     addPhone(item){
-       this.set('device_attributes.phone', item);
+        set(this, 'device_attributes.phone', item);
    },
     show() {
-        return this.get('device_attributes');
+        return get(this, 'device_attributes');
     },
     empty() {
-        this.set('device_attributes.device', null);
-        this.set('device_attributes.model', null);
-        this.set('device_attributes.network', null);
-        this.set('device_attributes.size', null);
-        this.set('device_attributes.condition', "normal");
-        this.set('device_attributes.price', null);
-        this.set('device_attributes.name', null);
-        this.set('device_attributes.phone', null);
+        set(this, 'device_attributes.device', null);
+        set(this, 'device_attributes.model', null);
+        set(this, 'device_attributes.network', null);
+        set(this, 'device_attributes.size', null);
+        set(this, 'device_attributes.condition', "normal");
+        set(this, 'device_attributes.price', null);
+        set(this, 'device_attributes.name', null);
+        set(this, 'device_attributes.phone', null);
     }
 });

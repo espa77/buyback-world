@@ -1,6 +1,14 @@
 import Ember from 'ember';
 
+const {
+    Component,
+    inject,
+    get,
+    set
+} = Ember;
+
 export default Ember.Component.extend({
+
     didInsertElement(){
         this._super(...arguments);
 
@@ -18,13 +26,14 @@ export default Ember.Component.extend({
             ease: Back.easeOut.config(2)
         },0.2);
     },
+
     actions: {
         changeModelValue(modelVal) {
-            this.set('groupValue', modelVal);
+            set(this, 'groupValue', modelVal);
             this.send(modelVal);
         }
     },
     changeModelValue() {
-        throw new Error ("You must select a model to continue");
+        throw new Error ("You must select a model");
     }
 });

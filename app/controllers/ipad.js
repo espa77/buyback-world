@@ -1,15 +1,23 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-    selectedDevice: Ember.inject.service(),
+const {
+    Controller,
+    inject,
+    computed,
+    get,
+    set
+} = Ember;
 
-    uniqueModel: Ember.computed('model', function(){
-        let val = this.get('selectedDevice.device_attributes.device'),
-            model = this.get('model'),
+export default Controller.extend({
+    selectedDevice: inject.service(),
+
+    uniqueModel: computed('model', 'selectedDevice.device_attributes.device', function(){
+        let val = get(this, 'selectedDevice.device_attributes.device'),
+            model = get(this, 'model'),
             uniqueModels = [];
         if (val === null) {
-            val = "iPad";
-            this.set('selectedDevice.device_attributes.device', val);
+            val = "ipad";
+            set(this, 'selectedDevice.device_attributes.device', val);
         }
         var filteredModels = model.filterBy('device_type', val );
         filteredModels.forEach(function(element){
@@ -21,18 +29,16 @@ export default Ember.Controller.extend({
     }),
     actions: {
         modelValue(modelVal) {
-            this.get('selectedDevice').addModel(modelVal);
+            get(this, 'selectedDevice').addModel(modelVal);
             this.transitionToRoute('network');
         },
-        refreshModel(modelVal) {
-            this.get('selectedDevice').removeModel(modelVal);
-        },
         selectNewDevice() {
-            this.get('selectedDevice').removeDevice();
             this.transitionToRoute('index');
         },
         selectDevice() {
+            get(this, 'selectedDevice').empty();
             this.transitionToRoute('index');
         }
     }
 });
+

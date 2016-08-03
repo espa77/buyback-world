@@ -1,7 +1,13 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
-    selectedDevice: Ember.inject.service('selected-device'),
+const {
+    Component,
+    get,
+    set
+} = Ember;
+
+export default Component.extend({
+    selectedDevice: Ember.inject.service(),
 
     didInsertElement(){
         this._super(...arguments);
@@ -20,22 +26,20 @@ export default Ember.Component.extend({
         },0.3);
 
     },
-
-
     actions: {
         iPhoneSelection() {
-            var deviceVal = "iPhone";
-            this.set('selectedDevice.device_attributes.device', deviceVal);
+            let deviceVal = "iPhone";
+            get(this, 'selectedDevice').addDevice(deviceVal);
             this.send(deviceVal);
         },
         iPadSelection() {
-            var deviceVal = "iPad";
-            this.set('selectedDevice.device_attributes.device', deviceVal);
+            let deviceVal = "iPad";
+            get(this, 'selectedDevice').addDevice(deviceVal);
             this.send(deviceVal);
         },
         samsungSelection() {
-            var deviceVal = "Galaxy";
-            this.set('selectedDevice.device_attributes.device', deviceVal);
+            let deviceVal = "Galaxy";
+            get(this, 'selectedDevice').addDevice(deviceVal);
             this.send(deviceVal);
         }
     }

@@ -1,20 +1,20 @@
 <div class="device layout-column flex">
     {{#if selectedDevice.device_attributes.device}}
         <div class="flex buttons" id="iphone-button">
-            {{#paper-button raised=true fab=true onClick=(action "iPhoneSelection") bubbles=false}}Sell iPhone{{/paper-button}}
+            {{#paper-button raised=true noink=true fab=true onClick=(action "iPhoneSelection") bubbles=false}}Sell iPhone{{/paper-button}}
         </div>
     {{else}}
         <div class="flex buttons" id="iphone-button">
-            {{#paper-button raised=true fab=true onClick=(action "iPhoneSelection") bubbles=false}}Yes please{{/paper-button}}
+            {{#paper-button raised=true noink=true fab=true onClick=(action "iPhoneSelection") bubbles=false}}Yes please{{/paper-button}}
         </div>
     {{/if}}
     <hr>
     <div class="layout-row flex index-bottom-buttons">
         <div class="flex buttons" id="ipad-button">
-           {{#paper-button raised=true onClick=(action "iPadSelection") bubbles=false}}Sell iPad{{/paper-button}}
+           {{#paper-button raised=true noink=true onClick=(action "iPadSelection") bubbles=false}}Sell iPad{{/paper-button}}
         </div>
         <div class="flex buttons" id="samsung-button">
-           {{#paper-button raised=true onClick=(action "samsungSelection") bubbles=false}}Sell Samsung{{/paper-button}}
+           {{#paper-button raised=true noink=true onClick=(action "samsungSelection") bubbles=false}}Sell Samsung{{/paper-button}}
         </div>
     </div>
 </div>

@@ -1,22 +1,30 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
-    selectedDevice: Ember.inject.service('selected-device'),
+const {
+    Component,
+    inject,
+    get,
+    set
+} = Ember;
+
+export default Component.extend({
+    selectedDevice: inject.service('selected-device'),
 
     actions: {
         newDevice() {
-            let deviceVal = this.get('selectedDevice.device');
-            var modelVal = this.get('selectedDevice.model');
-            if (this.get('selectedDevice.model')) {
-                modelVal = (this.get('selectedDevice.model'));
+            let deviceVal = get(this, 'selectedDevice.device');
+            var modelVal = get(this, 'selectedDevice.model');
+            if (get(this, 'selectedDevice.model')) {
+                modelVal = (get(this, 'selectedDevice.model'));
             }
             this.reloadDevice(deviceVal, modelVal);
         },
         newModel() {
-            let modelVal = this.get('selectedDevice.model');
+            let modelVal = get(this, 'selectedDevice.model');
             this.reloadModel(modelVal);
         },
         goBack() {
+            get(this, 'selectedDevice').empty();
             this.reloadIndex();
         }
     }
