@@ -65,6 +65,18 @@ html {
 
 //navigation
 
+#logo {
+  align-self: center;
+  width: 50px;
+  font-size: 40px;
+  color: color($primary, '700');
+  text-transform: uppercase;
+  margin-left: 5rem;
+  @include small {
+    margin-left:1rem;
+    text-align:center;
+  }
+}
 
 .wrapper {
   height: 100%;
@@ -103,28 +115,33 @@ html {
 }
 
 .menu--off {
-  display: none;
+  visibility: hidden;
   position: absolute;
-  right: -50%;
   width: 50%;
   background: #eee;
   min-height: 600px;
-  height: 100%;
-  margin-top: 1em;
   transition: all 300ms;
+  @include small {
+    height: 100%;
+    width: 75%;
+  }
 }
 
 .menu--on {
+  visibility: visible;
   display: block;
   z-index: 999;
-  margin-top: 106px;
   right: 0;
   box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.2);
   transition: all 300ms;
 }
 
+.material-design-hamburger {
+  display: flex;
+  justify-content: space-between;
+}
+
 .material-design-hamburger button {
-  float:right;
   display: block;
   border: none;
   background: none;
@@ -296,20 +313,6 @@ header a {
 //  top: 0px;
 //  border-bottom: 1px solid color($primary, '700');
 //}
-
-.logo {
-  width: 50px;
-  font-size: 40px;
-  color: color($primary, '700');
-  text-transform: uppercase;
-  margin-top: 0;
-  line-height: 1;
-  margin-bottom: 10px;
-  @include small {
-    align-items: center;
-    text-align:center;
-  }
-}
 
 nav {
   width: 100%;
