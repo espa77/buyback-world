@@ -48,6 +48,7 @@ $warn: "brown";
 }
 
 html {
+  width: 1500px;
   max-width:100%;
   height: auto;
   background: none;
@@ -73,13 +74,13 @@ html {
 }
 
 .background--blur {
-  background: #004d40;
+  background: color($accent, '700');
 }
 
 .menu {
   font-size:2em;
   font-family: 'Roboto', sans-serif;
-  color: #333;
+  color: color($accent, '700');
 }
 
 .menu div {
@@ -90,7 +91,7 @@ html {
 
 .menu a {
   text-decoration: none;
-  color: #3367d6;
+  color: color($primary, '700')
 }
 
 .menu a:hover {
@@ -102,19 +103,20 @@ html {
 }
 
 .menu--off {
-
+  display: none;
   position: absolute;
   right: -50%;
   width: 50%;
-  display: block;
   background: #eee;
   min-height: 600px;
-  height: 125%;
+  height: 100%;
   margin-top: 1em;
   transition: all 300ms;
 }
 
 .menu--on {
+  display: block;
+  z-index: 999;
   margin-top: 106px;
   right: 0;
   box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.2);
@@ -138,7 +140,7 @@ html {
   display: block;
   width: 100px;
   height: 10px;
-  background: #eee;
+  background: #aaa;
   position: relative;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
@@ -248,25 +250,25 @@ html {
 }
 
 //end navigation
-
-.main_h {
-  display:flex;
-  position: fixed;
-  max-height: 90px;
-  z-index: 999;
-  width: 100%;
-  padding-top: 0.5em;
-  background: none;
-  overflow: hidden;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  opacity: 0;
-  top: -100px;
-  padding-bottom: 6px;
-  @include small {
-    padding-top: 25px;
-  }
-}
+//
+//.main_h {
+//  display:flex;
+//  position: fixed;
+//  max-height: 90px;
+//  z-index: 9999;
+//  width: 100%;
+//  padding-top: 0.5em;
+//  background: none;
+//  overflow: hidden;
+//  -webkit-transition: all 0.3s;
+//  transition: all 0.3s;
+//  opacity: 0;
+//  top: -100px;
+//  padding-bottom: 6px;
+//  @include small {
+//    padding-top: 25px;
+//  }
+//}
 
 header a {
   color: color($primary, 'A700');
@@ -288,12 +290,12 @@ header a {
   }
 }
 
-.sticky {
-  background-color: rgba(255, 255, 255, 0.93);
-  opacity: 1;
-  top: 0px;
-  border-bottom: 1px solid color($primary, '700');
-}
+//.sticky {
+//  background-color: rgba(255, 255, 255, 0.93);
+//  opacity: 1;
+//  top: 0px;
+//  border-bottom: 1px solid color($primary, '700');
+//}
 
 .logo {
   width: 50px;
@@ -364,7 +366,7 @@ nav {
     height: 4px;
     margin-bottom: 6px;
     border-radius: 1000px;
-    background: #ffffff;
+    background: color($primary, '700');
     display: block;
   }
 }
@@ -382,9 +384,12 @@ nav {
   background: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
   background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
-  background-size: contain;
+  //background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  width: 100%;
+
+  min-height: 600px;
 }
 
 .index-text {
@@ -393,20 +398,20 @@ nav {
 }
 
 .index-bottom {
-  color: white;
+  color: color($primary, '700');
 }
 
 #index-text-hand-delivered {
   padding-top: 1.3em;
   font-size: 34px;
-  color: white;
+  color: color($primary, '700');
   font-weight: 500;
 }
 
 #index-text-one-hour {
   padding-top: 0.5em;
   font-size: 48px;
-  color: white;
+  color: color($primary, '700');
   font-weight: 500;
 }
 
@@ -432,7 +437,7 @@ hr {
   text-align: center;
   display: inherit;
   margin: 0 auto;
-  color: #ffffff;
+  color: color($primary, '700');
   @include small {
     font-size: 28px;
   }
@@ -784,14 +789,14 @@ md-icon.md-default-theme, .md-icon {
 }
 
 .navigation {
-  color: #fff;
+  color: color($primary, '700');
   width: 50%;
   display:flex;
   justify-content: space-around;
 }
 
 .navigation a {
-  color: #fff;
+  color: color($primary, '700');
   text-decoration: none;
 }
 
