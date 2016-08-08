@@ -1,23 +1,20 @@
- <div class="layout-column flex" id="index">
+ <div class="layout-row flex" id="index">
+     <div class="flex index-text sec01">
      {{#unless userSelectedDevice}}
-         <div class="flex index-text sec01">
              {{index-text}}
-         </div>
      {{/unless}}
-
      {{index-device}}
+     </div>
 
      {{#unless userSelectedDevice}}
          <div class="device-type selector">
              {{device-selector send=(action 'deviceSelected')}}
          </div>
-         <hr>
      {{else}}
          {{#if userSelectedDevice}}
              <div class="device-type selector">
                  {{device-selector send=(action 'deviceSelected')}}
              </div>
-             <hr>
          {{/if}}
      {{/unless}}
  </div>

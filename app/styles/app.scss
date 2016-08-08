@@ -1,4 +1,4 @@
-$primary: "grey";
+$primary: "red";
 $accent: "green";
 $warn: "brown";
 
@@ -50,6 +50,7 @@ $warn: "brown";
 html {
   width: 1500px;
   max-width:100%;
+  margin: 0 auto;
   height: auto;
   background: none;
 }
@@ -86,7 +87,7 @@ html {
 }
 
 .background--blur {
-  background: color($accent, '700');
+  background: color($warn, '100');
 }
 
 .menu {
@@ -383,6 +384,7 @@ nav {
 }
 
 #index {
+  display:flex;
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
   background: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
   background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
@@ -391,12 +393,12 @@ nav {
   background-repeat: no-repeat;
   background-position: center center;
   width: 100%;
-
   min-height: 600px;
 }
 
 .index-text {
-
+  flex: 100%;
+  align-self: center;
   text-align: center;
 }
 
@@ -405,17 +407,29 @@ nav {
 }
 
 #index-text-hand-delivered {
-  padding-top: 1.3em;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-size: 34px;
-  color: color($primary, '700');
+  color: #eee;
   font-weight: 500;
 }
 
 #index-text-one-hour {
   padding-top: 0.5em;
   font-size: 48px;
-  color: color($primary, '700');
+  color: #eee;
   font-weight: 500;
+}
+
+#device-selection-text {
+  font-size: 36px;
+  text-align: center;
+  display: inherit;
+  margin: 0 auto;
+  color: #eee;
+  @include small {
+    font-size: 28px;
+  }
 }
 
 hr {
@@ -435,17 +449,6 @@ hr {
   margin-bottom:-1px;
 }
 
-#device-selection-text {
-  font-size: 36px;
-  text-align: center;
-  display: inherit;
-  margin: 0 auto;
-  color: color($primary, '700');
-  @include small {
-    font-size: 28px;
-  }
-}
-
 #device-selection-text h3 {
   margin-bottom: 0;
 }
@@ -463,10 +466,13 @@ hr {
 
 .selector {
   display: flex;
-  align-content: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding-bottom: 2%;
+}
+
+.device-type {
+  align-self: center;
+  flex: 100%;
 }
 
 .device-network {
@@ -508,41 +514,45 @@ hr {
   margin: 1.5em;
   padding: 1em;
   justify-content: center;
+  align-self: center;
   @include small {
     margin: 0.5rem;
   }
 }
 
-#iphone-button {
+#iphone-button, #ipad-button, #samsung-button {
   text-align: center;
-  padding-bottom: 2%;
+  margin-top: 1rem;
+  color: color($accent, '700');
+}
+
+#iphone-button {
+  padding-top:6%;
+  @include small {
+
+  }
 }
 
 #ipad-button {
-  padding-left: 10%;
-  padding-right: 15%;
   padding-top:6%;
   @include small {
-    padding-left: 2%;
-    padding-right: 2%;
+
   }
 }
 
 .md-button.md-raised:hover {
-  color: color($primary, 'A700');
+  color: color($accent, '700');
 }
 
 #samsung-button {
-  padding-left: 15%;
-  padding-right: 10%;
+
   padding-top:6%;
   @include small {
-    padding-left: 2%;
-    padding-right: 2%;
+
   }
 }
 
-.device:hover img {
+.buttons button:hover {
   -webkit-transform: translate3d(0, -1%, 0);
   transform: translate3d(0, -1%, 0);
   transition: all 0.2s ease;
