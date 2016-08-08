@@ -12,6 +12,7 @@ export default Component.extend({
     tagName: 'section',
 
     didInsertElement() {
+        this.super(...arguments);
         document.querySelector('.material-design-hamburger__icon').addEventListener(
             'click',
             function () {
