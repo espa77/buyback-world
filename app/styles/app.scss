@@ -118,23 +118,45 @@ html {
 .menu--off {
   visibility: hidden;
   position: absolute;
-  width: 50%;
+  width: 0;
+  right: 30%;
+  height: 50%;
   background: #eee;
   min-height: 600px;
-  transition: all 300ms;
+  transition: all 100ms;
   @include small {
     height: 100%;
+    right: 56%;
+  }
+}
+
+.menu--off div {
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.menu--on {
+  width: 50%;
+  visibility: visible;
+  display: block;
+  z-index: 999;
+  height: 75%;
+  right: 0;
+  box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: all 100ms;
+  @include small {
     width: 75%;
   }
 }
 
-.menu--on {
-  visibility: visible;
-  display: block;
-  z-index: 999;
-  right: 0;
-  box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.2);
-  transition: all 300ms;
+.menu--on div {
+  height: auto;
+  width: auto;
+  margin: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ccc;
 }
 
 .material-design-hamburger {
@@ -158,7 +180,7 @@ html {
   display: block;
   width: 100px;
   height: 10px;
-  background: #aaa;
+  background: color($primary, '700');
   position: relative;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
@@ -215,7 +237,7 @@ html {
   0% {
   }
   100% {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
   }
 }
 
@@ -223,8 +245,8 @@ html {
   0% {
   }
   100% {
-    transform: rotate(45deg);
-    margin: 3% 37%;
+    transform: rotate(-45deg);
+    margin: 3% -12%;
     width: 75%;
   }
 }
@@ -233,8 +255,8 @@ html {
   0% {
   }
   100% {
-    transform: rotate(-45deg);
-    margin: 3% 37%;
+    transform: rotate(45deg);
+    margin: 3% -12%;
     width: 75%;
   }
 }

@@ -36,6 +36,7 @@ export default Service.extend({
     removeModel() {
         set(this, 'device_attributes.model', null);
     },
+
     addNetwork(item) {
         set(this, 'device_attributes.network', item);
     },
