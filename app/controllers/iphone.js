@@ -3,7 +3,6 @@ import Ember from 'ember';
 const {
     Controller,
     inject,
-    observer,
     computed,
     get,
     set
@@ -14,11 +13,13 @@ export default Controller.extend({
     selectedDevice: inject.service(),
 
     uniqueModel: computed('model', 'selectedDevice.device_attributes.device', function(){
+
         let val = get(this, 'selectedDevice.device_attributes.device'),
             model = get(this, 'model'),
             uniqueModels = [];
+
         if (val === null) {
-            val = "iphone";
+            val = "iPhone";
             set(this, 'selectedDevice.device_attributes.device', val);
         }
         var filteredModels = model.filterBy('device_type', val );

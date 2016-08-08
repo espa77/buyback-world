@@ -1,6 +1,14 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const {
+    Component,
+    inject,
+    get,
+    set
+} = Ember;
+
+export default Component.extend({
+    selectedDevice: inject.service('selected-device'),
     tagName: 'section',
 
     didInsertElement() {
@@ -23,6 +31,13 @@ export default Ember.Component.extend({
                 }
 
             });
+    },
+    actions: {
+        iPhoneSelection() {
+            let deviceVal = "iPhone";
+            get(this, 'selectedDevice').addDevice(deviceVal);
+
+        }
     }
 
 

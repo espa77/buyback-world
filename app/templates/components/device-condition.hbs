@@ -1,5 +1,5 @@
  {{#paper-radio-group groupValue=selectedDevice.device_attributes.condition onChange=(action (mut selectedDevice.device_attributes.condition)) as |group|}}
-     {{#group.paper-radio value=condition}}
+     {{#group.paper-radio value=condition primary=true}}
          {{condition}}
      {{/group.paper-radio}}
  {{/paper-radio-group}}

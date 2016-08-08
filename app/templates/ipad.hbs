@@ -1,4 +1,11 @@
 {{#if uniqueModel}}
+    {{#if selectedDevice.device_attributes.model}}
+        <div class="device-model selector">
+            {{#each uniqueModel as |uniqueModel|}}
+                {{device-model deviceVal send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
+            {{/each}}
+        </div>
+    {{/if}}
     {{#unless selectedDevice.device_attributes.model}}
         <div class="layout-row layout-md-column" id="model-selection-text">
             <h2><em>What model iPad are you selling?</em></h2>

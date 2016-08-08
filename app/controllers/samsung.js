@@ -16,7 +16,7 @@ export default Controller.extend({
             model = get(this, 'model'),
             uniqueModels = [];
         if (val === null) {
-            val = "galaxy";
+            val = "Galaxy";
             set(this, 'selectedDevice.device_attributes.device', val);
         }
         var filteredModels = model.filterBy('device_type', val );
