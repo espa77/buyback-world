@@ -12,7 +12,6 @@ export default Component.extend({
     tagName: 'section',
 
     didInsertElement() {
-        this.super(...arguments);
         document.querySelector('.material-design-hamburger__icon').addEventListener(
             'click',
             function () {
@@ -32,14 +31,5 @@ export default Component.extend({
                 }
 
             });
-    },
-    actions: {
-        iPhoneSelection() {
-            let deviceVal = "iPhone";
-            get(this, 'selectedDevice').addDevice(deviceVal);
-
-        }
     }
-
-
 });
