@@ -1,5 +1,15 @@
 <div class="device layout-column flex">
     {{#if selectedDevice.device_attributes.device}}
+        <div class="layout-md-column flex" id="device-selection-text">
+            <h2>You have already selected {{selectedDevice.device_attributes.device}}</h2>
+            <h3>Click on another device to change your selection?</h3>
+        </div>
+    {{else}}
+        <div class="layout-md-column flex" id="device-selection-text">
+            <h3>Sell Your iPhone</h3>
+        </div>
+    {{/if}}
+    {{#if selectedDevice.device_attributes.device}}
         <div class="flex buttons" id="iphone-button">
             {{#paper-button raised=true primary=true noink=true onClick=(action "iPhoneSelection") bubbles=false}}Sell iPhone{{/paper-button}}
         </div>

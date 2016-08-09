@@ -105,7 +105,9 @@ export default Controller.extend({
             quote.save().then(()=> {
                 get(this, 'selectedDevice').empty();
                 this.transitionToRoute('thanks');
-                }).catch(()=> {
+                }).catch((e)=> {
+
+                console.error(e);
                 alert("couldn't save quote.");
             });
         },
