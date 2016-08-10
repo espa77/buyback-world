@@ -4,7 +4,6 @@ const {
     Component,
     inject,
     get,
-    set
 } = Ember;
 
 export default Component.extend({
@@ -12,6 +11,14 @@ export default Component.extend({
 
     name: null,
     phone: null,
+
+    phoneValidation: [{
+        message:'please enter a valid phone number that accepts texts',
+        validate: (inputValue) => {
+            let phoneNo = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+            return phoneNo.test(inputValue);
+        }
+    }],
 
 
   actions: {

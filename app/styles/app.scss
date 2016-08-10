@@ -441,11 +441,6 @@ hr {
   text-align: center;
 }
 
-#network-selection-text {
-  padding-top: 7rem;
-}
-
-
 .selector {
   display: flex;
   justify-content: space-around;
@@ -466,6 +461,7 @@ hr {
 }
 
 .final-device-selection {
+  justify-content: center;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -715,6 +711,7 @@ md-icon.md-default-theme, .md-icon {
 
 .user-selection {
   margin: 0 auto;
+  text-align: center;
 }
 
 .liquid-container {
@@ -723,7 +720,7 @@ md-icon.md-default-theme, .md-icon {
 
 .price {
   margin: 1rem;
-  padding-top:7rem;
+  padding-top:1rem;
 }
 
 .condition_list {
@@ -732,11 +729,9 @@ md-icon.md-default-theme, .md-icon {
 }
 
 .device-price {
+  align-self: center;
   font-size: 64px;
   font-weight: 300;
-  @include small {
-    padding-top: 7rem;
-  }
 }
 
 .device-price span {
@@ -756,6 +751,41 @@ md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
 
 .price-page-top {
   padding-bottom:1.5rem;
+}
+
+.name-phone {
+  align-self: center;
+  width: 50%;
+}
+
+.phone_input {
+  display: flex;
+  justify-content: center;
+  .md-input {
+    width: 100%;
+  }
+}
+
+.phone_input input {
+  padding-right: 36%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.name_input {
+  display: flex;
+  justify-content: center;
+  .md-input {
+    width: 100%;
+  }
+}
+
+.name_input input {
+  padding-right:36%;
 }
 
 .size-condition {
@@ -779,6 +809,17 @@ md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
 
 .sell_button {
   text-align: center;
+  button {
+    letter-spacing: 0.5ch;
+    width: 80%;
+    height: 2em;
+    font-size: 28px;
+    @include small {
+      width: 100%;
+      font-size: 20px;
+      letter-spacing: 0.5ch;
+    }
+  }
 }
 
 
@@ -794,6 +835,11 @@ md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
 .device-condition {
   margin: 0 auto;
   text-align:center;
+}
+
+.card-media {
+  text-align: center;
+  padding-top: 1em;
 }
 
 .contact-page, .about-page {

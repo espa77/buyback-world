@@ -1,3 +1,7 @@
+<div class="sell_button">
+    {{#paper-button raised=true primary=true onClick=(action 'quoted')}}Get Cash Today{{/paper-button}}
+</div>
+
 <div class="name_input">
     {{paper-input label="Name"
     value=name
@@ -8,14 +12,11 @@
 </div>
 
 <div class="phone_input">
-    {{paper-input label="Phone Number"
+    {{paper-input label="Texting Number" type="number"
     value=phone
     onChange=(action (mut phone))
+    customValidations=phoneValidation
     required=true
-    errorMessages=(hash required="Phone Number is required.")
+    errorMessages=(hash required="This number must accept text messages.")
     icon="phone"}}
-</div>
-
-<div class="sell_button">
-    {{#paper-button raised=true primary=true onClick=(action 'quoted')}}Get Cash Today{{/paper-button}}
 </div>
