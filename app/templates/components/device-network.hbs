@@ -3,31 +3,37 @@
 
         <div class="device_images">
             {{#if att }}
-                <img src="assets/images/{{networkImage.att}}" class="img_network"/>
+                <img src="assets/images/{{networkImage.att}}" class="img_network" id="{{network}}"/>
                 <div class="device_title">
                     <h3>{{network}}</h3>
                 </div>
 
             {{else if sprint }}
-                <img src="assets/images/{{networkImage.sprint}}" class="img_network"/>
+                <img src="assets/images/{{networkImage.sprint}}" class="img_network" id="{{network}}"/>
                 <div class="device_title">
                     <h3>{{network}}</h3>
                 </div>
 
             {{else if tMobile }}
-                <img src="assets/images/{{networkImage.tMobile}}" class="img_network"/>
+                <img src="assets/images/{{networkImage.tMobile}}" class="img_network" id="{{network}}"/>
                 <div class="device_title">
                     <h3>{{network}}</h3>
                 </div>
 
             {{else if verizon }}
-                <img src="assets/images/{{networkImage.verizon}}" class="img_network"/>
+                <img src="assets/images/{{networkImage.verizon}}" class="img_network" id="{{network}}"/>
                 <div class="device_title">
                     <h3>{{network}}</h3>
                 </div>
 
             {{else if other }}
-                <img src="assets/images/{{networkImage.other}}" class="img_network"/>
+                <img src="assets/images/{{networkImage.other}}" class="img_network" id="{{network}}"/>
+                <div class="device_title">
+                    <h3>{{network}}</h3>
+                </div>
+
+            {{else if unlocked }}
+                <img src="assets/images/{{networkImage.unlocked}}" class="img_network" id="{{network}}"/>
                 <div class="device_title">
                     <h3>{{network}}</h3>
                 </div>

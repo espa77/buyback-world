@@ -27,8 +27,12 @@
                     {{device-condition send=(action 'conditionValue') condition=cond.name}}
                 {{/each}}
             </div>
+            <div class="condition-description">
+                {{conditionDescription}}
+            </div>
         </div>
     </div>
+    <hr>
     <div class="final-device-selection layout-row flex">
         {{#each finalDevice as |device|}}
             {{selected-device reloadIndex=(action 'startOver') image=device.image}}

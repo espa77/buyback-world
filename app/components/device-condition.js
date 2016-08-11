@@ -1,7 +1,12 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
-    selectedDevice: Ember.inject.service('selected-device'),
+const {
+    Component,
+    inject,
+} = Ember;
+
+export default Component.extend({
+    selectedDevice: inject.service('selected-device'),
 
     classNameBindings: ['layout'],
     layout: 'flex layout-row'

@@ -4,7 +4,6 @@ const {
     Component,
     inject,
     get,
-    set
 } = Ember;
 
 export default Component.extend({

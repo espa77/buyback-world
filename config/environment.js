@@ -10,7 +10,7 @@ module.exports = function(environment) {
         contentSecurityPolicy: {
             'default-src': "'none'",
             'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
-            'font-src': ["'self'", "http://fonts.gstatic.com"],
+            'font-src': ["'self'", "https://fonts.gstatic.com"],
             'connect-src': [
                 "'self'",
                 "https://arcane-waters-10630.herokuapp.com/api/devices",
@@ -18,10 +18,10 @@ module.exports = function(environment) {
                 "https://arcane-waters-10630.herokuapp.com//api/quotes",
                 "https://arcane-waters-10630.herokuapp.com//api/devices"
             ],
-            'img-src': "'self'",
+            'img-src': "'self' data:",
             'report-uri': "'localhost'",
             'media-src': "'self'",
-            'style-src': ["'self'", "'unsafe-inline'", "http://fonts.googleapis.com"],
+            'style-src': ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://fonts.gstatic.com data:"],
             'data': "'img-src'"
         },
 

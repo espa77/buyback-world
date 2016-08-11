@@ -4,8 +4,7 @@ const {
     Controller,
     inject,
     computed,
-    get,
-    set
+    get
 } = Ember;
 
 export default Controller.extend({

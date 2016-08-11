@@ -12,10 +12,9 @@
 </div>
 
 <div class="phone_input">
-    {{paper-input label="Texting Number" type="number"
+    {{paper-input label="Texting Number" type="tel"
     value=phone
     onChange=(action (mut phone))
-    customValidations=phoneValidation
     required=true
     errorMessages=(hash required="This number must accept text messages.")
     icon="phone"}}

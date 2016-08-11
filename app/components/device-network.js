@@ -1,40 +1,51 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const {
+    Component,
+    set,
+    get
+} = Ember;
+
+export default Component.extend({
 
     willRender() {
-        this.set('networkImage', {
+        set(this, 'networkImage', {
             'att': 'att-svg.png',
             'sprint': 'sprint-svg.png',
             'tMobile': 'tmobile-svg.png',
             'verizon': 'verizon-svg.png',
-            'other': 'wireless-tower-svg.png'
+            'other': 'wireless-tower-svg.png',
+            'unlocked': 'unlocked.png'
         });
     },
 
     att: function() {
-        return this.get('network') === 'ATT';
+        return get(this, 'network') === 'ATT';
     }.property('network'),
 
     sprint: function() {
-        return this.get('network') === 'Sprint';
+        return get(this, 'network') === 'Sprint';
     }.property('network'),
 
     tMobile: function() {
-        return this.get('network') === 'T-Mobile';
+        return get(this, 'network') === 'T-Mobile';
     }.property('network'),
 
     verizon: function() {
-        return this.get('network') === 'Verizon';
+        return get(this, 'network') === 'Verizon';
     }.property('network'),
 
     other: function() {
-        return this.get('network') === 'Other';
+        return get(this, 'network') === 'Other';
+    }.property('network'),
+
+    unlocked: function() {
+        return get(this, 'network') === 'Unlocked';
     }.property('network'),
  
     actions: {
         changeNetworkValue(networkVal) {
-            this.set('groupValue', networkVal);
+            set(this, 'groupValue', networkVal);
             this.send(networkVal);
         }
     },

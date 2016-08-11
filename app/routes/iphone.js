@@ -3,8 +3,7 @@ import ResetScroll from '../mixins/reset-scroll';
 
 const {
     Route,
-    get,
-    set
+    get
 } = Ember;
 
 export default Route.extend(ResetScroll, {

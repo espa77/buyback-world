@@ -81,6 +81,19 @@ export default Controller.extend({
         return finalDevice;
     }),
 
+    conditionDescription: computed('selectedDevice.device_attributes.condition', function () {
+        let selectedCondition = get(this, 'selectedDevice.device_attributes.condition');
+        if (selectedCondition === "normal") {
+            return ("Normal means there are no cracks on the body or screen. The device powers on and makes calls");
+        }
+        if (selectedCondition === "broken") {
+            return ("Broken means there are cracks on the body or screen but the device powers on and makes calls");
+        }
+        if (selectedCondition === "broken no power") {
+            return ("Broken No Power means the device does not power on and/or does not makes calls");
+        }
+    }),
+
     nameOnQuote: computed('name-phone', 'name', function(){
         return get(this, 'name');
     }),

@@ -1,5 +1,8 @@
-$primary: "red";
-$accent: "green";
+//background-color: #1EB0DC;
+//background-color: #FFB019;
+
+$primary: "light-blue";
+$accent: "amber";
 $warn: "brown";
 
 @import 'ember-paper';
@@ -26,6 +29,18 @@ $warn: "brown";
         width: 75%;
       }
     }
+  }
+}
+
+@mixin xs {
+  @media only screen and (max-width: 560px) {
+    @content
+  }
+}
+
+@mixin xxs {
+  @media only screen and (max-width: 500px) {
+    @content
   }
 }
 
@@ -153,7 +168,7 @@ section {
   display: flex;
   width: 100%;
   max-width: 1500px;
-  border-bottom: 1px solid color($primary, '700');
+  border-bottom: 1px solid color($primary, 'A400');
 }
 
 #logo {
@@ -161,7 +176,7 @@ section {
   width: 50px;
   font-size: 40px;
   letter-spacing: 2px;
-  color: color($primary, '700');
+  color: color($primary, 'A400');
   text-transform: uppercase;
   margin-left: 5rem;
   @include small {
@@ -178,12 +193,12 @@ section {
 }
 
 .background--blur {
-  background: color($warn, '100');
+  background: color($primary, '50');
 }
 
 .menu {
   font-size:2rem;
-  color: color($accent, '700');
+  color: color($accent, '600');
 }
 
 .menu div {
@@ -194,7 +209,7 @@ section {
 
 .menu a {
   text-decoration: none;
-  color: color($primary, '700')
+  color: color($primary, 'A400')
 }
 
 .menu a:hover {
@@ -275,7 +290,7 @@ section {
   display: block;
   width: 100px;
   height: 5px;
-  background: color($primary, '700');
+  background: color($primary, 'A400');
   position: relative;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
@@ -345,14 +360,14 @@ section {
 //end navigation
 
 header a {
-  color: color($primary, 'A700');
+  color: color($primary, 'A400');
   letter-spacing: 2px;
   text-decoration: none;
 }
 
 #header-title {
   @include small {
-    padding-left: 1%;
+    padding-left: 2%;
   }
 }
 
@@ -366,50 +381,80 @@ header a {
 
 #index {
   display:flex;
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
-  background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/iphone-wood.jpg);
+  background: linear-gradient(rgba(255, 176, 25, 0.1), rgba(255, 176, 25, 0.1)), url(../assets/images/iphone-wood.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  min-height: 100%;
+  min-height: 66.6vmin;
   z-index: -1;
+  @include small {
+    background-position: top center;
+  }
+  @include xs {
+    background-size: contain;
+  }
 }
 
 .index-text {
-  flex: 100%;
+  flex: 0 1 auto;
+  padding-top: 2rem;
   align-self: center;
   text-align: center;
+  text-shadow: color($primary, 'A400') 0px 0px 1px;
 }
 
 .index-bottom {
-  color: color($primary, '700');
+  color: color($primary, 'A400');
 }
 
 #index-text-hand-delivered {
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 34px;
-  color: #eee;
+  color: color($primary, 'A400');
   font-weight: 300;
+  @include xs {
+    padding-top: 1em;
+    font-size: 26px;
+  }
+  @include xxs {
+    padding-top: 0;
+  }
 }
 
 #index-text-one-hour {
   padding-top: 0.5em;
   font-size: 48px;
-  color: #eee;
+  color: color($primary, 'A400');
   font-weight: 300;
+  @include xs {
+    padding-top: 0.3em;
+  }
+  @include xxs {
+    font-size: 36px;
+  }
 }
 
 #device-selection-text {
   font-size: 36px;
   text-align: center;
+  justify-content: center;
   display: inherit;
   margin: 0 auto;
-  color: #eee;
-  @include small {
-    font-size: 28px;
+  color: color($primary, 'A400');
+  h3 {
+    font-weight: 300;
+    text-shadow: color($primary, 'A400') 0px 0px 1px;
+    margin-bottom: 0;
+    letter-spacing: 0.2ch;
+    @include small {
+      font-size: 30px;
+    }
+    @include xs {
+      margin-top: 0;
+      letter-spacing: 0.1ch;
+      padding-top: 0.2em;
+    }
   }
 }
 
@@ -426,17 +471,12 @@ hr {
   line-height: 0;
   clear: both;
   border: none;
-  border-bottom: 1px solid color($primary, 'A700');
+  border-bottom: 1px solid color($primary, 'A400');
   margin-bottom:-1px;
 }
 
-#device-selection-text h3 {
-  margin-bottom: 0;
-  letter-spacing: 0.1em;
-}
-
 #model-selection-text, #network-selection-text {
-  color: color($primary, '500');
+  color: color($primary, 'A400');
   justify-content: center;
   text-align: center;
 }
@@ -458,12 +498,16 @@ hr {
 
 .reset-button {
   padding-bottom: 5em;
+  button {
+    font-size: 24px;
+    height: 2em;
+    width: 12em;
+  }
 }
 
 .final-device-selection {
   justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-top: 2rem;
 }
 
 .buttons .md-button {
@@ -471,20 +515,14 @@ hr {
   height: 80px;
   font-size: 24px;
   @include small {
-    width: 150px;
-    height: 80px;
+    width: 130px;
+    height: 60px;
     font-size: 18px;
   }
-}
-
-#iphone-button .md-fab {
-  width: 170px;
-  height: 170px;
-  font-size: 24px;
-  @include small {
-    width: 125px;
-    height: 125px;
-    font-size: 18px;
+  @include xxs {
+    width: 110px;
+    height: 45px;
+    font-size: 16px;
   }
 }
 
@@ -496,45 +534,36 @@ hr {
   @include small {
     margin: 0.5rem;
   }
+  @include xs {
+    padding: 0.5em;
+  }
+  @include xxs {
+    padding: 0;
+  }
 }
 
 #iphone-button, #ipad-button, #samsung-button {
   text-align: center;
   margin-top: 1rem;
-  color: color($accent, '700');
-}
-
-#iphone-button {
+  color: color($accent, '600');
   padding-top:6%;
-  @include small {
-
+  @include xs {
+    padding-top: 2%;
   }
 }
 
-#ipad-button {
-  padding-top:6%;
-  @include small {
-
-  }
+.md-button.md-primary.md-raised {
+  color: color($accent, '600')!important;
 }
 
 .md-button.md-raised:hover {
-  color: color($accent, '700')!important;
-}
-
-#samsung-button {
-
-  padding-top:6%;
-  @include small {
-
-  }
+  color: color($primary, 'A400')!important;
+  background-color: color($accent, '600')!important;
 }
 
 .buttons button:hover {
-  -webkit-transform: translate3d(0, -1%, 0);
-  transform: translate3d(0, -1%, 0);
-  transition: all 0.2s ease;
-  -webkit-transition: all 0.2s ease;
+  background-color: color($accent, '600');
+  color: white;
 }
 
 .device * .md-label {
@@ -567,6 +596,8 @@ hr {
 }
 
 .index-bottom {
+  color: color($primary, 'A400');
+  background-color: #FFFFFF;
   padding-bottom: 3rem;
   justify-content: center;
   align-items: center;
@@ -577,15 +608,14 @@ hr {
 
 .index-bottom h1 {
   text-align: center;
+  letter-spacing: 0.5ch;
 }
 
 #simple-easy {
   padding-bottom: 3em;
   text-align: center;
-  @include small {
-    padding-bottom: 0;
-    display: block;
-  }
+  align-items: center;
+  justify-content: center;
 }
 
 #timer, #appointment, #get-paid {
@@ -595,15 +625,43 @@ hr {
 
 #see-price-text, #appt-text, #paid-text {
   justify-content: center;
-  align-items:center;
+  align-items:baseline;
   padding-top:2rem;
   padding-bottom: 2rem;
   margin: 0 auto;
   h2 {
     padding-left: 6em;
+    font-size: 28px;
+    font-weight: bold;
     @include small {
-      font-size: 18px;
+      font-size: 22px;
+      margin-top: 0;
     }
+  }
+  @include small {
+    align-items: center;
+  }
+}
+
+.icon-text {
+  width: 66vw;
+  @include xs {
+    width: 70vw;
+  }
+  @include xxs {
+    width: 72vw;
+  }
+}
+
+.icon-text p {
+  margin:0;
+  width: 70%;
+  float: right;
+  @include xs {
+    width: 65%;
+  }
+  @include xxs {
+    width: 61%;
   }
 }
 
@@ -613,8 +671,8 @@ hr {
   }
 }
 
-md-icon.md-default-theme, .md-icon {
-  color: color($primary, 'A700');
+.layout-row md-icon.md-default-theme, .md-icon {
+  color: color($accent, '600');
 }
 
 .buybacker-team {
@@ -630,8 +688,7 @@ md-icon.md-default-theme, .md-icon {
 }
 
 .about-text {
-  color: color($primary, '700');
-  text-shadow: color($primary, 'A100') 0px 0px 1px,   color($primary, 'A100') 0px 0px 1px,   color($primary, 'A100') 0px 0px 1px;
+  color: color($primary, 'A400');
   text-align: center;
 }
 
@@ -642,8 +699,7 @@ md-icon.md-default-theme, .md-icon {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  color: color($primary, '700');
-  text-shadow: color($primary, 'A100') 0px 0px 1px,   color($primary, 'A100') 0px 0px 1px,   color($primary, 'A100') 0px 0px 1px;
+  color: color($primary, 'A400');
   @include small {
     height: 210px;
   }
@@ -664,12 +720,20 @@ md-icon.md-default-theme, .md-icon {
     text-align: center;
     width: 80%;
   }
+  button {
+    font-size: 18px;
+    align-self: center;
+    width: 12em;
+    height: 1.5em;
+  }
 }
 
 #model-change-text h3 {
   padding-bottom: 1em;
   margin: 0 auto;
 }
+
+
 
 .no-model {
   padding-top: 5em;
@@ -688,7 +752,7 @@ md-icon.md-default-theme, .md-icon {
 
 .device-network .device_title {
   font-weight: 300;
-  color: color($primary, '500');
+  color: color($primary, 'A400');
   text-align: center;
   text-shadow: 0 0 1px #EEE, 0 0 2px #DDD;
 }
@@ -707,6 +771,28 @@ md-icon.md-default-theme, .md-icon {
   padding: 2em;
   min-width: 100px;
   height: 50px;
+}
+
+#T-Mobile {
+  margin-top: 1.5em;
+  height: 28px;
+}
+
+#Other {
+  width: auto;
+  min-width: 38%;
+  padding-left: 38%;
+}
+
+#Other + div {
+  padding-left: 15%
+}
+
+#Unlocked {
+  margin-left:6%;
+  + div {
+    margin-left: 6%;
+  }
 }
 
 .user-selection {
@@ -735,10 +821,10 @@ md-icon.md-default-theme, .md-icon {
 }
 
 .device-price span {
-  color: color($accent, '700')!important;
+  color: color($accent, '600')!important;
   font-weight: 400;
   .money-icon, md-icon.md-default-theme {
-    color: color($accent, '700') !important;
+    color: color($accent, '600') !important;
     margin-left: -1.8rem;
     padding-right: 2.5rem;
     margin-bottom: 0.5rem;
@@ -746,7 +832,7 @@ md-icon.md-default-theme, .md-icon {
 }
 
 md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
-  color: color($primary, '700');
+  color: color($primary, 'A400');
 }
 
 .price-page-top {
@@ -801,7 +887,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .size-condition .md-label span {
   @include small {
-    color: color($primary, '700');
+    color: color($primary, 'A400');
     font-size: 8px;
     font-weight: 400;
   }
@@ -816,8 +902,8 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 28px;
     @include small {
       width: 100%;
+      letter-spacing: 0.2ch;
       font-size: 20px;
-      letter-spacing: 0.5ch;
     }
   }
 }
@@ -852,14 +938,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .navigation {
-  color: color($primary, '700');
+  color: color($primary, 'A400');
   width: 50%;
   display:flex;
   justify-content: space-around;
 }
 
 .navigation a {
-  color: color($primary, '700');
+  color: color($primary, 'A400');
   text-decoration: none;
 }
 

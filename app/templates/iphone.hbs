@@ -15,7 +15,7 @@
                 {{device-model send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
             {{/each}}
         </div>
-        <div class="layout-row layout-md-column" id="model-change-text">
+        <div class="layout-column" id="model-change-text">
             <h3>Showing models for: {{selectedDevice.device_attributes.device}}</h3>
             {{#paper-button raised=true primary=true onClick=(action "selectNewDevice")}}Select New Device{{/paper-button}}
         </div>
