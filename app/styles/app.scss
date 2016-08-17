@@ -168,21 +168,18 @@ section {
   display: flex;
   width: 100%;
   max-width: 1500px;
-  border-bottom: 1px solid color($primary, 'A400');
 }
 
 #logo {
-  align-self: center;
-  width: 50px;
-  font-size: 40px;
-  letter-spacing: 2px;
-  color: color($primary, 'A400');
-  text-transform: uppercase;
-  margin-left: 5rem;
-  @include small {
-    margin-left:1rem;
-    text-align:center;
+  width: 400px;
+  margin-left: 1%;
+  @include xs {
+    width:75%;
   }
+}
+
+svg {
+  object-fit: contain;
 }
 
 .wrapper {
@@ -269,9 +266,10 @@ section {
 }
 
 .material-design-hamburger {
-  background-color: #FFFFFF;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid color($primary, 'A400');
 }
 
 .material-design-hamburger button {
@@ -295,7 +293,8 @@ section {
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
   @include small {
-    height: 10px;
+    height: 6px;
+    width:60px;
   }
 }
 
@@ -310,7 +309,7 @@ section {
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
   @include small {
-    height: 10px;
+    height: 6px;
   }
 }
 
@@ -381,7 +380,7 @@ header a {
 
 #index {
   display:flex;
-  background: linear-gradient(rgba(255, 176, 25, 0.1), rgba(255, 176, 25, 0.1)), url(../assets/images/iphone-wood.jpg);
+  //background: linear-gradient(rgba(255, 176, 25, 0.1), rgba(255, 176, 25, 0.1)), url(../assets/images/iphone-wood.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -393,6 +392,22 @@ header a {
   @include xs {
     background-size: contain;
   }
+}
+
+#header-bg-video {
+  position: fixed;
+  max-height: 100vmax;
+  width: 101vmax;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-34%);
+  transform: translateX(-50%) translateY(-34%);
+  background-size: contain;
+  background-position: center center;
+}
+
+#header-bg-video:before {
+  content: '';
+  position: absolute;
 }
 
 .index-text {
@@ -553,17 +568,15 @@ hr {
 }
 
 .md-button.md-primary.md-raised {
-  color: color($accent, '600')!important;
+  color: #FFFFFF!important;
 }
 
 .md-button.md-raised:hover {
-  color: color($primary, 'A400')!important;
-  background-color: color($accent, '600')!important;
+   background-color: color($primary, '800')!important;
 }
 
-.buttons button:hover {
-  background-color: color($accent, '600');
-  color: white;
+.md-button.md-raised:active {
+  background-color: color($primary, '800')!important;
 }
 
 .device * .md-label {
