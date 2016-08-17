@@ -612,10 +612,11 @@ hr {
 }
 
 #simple-easy {
+  display: flex;
   padding-bottom: 3em;
   text-align: center;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: left;
 }
 
 #timer, #appointment, #get-paid {
@@ -625,12 +626,13 @@ hr {
 
 #see-price-text, #appt-text, #paid-text {
   justify-content: center;
-  align-items:baseline;
+  text-align: center;
+  align-items: flex-start;
   padding-top:2rem;
   padding-bottom: 2rem;
   margin: 0 auto;
   h2 {
-    padding-left: 6em;
+    padding-left: 2.6em;
     font-size: 28px;
     font-weight: bold;
     @include small {
@@ -639,12 +641,12 @@ hr {
     }
   }
   @include small {
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
 .icon-text {
-  width: 66vw;
+  width: 33vw;
   @include xs {
     width: 70vw;
   }
@@ -881,7 +883,7 @@ input[type=number]::-webkit-outer-spin-button {
   width:95%;
   @include small {
     width: 100%;
-    font-size: 14px;
+    font-size: 50px;
   }
 }
 
