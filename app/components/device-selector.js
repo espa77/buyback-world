@@ -32,15 +32,8 @@ export default Component.extend({
             get(this, 'selectedDevice').addDevice(deviceVal);
             this.send(deviceVal);
         },
-        iPadSelection() {
-            let deviceVal = "iPad";
-            get(this, 'selectedDevice').addDevice(deviceVal);
-            this.send(deviceVal);
-        },
-        samsungSelection() {
-            let deviceVal = "Galaxy";
-            get(this, 'selectedDevice').addDevice(deviceVal);
-            this.send(deviceVal);
+        otherDeviceSelection() {
+            this.sendAction('other-device-selector');   
         }
     }
 
