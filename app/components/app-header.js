@@ -85,5 +85,6 @@ export default Component.extend({
                 scrollTop: target
             }, 500);
         },
+        
     }
 });

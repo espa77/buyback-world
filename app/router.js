@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('price');
   this.route('thanks');
   this.route('page-not-found', { path: '/*wildcard' });
+  this.route('other-device-selector');
 });
 
 

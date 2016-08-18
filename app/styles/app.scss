@@ -270,7 +270,12 @@ svg {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid color($primary, 'A400');
+  transition: all 0.4s ease;
 }
+.material-design-hamburger-hide {
+  top: -44px;
+}
+
 
 .material-design-hamburger button {
   display: block;
@@ -591,6 +596,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: larger;
 }
 
 .device-network .md-label {
@@ -625,9 +631,10 @@ hr {
 }
 
 #simple-easy {
+  display: flex;
   padding-bottom: 3em;
   text-align: center;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -638,12 +645,13 @@ hr {
 
 #see-price-text, #appt-text, #paid-text {
   justify-content: center;
-  align-items:baseline;
+  text-align: center;
+  align-items: flex-start;
   padding-top:2rem;
   padding-bottom: 2rem;
   margin: 0 auto;
   h2 {
-    padding-left: 6em;
+    padding-left: 2.6em;
     font-size: 28px;
     font-weight: bold;
     @include small {
@@ -652,12 +660,12 @@ hr {
     }
   }
   @include small {
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
 .icon-text {
-  width: 66vw;
+  width: 33vw;
   @include xs {
     width: 70vw;
   }
@@ -894,7 +902,7 @@ input[type=number]::-webkit-outer-spin-button {
   width:95%;
   @include small {
     width: 100%;
-    font-size: 14px;
+    font-size: 50px;
   }
 }
 
