@@ -8,7 +8,7 @@
     </div>
     <br>
     {{#if selectedDevice.device_attributes.network}}
-        {{#paper-button raised=true onClick=(action "goBack")}}Go Back{{/paper-button}}
+        {{#paper-button raised=true primary=true onClick=(action "goBack")}}Go Back{{/paper-button}}
     {{else}}
         {{#if selectedDevice.device_attributes.device}}
             {{#paper-button raised=true onClick=(action "newDevice")}}Select New Device{{/paper-button}}

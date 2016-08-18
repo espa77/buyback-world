@@ -3,18 +3,18 @@
      {{#unless userSelectedDevice}}
              {{index-text}}
      {{/unless}}
-         <video loop autoplay preload="none" poster="assets/videos/coffee-shop-first00.jpg" id="header-bg-video">
+         <video loop autoplay="autoplay" preload="none" poster="assets/videos/coffee-shop-first00.jpg" id="header-bg-video">
              <source src="assets/videos/coffee-shop-iphone.mp4">
          </video>
      </div>
 
      {{#unless userSelectedDevice}}
-         <div class="device-type selector flex">
+         <div class="device-type selector flex" id="index-button-container">
              {{device-selector send=(action 'deviceSelected')}}
          </div>
      {{else}}
          {{#if userSelectedDevice}}
-             <div class="device-type selector flex">
+             <div class="device-type selector flex" id="index-button-container">
                  {{device-selector send=(action 'deviceSelected')}}
              </div>
          {{/if}}
@@ -25,22 +25,22 @@
      <div class="index-bottom flex sec02">
          <br>
          <h1>HOW IT WORKS</h1>
-         <div class="layout-row layout-xs-column" id="simple-easy">
-             <div id="see-price-text" class="layout-column flex">
+         <div class="layout-column" id="simple-easy">
+             <div class="layout-row flex" id="see-price-text">
                  {{paper-icon "forward-30" size=80}}
                  <div class="flex icon-text">
                     <h2>Instant Quote</h2>
                     <p>Simply choose your device and see how much you're going to get paid.</p>
                  </div>
              </div>
-             <div class="layout-column flex" id="appt-text">
+             <div class="layout-row flex" id="appt-text">
                  {{paper-icon "person-pin" size=80}}
                  <div class="flex icon-text">
                      <h2>Same Day Payment</h2>
                      <p>We'll text you so you can tell us the best time to bring you money and pick-up your old device.</p>
                  </div>
              </div>
-             <div class="layout-column flex" id="paid-text">
+             <div class="layout-row flex" id="paid-text">
                  {{paper-icon "monetization-on" size=80}}
                  <div class="flex icon-text">
                      <h2>Easiest Fastest Funnest</h2>

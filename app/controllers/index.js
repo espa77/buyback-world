@@ -35,8 +35,8 @@ export default Controller.extend({
     actions: {
         deviceSelected(deviceVal) {
             let device = deviceVal.toLowerCase();
-            if (device === "galaxy") {
-                return this.transitionToRoute("samsung");
+            if (device === "other") {
+                return this.transitionToRoute("other-device");
             }
             this.transitionToRoute(device);
         }

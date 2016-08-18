@@ -3,7 +3,7 @@ import Ember from 'ember';
 const {
     Component,
     get,
-    set
+    send
 } = Ember;
 
 export default Component.extend({
@@ -32,8 +32,9 @@ export default Component.extend({
             get(this, 'selectedDevice').addDevice(deviceVal);
             this.send(deviceVal);
         },
-        otherDeviceSelection() {
-            this.sendAction('other-device-selector');   
+        transition() {
+            let deviceVal = "other";
+            this.send(deviceVal);
         }
     }
 
