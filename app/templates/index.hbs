@@ -1,11 +1,9 @@
  <div class="layout-column flex" id="index">
      <div class="flex index-text sec01">
      {{#unless userSelectedDevice}}
-             {{index-text}}
+         {{index-text}}
      {{/unless}}
-         <video loop autoplay="autoplay" preload="none" poster="assets/videos/coffee-shop-first00.jpg" id="header-bg-video">
-             <source src="assets/videos/coffee-shop-iphone.mp4">
-         </video>
+        {{index-video}}
      </div>
 
      {{#unless userSelectedDevice}}
@@ -23,25 +21,23 @@
 
  {{#unless userSelectedDevice}}
      <div class="index-bottom flex sec02">
-         <br>
-         <h1>HOW IT WORKS</h1>
          <div class="layout-column" id="simple-easy">
              <div class="layout-row flex" id="see-price-text">
-                 {{paper-icon "forward-30" size=80}}
+                 <img src="assets/images/instant-quote.png" height="100px"/>
                  <div class="flex icon-text">
                     <h2>Instant Quote</h2>
                     <p>Simply choose your device and see how much you're going to get paid.</p>
                  </div>
              </div>
              <div class="layout-row flex" id="appt-text">
-                 {{paper-icon "person-pin" size=80}}
+                 <img src="assets/images/same-day-payment.png" height="85px" />
                  <div class="flex icon-text">
                      <h2>Same Day Payment</h2>
                      <p>We'll text you so you can tell us the best time to bring you money and pick-up your old device.</p>
                  </div>
              </div>
              <div class="layout-row flex" id="paid-text">
-                 {{paper-icon "monetization-on" size=80}}
+                 <img src="assets/images/friendly-girl.png" height="100px" />
                  <div class="flex icon-text">
                      <h2>Easiest Fastest Funnest</h2>
                      <p>Seriously, our competitors are freaking out so if you don't mind waiting a month to get paid we'd love to send them some customers.</p>

@@ -44,6 +44,12 @@ $warn: "brown";
   }
 }
 
+@mixin medium-xs {
+  @media only screen and (max-width: 863px) {
+    @content
+  }
+}
+
 @mixin smaller {
   @media only screen and (max-width: 650px) {
     @content
@@ -124,14 +130,13 @@ $warn: "brown";
 
 @keyframes slide-up {
   from {
-    opacity: 0.3;
-    -webkit-transform: translate3d(0, 50%, 0);
-    transform: translate3d(0, 50%, 0);
-  }
-  to {
-    opacity: 1;
     -webkit-transform: none;
     transform: none;
+
+  }
+  to {
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
   }
 }
 @media only screen and (min-width: 961px) {
@@ -194,6 +199,14 @@ section {
   max-width: 1500px;
 }
 
+.sticky {
+  opacity: 0;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
 #logo {
   width: 400px;
   margin-left: 1%;
@@ -204,6 +217,10 @@ section {
 
 svg {
   object-fit: contain;
+}
+
+.menu svg {
+  width: 200px;
 }
 
 .wrapper {
@@ -218,18 +235,19 @@ svg {
 }
 
 .menu {
-  font-size:2rem;
+  font-size:24px;
   color: color($accent, '600');
 }
 
 .menu div {
-  margin: 1em;
-  padding-bottom: 1em;
   border-bottom: 1px solid #ccc;
+  margin:0;
 }
 
 .menu a {
   text-decoration: none;
+  margin:0;
+  padding:0;
   color: color($primary, 'A400')
 }
 
@@ -284,8 +302,8 @@ svg {
 .menu--on div {
   height: auto;
   width: auto;
-  margin: 1em;
-  padding-bottom: 1em;
+  margin: 5%;
+  padding-bottom: 5%;
   border-bottom: 1px solid #ccc;
 }
 
@@ -320,7 +338,7 @@ svg {
   display: block;
   width: 100px;
   height: 5px;
-  background: color($primary, 'A400');
+  background: white;
   position: relative;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
@@ -406,34 +424,27 @@ svg {
   background-position: center center;
   min-height: 70vmin;
   z-index: -1;
-  @include small {
-    max-height: 52vmax;
-    background-position: top center;
-  }
-  @include xs {
-    background-size: contain;
-  }
 }
 
 #header-bg-video {
   position: absolute;
   max-height: 100vmax;
-  width: 101vmax;
+  width: 100vmax;
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   background-size: contain;
   background-position: top center;
   @include large {
-    width: 118vmax;
+    transform: translateX(-50%) translateY(-52%);
   }
   @include medium {
-    width: 142vmax;
+    transform: translateX(-50%) translateY(-55%);
   }
   @include small {
-    width: 101vmax;
-    transform: translateX(-50%) translateY(-80%);
+    transform: translateX(-50%) translateY(-50%);
   }
+
 }
 
 .index-text {
@@ -441,47 +452,41 @@ svg {
   margin-top: 10rem;
   align-self: center;
   text-align: center;
-  color: color($primary, 'A400');
-}
-
-#index-text-hand-delivered {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 34px;
-  font-weight: 300;
-  @include xs {
-    font-weight: 400;
-    font-size: 24px;
-    margin-top: -2em;
-  }
-  @include xxs {
-    padding-top: 0;
-  }
+  color: white;
 }
 
 #index-text-one-hour {
-  color: color($primary, 'A400');
-  padding-top: 0.5em;
+  color: white;
+  width: 58%;
+  margin: 0 auto;
   font-size: 48px;
   font-weight: 700;
+  @include medium {
+    width: 62%;
+  }
+  @include medium-xs {
+    width: 64%;
+  }
   @include small {
-    padding-top:0.3em;
+    width: 72%;
+    font-size: 40px;
   }
   @include xs {
-    padding-top:0.5em;
-    font-size: 40px;
+    width: 78%;
   }
   @include xxs {
     font-size: 34px;
+    width: 80%;
   }
 }
 
 #device-selection-text {
+  display: none;
   color: color($accent, '600');
   font-size: 36px;
   text-align: center;
   justify-content: center;
-  display: inherit;
+
   margin: 0 auto;
   h3 {
     font-weight: 300;
@@ -564,17 +569,18 @@ hr {
 
 .buttons .md-button {
   width: 200px;
-  height: 80px;
+  height: 50px;
+  text-transform: none;
   font-size: 24px;
   @include small {
-    width: 130px;
-    height: 60px;
-    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
   }
   @include xxs {
     width: 110px;
     height: 45px;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -595,6 +601,7 @@ hr {
 }
 
 #iphone-button, #ipad-button, #samsung-button {
+  color: #FFF;
   text-align: center;
   margin-top: 1rem;
   padding-top:6%;
@@ -603,8 +610,31 @@ hr {
   }
 }
 
+.buttons > .md-button {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  background-color: color($accent, '600')!important;
+  color: #FFF!important;
+  @include small {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @include smaller {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
 .md-button.md-primary.md-raised {
   color: #FFFFFF!important;
+}
+
+.buttons > .md-button.md-raised:hover {
+  background-color: color($accent, '800')!important;
+}
+
+.buttons > .md-button.md-raised:active {
+  background-color: color($accent, '800')!important;
 }
 
 .md-button.md-raised:hover {
@@ -653,10 +683,10 @@ hr {
   align-items: center;
   @include small {
     padding-bottom: 2rem;
-    margin-top:-10em;
+    margin-top:-4em;
   }
   @include smaller {
-    margin-top: -5em;
+    margin-top: 0;
   }
   @include xs {
     margin-top: 6em;
