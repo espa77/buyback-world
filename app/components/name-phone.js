@@ -7,7 +7,7 @@ const {
 } = Ember;
 
 export default Component.extend({
-    selectedDevice: inject.service('selected-device'),
+    selectedDevice: inject.service(),
 
     name: null,
     phone: null,

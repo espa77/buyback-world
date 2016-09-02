@@ -1,52 +1,60 @@
  <div class="layout-column flex" id="index">
      <div class="flex index-text sec01">
-     {{#unless userSelectedDevice}}
          {{index-text}}
-     {{/unless}}
-        {{index-video}}
      </div>
 
-     {{#unless userSelectedDevice}}
-         <div class="device-type selector flex" id="index-button-container">
-             {{device-selector send=(action 'deviceSelected')}}
-         </div>
-     {{else}}
-         {{#if userSelectedDevice}}
-             <div class="device-type selector flex" id="index-button-container">
-                 {{device-selector send=(action 'deviceSelected')}}
-             </div>
-         {{/if}}
-     {{/unless}}
+     <div class="device-type selector flex" id="index-button-container">
+         {{device-selector send=(action 'deviceSelected')}}
+     </div>
  </div>
 
- {{#unless userSelectedDevice}}
-     <div class="index-bottom flex sec02">
-         <div class="layout-column" id="simple-easy">
-             <div class="layout-row flex" id="see-price-text">
-                 <img src="assets/images/instant-quote.png" height="100px"/>
-                 <div class="flex icon-text">
-                    <h2>Instant Quote</h2>
-                    <p>Simply choose your device and see how much you're going to get paid.</p>
-                 </div>
+
+ <div class="index-bottom flex sec02">
+     <div class="layout-xs-column layout-row" id="simple-easy">
+         <div class="layout-row layout-gt-xs-column flex" id="see-price-text">
+             <img src="assets/images/instant-quote.png" class="index-icon" id="index-icon-quote" height="100" alt="instant quote icon"/>
+             <div class="flex icon-text">
+                 <h2>Instant Quote</h2>
+                 <p>Simply choose your device and see how much you're going to get paid.</p>
              </div>
-             <div class="layout-row flex" id="appt-text">
-                 <img src="assets/images/same-day-payment.png" height="85px" />
-                 <div class="flex icon-text">
-                     <h2>Same Day Payment</h2>
-                     <p>We'll text you so you can tell us the best time to bring you money and pick-up your old device.</p>
-                 </div>
+         </div>
+         <div class="layout-row layout-gt-xs-column flex" id="appt-text">
+             <img src="assets/images/same-day-payment.png"  class="index-icon" id="index-icon-payment" height="100" alt="same day payment icon"/>
+             <div class="flex icon-text">
+                 <h2>Same Day Payment</h2>
+                 <p>We'll text you so you can tell us the best time to bring you money and pick-up your old device.</p>
              </div>
-             <div class="layout-row flex" id="paid-text">
-                 <img src="assets/images/friendly-girl.png" height="100px" />
-                 <div class="flex icon-text">
-                     <h2>Easiest Fastest Funnest</h2>
-                     <p>Seriously, our competitors are freaking out so if you don't mind waiting a month to get paid we'd love to send them some customers.</p>
-                 </div>
+         </div>
+         <div class="layout-row layout-gt-xs-column flex" id="paid-text">
+             <img src="assets/images/friendly-girl.png"  class="index-icon" id="index-icon-girl" height="100" alt="friendly staff icon"/>
+             <div class="flex icon-text">
+                 <h2>Buybackers</h2>
+                 <p>Our team loves helping people. It's what we do best, and we're here to answer any question you may have.</p>
              </div>
          </div>
      </div>
-     <hr>
- {{/unless}}
+ </div>
+ <div class="layout-row layout-xs-column index-footer">
+    <div class="buybacker-team">
+        <img src="assets/images/buybacker-team.jpg" alt="buybacker team"/>
+    </div>
+     <div class="index-footer-text">
+        <div id="buybacker-team-text">
+        <h4>Our Buybackers are some of the nicest people you'll ever meet. Fun, professional, and smart - you'll wish we didn't have to leave so soon.</h4>
+        </div>
+     </div>
+ </div>
+
+
+ <div id="buybacker-help-text">
+     <h4>We'll help you with anything you need. From meeting you during your lunch break at the office to wiping all the data from your old device, our job is to make you happy.</h4>
+ </div>
+ <div id="buybacker-start-text">
+     <h4>We started Buybackers because we wanted to create the fastest and most convenient way for you to sell your old devices. Thank you to all of our amazing customers who love getting paid in as little as one hour.</h4>
+ </div>
+ <div id="buybacker-bring-money-text">
+     <h4>Buybackers will come bring you money anywhere in New York City. We're working on launching in San Francisco, Los Angeles, Boston, and many other cities around the world. Stay tuned and we'll see you soon!</h4>
+ </div>
 
  {{liquid-outlet}}
 

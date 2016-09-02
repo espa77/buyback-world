@@ -1,5 +1,5 @@
 {{#paper-radio-group groupValue=selectedDevice.device_attributes.size onChange=(action (mut selectedDevice.device_attributes.size)) as |group|}}
-    {{#group.paper-radio value=size primary=true}}
+    {{#group.paper-radio value=size accent=true}}
         {{size}} GB
     {{/group.paper-radio}}
 {{/paper-radio-group}}

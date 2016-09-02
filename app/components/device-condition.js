@@ -6,7 +6,7 @@ const {
 } = Ember;
 
 export default Component.extend({
-    selectedDevice: inject.service('selected-device'),
+    selectedDevice: inject.service(),
 
     classNameBindings: ['layout'],
     layout: 'flex layout-row'

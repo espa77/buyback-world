@@ -6,15 +6,4 @@
     <div class="card-media flex">
         <img src="assets/images/{{image}}" width="150px" alt="{{selectedDevice.device_attributes.device}}" title="{{selectedDevice.device}}" />
     </div>
-    <br>
-    {{#if selectedDevice.device_attributes.network}}
-        {{#paper-button raised=true primary=true onClick=(action "goBack")}}Go Back{{/paper-button}}
-    {{else}}
-        {{#if selectedDevice.device_attributes.device}}
-            {{#paper-button raised=true onClick=(action "newDevice")}}Select New Device{{/paper-button}}
-        {{/if}}
-        {{#if selectedDevice.device_attributes.model}}
-            {{#paper-button raised=true onClick=(action "newModel")}}Select New Model{{/paper-button}}
-        {{/if}}
-    {{/if}}
 </div>

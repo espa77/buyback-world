@@ -1,5 +1,8 @@
 {{#if uniqueModel}}
     {{#if selectedDevice.device_attributes.model}}
+        <div class="layout-row layout-md-column" id="model-selection-text">
+            <h2>Choose A Different Galaxy</h2>
+        </div>
         <div class="device-model selector">
             {{#each uniqueModel as |uniqueModel|}}
                 {{device-model deviceVal send=(action 'modelValue') id=uniqueModel.id device_model=uniqueModel.device_model image=uniqueModel.image}}
@@ -8,7 +11,7 @@
     {{/if}}
     {{#unless selectedDevice.device_attributes.model}}
         <div class="layout-row layout-md-column" id="model-selection-text">
-            <h2><em>What model Galaxy are you selling?</em></h2>
+            <h2><em>Choose Your Galaxy</em></h2>
         </div>
         <div class="device-model selector">
             {{#each uniqueModel as |uniqueModel|}}
@@ -17,7 +20,7 @@
         </div>
         <div class="layout-column" id="model-change-text">
             <h3>Showing models for: {{selectedDevice.device_attributes.device}}</h3>
-            {{#paper-button raised=true primary=true onClick=(action "selectNewDevice")}}Select New Device{{/paper-button}}
+            {{#paper-button raised=true onClick=(action "selectNewDevice")}}Select New Device{{/paper-button}}
         </div>
     {{/unless}}
 {{else}}

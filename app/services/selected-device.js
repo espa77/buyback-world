@@ -36,7 +36,6 @@ export default Service.extend({
     removeModel() {
         set(this, 'device_attributes.model', null);
     },
-
     addNetwork(item) {
         set(this, 'device_attributes.network', item);
     },
@@ -70,6 +69,12 @@ export default Service.extend({
     show() {
         return get(this, 'device_attributes');
     },
+    // changeHamburgerColorToBlue() {
+    //     document.getElementsByClassName('material-design-hamburger__layer')[0].style.background = '#00b0ff';
+    // },
+    // changeHamburgerColorToWhite() {
+    //     document.getElementsByClassName('material-design-hamburger__layer')[0].style.background = '#fff';
+    // },
     empty() {
         set(this, 'device_attributes.device', null);
         set(this, 'device_attributes.model', null);

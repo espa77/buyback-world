@@ -16,7 +16,7 @@ $warn: "brown";
       }
       100% {
         transform: rotate(-45deg);
-        margin: 3% -12%;
+        margin: 4% -11%;
         width: 75%;
       }
     }
@@ -25,10 +25,16 @@ $warn: "brown";
       }
       100% {
         transform: rotate(45deg);
-        margin: 3% -12%;
+        margin: 4% -11%;
         width: 75%;
       }
     }
+  }
+}
+
+@mixin xs-paper {
+  @media only screen and (min-width: 600px) and (max-width: 766px) {
+    @content
   }
 }
 
@@ -57,7 +63,7 @@ $warn: "brown";
 }
 
 @mixin xs {
-  @media only screen and (max-width: 560px) {
+  @media only screen and (max-width: 600px) {
     @content
   }
 }
@@ -81,7 +87,7 @@ $warn: "brown";
   }
   100% {
     transform: rotate(-45deg);
-    margin: 11% -12%;
+    margin: 10% -11%;
     width: 63.5%;
   }
 }
@@ -91,7 +97,7 @@ $warn: "brown";
   }
   100% {
     transform: rotate(45deg);
-    margin: 11% -12%;
+    margin: 10% -11%;
     width: 63.5%;
     @include small {
       margin: 3% -12%;
@@ -166,7 +172,7 @@ $warn: "brown";
 html {
   font-family: 'Comfortaa', cursive;
   width: 1500px;
-  max-width:105%;
+  max-width:100%;
   margin: 0 auto;
   height: auto;
   background: none;
@@ -192,6 +198,7 @@ html {
 //navigation
 
 section {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)); //background for header
   position: fixed;
   z-index:999;
   display: flex;
@@ -199,24 +206,35 @@ section {
   max-width: 1500px;
 }
 
+.main_h {
+  opacity:0;
+  transform: translate3d(0, -82px, 0);
+  transition: all 0.4s ease-in-out;
+}
+
 .sticky {
-  opacity: 0;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
   -moz-transition: opacity 0.4s ease-in-out;
   -o-transition: opacity 0.4s ease-in-out;
   -webkit-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 #logo {
-  width: 400px;
+  width: 40vh;
   margin-left: 1%;
-  @include xs {
-    width:66%;
+  @include small {
+    width:35vh;
+      -webkit-transform: scale(1)!important;
   }
 }
 
 svg {
   object-fit: contain;
+  @include small {
+    -webkit-transform: scale(1)!important;
+  }
 }
 
 .menu svg {
@@ -248,7 +266,7 @@ svg {
   text-decoration: none;
   margin:0;
   padding:0;
-  color: color($primary, 'A400')
+  color: #000;
 }
 
 .menu a:hover {
@@ -336,15 +354,15 @@ svg {
 
 .material-design-hamburger__layer {
   display: block;
-  width: 100px;
+  width: 60px;
   height: 5px;
-  background: white;
+  background: color($accent, '600');
   position: relative;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
   @include small {
-    height: 6px;
-    width:60px;
+    height: 4px;
+    width:40px;
   }
 }
 
@@ -359,23 +377,25 @@ svg {
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
   @include small {
-    height: 6px;
+    height: 4px;
   }
 }
 
 .material-design-hamburger__layer:before {
-  margin-bottom: 0.6rem;
-  bottom: 200%;
+  margin-bottom: 0.5rem;
+  bottom: 125%;
   @include small {
-    margin-bottom: 0;
+    margin-bottom: 0.3rem;
+    bottom: 200%
   }
 }
 
 .material-design-hamburger__layer:after {
-  margin-top: 0.6rem;
-  top: 200%;
+  margin-top: 0.5rem;
+  top: 125%;
   @include small {
-    margin-top: 0;
+    margin-top: 0.3rem;
+    top: 200%
   }
 }
 
@@ -422,61 +442,81 @@ svg {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  min-height: 70vmin;
   z-index: -1;
+  margin-bottom: 5%;
+  @include xs {
+    margin-bottom: 1%;
+  }
 }
 
 #header-bg-video {
   position: absolute;
+  top: 0;
   max-height: 100vmax;
   width: 100vmax;
   z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0);
   background-size: contain;
   background-position: top center;
   @include large {
-    transform: translateX(-50%) translateY(-52%);
+    transform: translateX(-50%) translateY(0);
   }
   @include medium {
-    transform: translateX(-50%) translateY(-55%);
+    transform: translateX(-50%) translateY(0);
   }
   @include small {
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(0);
   }
 
 }
 
 .index-text {
+  width: 90%;
   flex: 0 1 auto;
-  margin-top: 10rem;
+  margin-top: 12vmin;
+  padding-top: 10vmin;
+  padding-bottom: 2vmin;
+  margin-bottom: 2vmin;
   align-self: center;
   text-align: center;
-  color: white;
+  color: #000;
+  @include small {
+    width: 90%;
+  }
 }
 
+#index-text-money {
+  font-weight:100;
+  letter-spacing: 0.05ch;
+  text-transform: capitalize;
+  //text-align:start;
+  font-size: 60px;
+  padding-bottom:1vmax;
+}
+
+
 #index-text-one-hour {
-  color: white;
-  width: 58%;
+  //text-align:start;
   margin: 0 auto;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 300;
+  //text-shadow: #666 0px 1px 0;
   @include medium {
-    width: 62%;
+
   }
   @include medium-xs {
-    width: 64%;
+
   }
   @include small {
-    width: 72%;
-    font-size: 40px;
+    font-size: 16px;
   }
   @include xs {
-    width: 78%;
+
   }
   @include xxs {
-    font-size: 34px;
-    width: 80%;
+    font-size: 14px;
+
   }
 }
 
@@ -523,18 +563,28 @@ hr {
   margin-bottom:-1px;
 }
 
+#price-page-hr {
+  border-bottom: 1px solid #888;
+}
+
 #model-selection-text, #network-selection-text {
-  color: color($primary, 'A400');
+  color: #000;
+  margin: 0 auto;
   justify-content: center;
   text-align: center;
   margin-top: 70px;
+  @include small {
+    font-size: 14px;
+  }
 }
 
 .selector {
+  margin: 0 auto;
   display: flex;
+  max-width: 90%;
   justify-content: space-around;
   flex-wrap: wrap;
-  max-height:50%;
+  //max-height:10vmax;
 }
 
 .device-type {
@@ -578,7 +628,7 @@ hr {
     font-size: 20px;
   }
   @include xxs {
-    width: 110px;
+    width: 130px;
     height: 45px;
     font-size: 18px;
   }
@@ -637,12 +687,28 @@ hr {
   background-color: color($accent, '800')!important;
 }
 
+#model-change-text > .md-button.md-raised:hover {
+  background-color: color($accent, '800')!important;
+}
+
+#model-change-text > .md-button.md-raised:active {
+  background-color: color($accent, '800')!important;
+}
+
+.reset-button > .md-button.md-raised:hover {
+  background-color: color($accent, '800')!important;
+}
+
+.reset-button > .md-button.md-raised:active {
+  background-color: color($accent, '800')!important;
+}
+
 .md-button.md-raised:hover {
-   background-color: color($primary, '800')!important;
+   background-color: color($accent, '800')!important;
 }
 
 .md-button.md-raised:active {
-  background-color: color($primary, '800')!important;
+  background-color: color($accent, '800')!important;
 }
 
 .device * .md-label {
@@ -676,20 +742,19 @@ hr {
 }
 
 .index-bottom {
-  color: color($primary, 'A400');
+  color: #000;
   background-color: #FFFFFF;
-  padding-bottom: 3rem;
   justify-content: center;
   align-items: center;
   @include small {
-    padding-bottom: 2rem;
-    margin-top:-4em;
+    padding-bottom: 1rem;
+    //margin-top:-7em;
   }
   @include smaller {
-    margin-top: 0;
+    margin-top: -3em;
   }
   @include xs {
-    margin-top: 6em;
+    margin-top: 3em;
   }
 }
 
@@ -702,35 +767,92 @@ hr {
 #simple-easy {
   display: flex;
   padding-bottom: 3em;
+  @include xs-paper {
+    padding-top: 3rem;
+    padding-bottom: 0;
+  }
+  @include small {
+    padding-bottom: 0
+  }
 }
 
 #timer, #appointment, #get-paid {
   padding-right: 6.7em;
 }
 
+
 #see-price-text, #appt-text, #paid-text {
   justify-content: center;
-  align-items: baseline;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top:2rem;
   padding-bottom: 2rem;
+  align-items: flex-start;
+  padding-right:1%;
+  padding-top:4%;
   h2 {
-    padding-left: 30%;
+    text-align: center;
     font-size: 30px;
     font-weight: 700;
-    @include small {
-      font-size: 20px;
+    @include xs-paper {
+      text-align: center;
+      font-size: 18px;
       margin-top: 0;
+    }
+    @include xs {
+      text-align: left;
+      padding-left: 30%;
+    }
+  }
+  @include large {
+    img {
+      height: 90px;
+      width: 90px;
+    }
+  }
+  @include medium {
+    padding-right:0;
+    padding-left:0;
+    h2 {
+      font-size: 20px;
+    }
+  }
+  @include xs-paper {
+    align-items: flex-start;
+    padding-left:1%;
+    padding-right:1%;
+    padding-top:4%;
+    h2 {
+      font-size: 16px;
+    }
+    img {
+      height: 90px;
+      width: 90px;
     }
   }
   @include small {
     align-items: flex-start;
+    padding-left:1%;
+    padding-right:1%;
+    padding-top:4%;
+    h2 {
+      font-size: 16px;
+    }
+    img {
+      height: 90px;
+      width: 90px;
+    }
   }
 }
 
+.index-icon {
+  align-self:center;
+}
+
 .icon-text {
-  width: 33vw;
+  width: 100%;
+  padding-left: -4%;
+  @include xs-paper {
+    width: 100%;
+    margin-left:-4%;
+  }
   @include xs {
     width: 70vw;
   }
@@ -741,386 +863,554 @@ hr {
 
 .icon-text p {
   font-size: 12px;
-  margin:0;
-  width: 70%;
+  margin:0 auto;
+  width: 80%;
   float: right;
   @include xs {
     width: 70%;
   }
-  @include xxs {
-    width: 70%;
-  }
 }
 
-.paper-icon {
-  @include small {
-    margin: 0;
-  }
-}
-
-.layout-row md-icon.md-default-theme, .md-icon {
-  color: color($accent, '600');
-}
-
-#other-device-buttons {
-  margin-top: 100px;
-}
-
-.buybacker-team {
-  align-items:center;
-  background: url(../assets/images/buybacker-team-money.jpg);
-  height: 650px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  @include small {
-    height: 188px;
-  }
-}
-
-.about-text {
-  color: color($primary, 'A400');
-  text-align: center;
-}
-
-.contact {
-  text-align: center;
-  background: url(../assets/images/buybacker-contact.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: color($primary, 'A400');
-  @include small {
-    height: 210px;
-  }
-}
-
-.contact-text ul {
-  list-style: none;
-
-}
-
-#model-change-text {
-  padding-top: 0;
-  padding-bottom: 2em;
-  margin: 0 auto;
-  width: 50%;
-  @include small {
-    display: block;
-    text-align: center;
-    width: 80%;
-  }
-  button {
-    font-size: 18px;
-    align-self: center;
-    width: 12em;
-    height: 1.5em;
-  }
-}
-
-#model-change-text h3 {
-  padding-bottom: 1em;
-  margin: 0 auto;
-}
-
-.no-model {
-  padding-top: 5em;
-  padding-bottom: 5em;
-  margin: 0 auto;
-}
-
-.no-model h3 {
-  margin: 0 auto;
-  padding-bottom: 2em;
-}
-
-.device-network .md-ink-ripple {
-  display: none;
-}
-
-.device-network .device_title {
-  font-weight: 300;
-  color: color($primary, 'A400');
-  text-align: center;
-  text-shadow: 0 0 1px #EEE, 0 0 2px #DDD;
-}
-
-.img_device {
-  padding: 0.2em;
-  height: 200px;
-  @include small {
-    height: 100px;
-    padding: 0;
-  }
-}
-
-.img_network {
-  box-sizing: initial;
-  padding: 2em;
-  min-width: 100px;
-  height: 50px;
-  @include small {
-    padding:0;
-  }
-}
-
-#T-Mobile {
-  margin-top: 1.5em;
-  height: 28px;
-}
-
-#Other {
-  width: auto;
-  min-width: 38%;
-  padding-left: 38%;
-}
-
-#Other + div {
-  padding-left: 15%
-}
-
-#Unlocked {
-  margin-left:6%;
-  + div {
-    margin-left: 6%;
-  }
-}
-
-.user-selection {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.liquid-container {
-  width: 100%;
-}
-
-.price {
-  margin: 1rem;
-  padding-top:4rem;
-}
-
-.condition_list {
-  list-style: none;
-  padding: 0;
-}
-
-.device-price {
-  align-self: center;
-  font-size: 64px;
-  font-weight: 300;
-}
-
-.device-price span {
-  color: color($accent, '600')!important;
-  font-weight: 400;
-  .money-icon, md-icon.md-default-theme {
-    color: color($accent, '600') !important;
-    margin-left: -1.8rem;
-    padding-right: 2.5rem;
-    margin-bottom: 0.7rem;
-  }
-}
-
-md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
-  color: color($primary, 'A400');
-}
-
-.price-page-top {
-  padding-top:5%;
-}
-
-.name-phone {
-  align-self: center;
-  width: 50%;
-}
-
-.phone_input {
-  display: flex;
-  justify-content: center;
-  .md-input {
-    width: 100%;
-  }
-}
-
-.phone_input input {
-  padding-right: 36%;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.name_input {
-  display: flex;
-  justify-content: center;
-  margin-top:-2rem;
-  padding-top:0;
-  .md-input {
-    width: 100%;
-  }
-}
-
-.name_input input {
-  padding-right:36%;
-}
-
-.size-condition {
-  padding-top:1.5rem;
-  padding-bottom: 0;
-  margin-bottom: -0.03em;
-  width:100%;
-  @include small {
-    font-size: 50px;
-  }
-}
-
-.size-condition .md-label span {
-  @include small {
-    color: color($primary, 'A400');
-    font-size: 15px;
-    font-weight: 300;
-    padding-bottom: 25%;
-  }
-}
-
-.sell_button {
-  text-align: center;
-  button {
-    letter-spacing: 0.3ch;
-    width: 80%;
-    height: 2em;
-    font-size: 24px;
+#see-price-text .icon-text {
+  p {
     @include small {
-      width: 100%;
-      letter-spacing: 0.2ch;
-      font-size: 14px;
-      margin-top: -1rem;
+      margin-right: 3%;
+    }
+    @include xs-paper {
+      margin-right:6%;
+      padding:0;
+      text-align:center;
+    }
+  }
+  h2 {
+    @include small {
+      padding-left: 27%;
+    }
+    @include xs-paper {
+      padding-left:6%;
+      margin-top:5vh;
+      text-align:center;
     }
   }
 }
 
-.sell_button .paper-button {
-  color: #EFEFEE!important;
+#appt-text .icon-text {
+  p {
+    @include small {
+      margin-right: 3%;
+    }
+    @include xs-paper {
+      margin-right:6%;
+      padding:0;
+      text-align:center;
+    }
+  }
+  h2 {
+    @include small {
+      padding-left: 27%;
+    }
+    @include xs-paper {
+      padding-left:6%;
+      margin-top:5vh;
+      text-align:center;
+    }
+  }
 }
 
-.device-size {
-  text-align: center;
-  h3 {
+#paid-text .icon-text {
+  p {
+    @include small {
+      margin-right: 1%;
+    }
+    @include xs-paper {
+      margin-right:4%;
+      padding:0;
+      text-align:center;
+    }
+  }
+  h2 {
+    @include small {
+      padding-left: 29%;
+    }
+    @include xs-paper {
+      margin-top:5vh;
+      padding-left:8%;
+      text-align:center;
+    }
+  }
+}
+
+
+  .paper-icon {
+    @include small {
+      margin: 0;
+    }
+  }
+
+  .layout-row md-icon.md-default-theme, .md-icon {
+    color: color($accent, '600');
+  }
+
+  #other-device-buttons {
+    margin-top: 100px;
+  }
+
+  .buybacker-team img {
+    width: 100%;
+    height: auto;
+    align-items:center;
+    //background: url(../assets/images/buybacker-team-money.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include small {
+
+    }
+  }
+
+.index-footer-text {
+  h4 {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
     font-size: 24px;
-    font-weight:bold;
-  }
-  @include small {
-    border-top: color($primary, 'A400') 1px solid;
-    margin-top: 13%;
-    width: 120%;
-    margin-left: -5%;
-    background-color: color($accent, '600');
-    padding-top: 10%;
-    h3 {
-      color: #FFFFFF;
-      padding-right: 12%;
-      padding-top: 0;
-      margin-top: -5%;
-      margin-bottom: -2%;
-      font-size: 24px;
-      font-weight:bold;
-    }
-    md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
-      border-color: color($warn, '300');
-    }
-  }
-}
-
-#size-radio {
-  width: 75%;
-  align-self: center;
-  @include small {
-    padding-right: 5%;
-  }
-}
-
-.device-condition {
-  text-align: center;
-  h3 {
-    font-size: 24px;
-    font-weight:bold;
-    padding-bottom: 3%;
-  }
-  @include small {
-    padding-top: 10%;
-    border-top: color($primary, 'A400') 1px solid;
-    margin-top: 0;
-    width: 110%;
-    margin-left: -5%;
-    background-color: color($accent, '600');
-    h3 {
-      padding-right: 5%;
-      color: #FFFFFF;
-      padding-top: 0;
-      margin-top: -5%;
-      margin-bottom: -2%;
-    }
-    md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
-      border-color: color($warn, '300');
-    }
-  }
-}
-
-#condition-radio {
-  width: 100%;
-  padding-left: 2%;
-  align-self: center;
-  @include small {
-    padding-right: 5%;
-  }
-}
-
-.condition-description {
-  width: 99%;
-  padding-bottom: 6%;
-  font-size: 14px;
-  @include small {
-    width: 90%;
-    padding-left: 7.5%;
-    margin-top: -2em;
-    color: #FFFFFF;
     font-weight: 700;
   }
 }
 
-.card-media {
-  text-align: center;
-  padding-top: 1em;
+  #buybacker-team-text {
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 15vmin;
+    margin-top: -4px;
+    color: #FFF;
+    background-color: color($accent, '600');
+    @include small {
+      h4 {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        font-size: 18px;
+      }
+    }
+  }
+
+  #buybacker-help-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 15vmin;
+    margin-top: -4px;
+    color: color($accent, '600');
+    background-color: #000;
+    @include small {
+      h4 {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        font-size: 18px;
+      }
+    }
+  }
+
+#buybacker-start-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 15vmin;
+  margin-top: -4px;
+  color: color($accent, '600');
+  background-color: transparent;
+  @include small {
+    h4 {
+      padding-top: 5%;
+      padding-bottom: 5%;
+      font-size: 18px;
+    }
+  }
 }
 
-.contact-page, .about-page {
-  margin-top: 5.5rem;
+#buybacker-bring-money-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 15vmin;
+  margin-top: -4px;
+  color: #FFF;
+  background-color: color($accent, '600');
+  @include small {
+    h4 {
+      padding-top: 5%;
+      padding-bottom: 5%;
+      font-size: 18px;
+    }
+  }
 }
 
-.reset-button button {
-  width: 40vmax;
-  font-size: 16px;
-}
+  .about-text {
+    color: color($primary, 'A400');
+    text-align: center;
+  }
 
-.reset-button button a {
-  color: #EFEFEE;
-  text-decoration: none;
-}
+  .contact {
+    text-align: center;
+    background: url(../assets/images/buybacker-contact.jpg);
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: color($primary, 'A400');
+    @include small {
+      height: 210px;
+    }
+  }
 
-.navigation {
-  color: color($primary, 'A400');
-  width: 50%;
-  display:flex;
-  justify-content: space-around;
-}
+  .contact-text ul {
+    list-style: none;
 
-.navigation a {
-  color: color($primary, 'A400');
-  text-decoration: none;
-}
+  }
+
+  #model-change-text {
+    padding-top: 0;
+    padding-bottom: 2em;
+    margin: 0 auto;
+    width: 50%;
+    @include small {
+      display: block;
+      text-align: center;
+      width: 80%;
+    }
+    button {
+      color: #FFF;
+      background-color: color($accent, '600');
+      text-transform: none;
+      font-size: 18px;
+      align-self: center;
+      width: 12em;
+      height: 1.5em;
+    }
+  }
+
+  #model-change-text h3 {
+    padding-bottom: 1em;
+    margin: 0 auto;
+  }
+
+  .no-model {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    margin: 0 auto;
+  }
+
+  .no-model h3 {
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+
+  .device-network .md-ink-ripple {
+    display: none;
+  }
+
+  .device-network .device_title {
+    font-weight: 300;
+    color: color($primary, 'A400');
+    text-align: center;
+    text-shadow: 0 0 1px #EEE, 0 0 2px #DDD;
+  }
+
+  .img_device {
+    padding: 0.2em;
+    height: 200px;
+    @include small {
+      height: 100px;
+      padding: 0;
+    }
+  }
+
+  .img_network {
+    box-sizing: initial;
+    padding: 2em;
+    min-width: 100px;
+    height: 50px;
+    @include small {
+      padding:0;
+    }
+  }
+
+  #T-Mobile {
+    margin-top: 18%;
+    height: 28px;
+  }
+
+
+  #Other {
+    width: auto;
+    min-width: 38%;
+    padding-left: 38%;
+  }
+
+  #Other + div {
+    padding-left: 15%
+  }
+
+  #Unlocked {
+    margin-left:6%;
+    + div {
+      margin-left: 6%;
+    }
+  }
+
+  .user-selection {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .liquid-container {
+    width: 100%;
+  }
+
+  .price {
+    margin: 1rem;
+    padding-top:4rem;
+  }
+
+  .condition_list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .device-price {
+    align-self: center;
+    font-size: 64px;
+    font-weight: 300;
+    padding-bottom: 3%;
+    @include small {
+      padding-bottom: 0;
+    }
+  }
+
+  .device-price span {
+    color: color($accent, '600')!important;
+    font-weight: 400;
+    .money-icon, md-icon.md-default-theme {
+      color: color($accent, '600') !important;
+      margin-left: -1.8rem;
+      padding-right: 2.5rem;
+      margin-bottom: 0.7rem;
+    }
+  }
+
+  md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
+    color: color($primary, 'A400');
+  }
+
+  .price-page-top {
+    padding-top:5%;
+  }
+
+  .name-phone {
+    align-self: center;
+    width: 50%;
+  }
+
+  .phone_input {
+    display: flex;
+    justify-content: center;
+    .md-input {
+      width: 100%;
+    }
+  }
+
+  .phone_input input {
+    padding-right: 36%;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .name_input {
+    display: flex;
+    justify-content: center;
+    margin-top:-2rem;
+    padding-top:0;
+    .md-input {
+      width: 100%;
+    }
+  }
+
+  .name_input input {
+    padding-right:36%;
+  }
+
+  .size-condition {
+    padding-top:1.5rem;
+    padding-bottom: 0;
+    margin-bottom: -0.03em;
+    width:100%;
+    @include small {
+      font-size: 50px;
+    }
+  }
+
+  .size-condition .md-label span {
+    color: color($accent, '600');
+    @include small {
+      font-size: 14px;
+      font-weight: 100;
+      padding-bottom: 25%;
+      text-shadow: #FFF 1px 0 3px;
+    }
+  }
+
+  .sell_button {
+    text-align: center;
+    button {
+      background-color: color($accent, '600')!important;
+      color: #fff!important;
+      text-transform: none;
+      letter-spacing: 0.3ch;
+      width: 80%;
+      height: 2em;
+      font-size: 24px;
+      @include small {
+        width: 100%;
+        letter-spacing: 0.2ch;
+        font-size: 14px;
+        margin-top: -1rem;
+      }
+    }
+  }
+
+  .device-size {
+    text-align: center;
+    h3 {
+      font-size: 24px;
+      font-weight:bold;
+    }
+    @include small {
+      border-top: #888 1px solid;
+      margin-top: 13%;
+      width: 120%;
+      margin-left: -5%;
+      background-color: transparent;
+      padding-top: 10%;
+      h3 {
+        padding-right: 12%;
+        padding-top: 0;
+        margin-top: -5%;
+        margin-bottom: -2%;
+        font-size: 24px;
+        font-weight:bold;
+      }
+      md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
+        border-color: color($accent, '600');
+      }
+    }
+  }
+
+  #size-radio {
+    width: 75%;
+    align-self: center;
+    @include small {
+      padding-right: 5%;
+    }
+  }
+
+  .device-condition {
+    text-align: center;
+    h3 {
+      font-size: 24px;
+      font-weight:bold;
+      padding-bottom: 3%;
+    }
+    @include small {
+      padding-top: 10%;
+      border-top: #888 1px solid;
+      margin-top: 0;
+      width: 110%;
+      margin-left: -5%;
+      background-color: transparent;
+      h3 {
+        padding-right: 5%;
+        padding-top: 0;
+        margin-top: -5%;
+        margin-bottom: -2%;
+      }
+      md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
+        border-color: color($accent, '600');
+      }
+    }
+  }
+
+  #condition-radio {
+    text-transform: capitalize;
+    width: 90%;
+    padding-left: 6%;
+    align-self: center;
+    @include small {
+      margin: 0 auto;
+      :nth-child(3){
+        text-align:start;
+        span {
+          padding-bottom: 12%;
+        }
+      }
+    }
+  }
+
+  .condition-description {
+    color: color($accent, '600');
+    width: 99%;
+    padding-top: 2%;
+    padding-bottom: 6%;
+    font-size: 14px;
+    @include small {
+      padding-left: 18.5%;
+      margin-top: -2em;
+      font-weight: 700;
+      text-align: start;
+    }
+  }
+
+  .card-media {
+    text-align: center;
+    padding-top: 1em;
+  }
+
+  .contact-page, .about-page {
+    margin-top: 5.5rem;
+  }
+
+  .reset-button button {
+    background-color: color($accent, '600')!important;
+    color: #FFF!important;
+    width: 40vmax;
+    font-size: 16px;
+    text-transform: none;
+  }
+
+  .navigation {
+    color: color($primary, 'A400');
+    width: 50%;
+    display:flex;
+    justify-content: space-around;
+  }
+
+  .navigation a {
+    color: color($primary, 'A400');
+    text-decoration: none;
+  }
+
+  #copyright {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    text-align:center;
+
+  }
+
 
 

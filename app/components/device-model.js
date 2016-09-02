@@ -2,10 +2,11 @@ import Ember from 'ember';
 
 const {
     Component,
+    get,
     set
 } = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
 
     didInsertElement(){
         this._super(...arguments);

@@ -3,7 +3,6 @@ import Ember from 'ember';
 const {
     Component,
     get,
-    send
 } = Ember;
 
 export default Component.extend({

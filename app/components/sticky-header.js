@@ -13,29 +13,30 @@ export default Component.extend({
     selectedDevice: inject.service(),
 
     tagName: 'section',
-    classNames:['main_h'],
-    classNameBindings: ['sticky'],
-    sticky: false,
-    topPos: 0,
-    offset: 70,
-
-    onWindowScroll(e) {
-        let scroll = $(e.currentTarget).scrollTop(),
-            topPos = (get(this, 'topPos') * -1);
-        if (scroll > topPos) {
-            set(this, 'sticky', true);
-        } else {
-            set(this, 'sticky', false);
-        }
-    },
-
-    modelAdded: observer('selectedDevice.device_attributes.model', function() {
-        $(window).off('scroll', this._windowScroll);
-        set(this, 'sticky', true);
-    }),
+    classNames:['main_h', 'sticky'],
 
     didInsertElement() {
         this._super(...arguments);
+
+        var previousScroll = 0,
+            headerOrgOffset = $('.material-design-hamburger').height();
+
+        $('.main_h').height($('.material-design-hamburger').height());
+
+        $(window).scroll(function () {
+            var currentScroll = $(this).scrollTop();
+            if (currentScroll > headerOrgOffset) {
+                if (currentScroll > previousScroll) {
+                    $('.main_h').removeClass('sticky');
+                } else {
+                    $('.main_h').addClass('sticky');
+                }
+            } else {
+                $('.main_h').addClass('sticky');
+            }
+            previousScroll = currentScroll;
+        });
+
         document.querySelector('.material-design-hamburger__icon').addEventListener(
             'click',
             function () {
@@ -53,25 +54,7 @@ export default Component.extend({
                     child.remove('material-design-hamburger__icon--from-arrow');
                     child.add('material-design-hamburger__icon--to-arrow');
                 }
-            }),
-        this._windowScroll = run.bind(this, 'onWindowScroll');
-        $(window).on('scroll', this._windowScroll);
-        set(this, 'topPos', $('.main_h').offset().top);
-
-        $('.mobile-toggle').click(function () {
-            if ($('.main_h').hasClass('open-nav')) {
-                $('.main_h').removeClass('open-nav');
-            } else {
-                $('.main_h').addClass('open-nav');
-            }
-        });
-
-        $('.main_h li a').click(function () {
-            if ($('.main_h').hasClass('open-nav')) {
-                $('.navigation').removeClass('open-nav');
-                $('.main_h').removeClass('open-nav');
-            }
-        });
+            });
     },
     willRemoveElement() {
         this._super(...arguments);

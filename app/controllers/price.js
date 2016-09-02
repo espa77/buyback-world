@@ -82,15 +82,18 @@ export default Controller.extend({
     }),
 
     conditionDescription: computed('selectedDevice.device_attributes.condition', function () {
-        let selectedCondition = get(this, 'selectedDevice.device_attributes.condition');
+        let normal = ["No cracks on screen or body", "Powers on and makes test call", "No major scratches or scuffs"],
+            broken = ["Cracked screen or body", "Major scratches or scruffs", "Missing buttons or parts", "Other types of damage"],
+            bnp = ["Device does not power on", "Device can not make calls", "Water or liquid damage"],
+            selectedCondition = get(this, 'selectedDevice.device_attributes.condition');
         if (selectedCondition === "normal") {
-            return ("Normal means there are no cracks on the body or screen. The device powers on and makes calls");
+            return normal;
         }
         if (selectedCondition === "broken") {
-            return ("Broken means there are cracks on the body or screen but the device powers on and makes calls");
+            return broken;
         }
         if (selectedCondition === "broken no power") {
-            return ("Broken No Power means the device does not power on and/or does not makes calls");
+            return bnp;
         }
     }),
 
@@ -117,7 +120,7 @@ export default Controller.extend({
                 quote = this.store.createRecord('quote', finalDevice);
             quote.save().then(()=> {
                 get(this, 'selectedDevice').empty();
-                this.transitionToRoute('thanks');
+                this.transitionToRoute('index');
                 }).catch((e)=> {
 
                 console.error(e);
