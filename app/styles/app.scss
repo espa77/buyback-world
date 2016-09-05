@@ -742,6 +742,7 @@ hr {
 }
 
 .index-bottom {
+  z-index:999;
   color: #000;
   background-color: #FFFFFF;
   justify-content: center;
@@ -953,19 +954,13 @@ hr {
 
   #other-device-buttons {
     margin-top: 100px;
+    margin-bottom:100px;
   }
 
   .buybacker-team img {
     width: 100%;
     height: auto;
     align-items:center;
-    //background: url(../assets/images/buybacker-team-money.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    @include small {
-
-    }
   }
 
 .index-footer-text {
@@ -980,11 +975,11 @@ hr {
 
   #buybacker-team-text {
     height:100%;
+    margin-top:-1%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 15vmin;
-    margin-top: -4px;
     color: #FFF;
     background-color: color($accent, '600');
     @include small {
@@ -996,48 +991,29 @@ hr {
     }
   }
 
-  #buybacker-help-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 15vmin;
-    margin-top: -4px;
-    color: color($accent, '600');
-    background-color: #000;
-    @include small {
-      h4 {
-        padding-top: 5%;
-        padding-bottom: 5%;
-        font-size: 18px;
-      }
-    }
-  }
-
-#buybacker-start-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 15vmin;
-  margin-top: -4px;
-  color: color($accent, '600');
-  background-color: transparent;
-  @include small {
-    h4 {
-      padding-top: 5%;
-      padding-bottom: 5%;
-      font-size: 18px;
-    }
-  }
+.index-footer-details {
+  padding:3%;
+  text-align:center;
 }
 
-#buybacker-bring-money-text {
+.index-footer-details > div > div {
+  padding:2%;
+  margin-left:2%;
+  margin-right:2%;
+}
+
+.buybacker-bring-money-text {
   display: flex;
+  text-align:center;
   justify-content: center;
   align-items: center;
   min-height: 15vmin;
   margin-top: -4px;
   color: #FFF;
   background-color: color($accent, '600');
+  h4 {
+    width: 80%;
+  }
   @include small {
     h4 {
       padding-top: 5%;
@@ -1208,9 +1184,14 @@ hr {
     padding-top:5%;
   }
 
+
+
   .name-phone {
     align-self: center;
     width: 50%;
+    md-input-container > md-icon {
+      color:black;
+    }
   }
 
   .phone_input {
