@@ -11,6 +11,7 @@
             </div>
     </div>
     <div class="size-condition layout-row layout-sm-column layout-xs-column flex">
+        {{#unless samsung}}
         <div class="device-size layout-column">
             <h3>Choose GB Size:</h3>
             <div class="layout-row flex" id="size-radio">
@@ -19,6 +20,9 @@
             {{/each}}
             </div>
         </div>
+        {{else}}
+            <div class="no-size layout-column"></div>
+        {{/unless}}
         <div class="device-condition layout-column">
             <h3>Device Condition</h3>
             <div class="layout-row flex" id="condition-radio">

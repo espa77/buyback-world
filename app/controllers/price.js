@@ -13,6 +13,14 @@ export default Controller.extend({
 
     quote: null,
 
+    samsung: computed('selectedDevice.device_attributes.device', function(){
+        if (get(this, 'selectedDevice.device_attributes.device') === 'Galaxy') {
+            return true;
+        } else {
+            return false;
+        }
+    }),
+
     conditionSelection: [
         {
             name: "normal"
@@ -113,6 +121,7 @@ export default Controller.extend({
             get(this, 'selectedDevice').addCondition(conditionVal);
         },
         startOver() {
+            get(this, 'selectedDevice').empty();
             this.transitionToRoute('index');
         },
         quoted(){
@@ -126,6 +135,6 @@ export default Controller.extend({
                 console.error(e);
                 alert("couldn't save quote.");
             });
-        },
+        }
     }
 });

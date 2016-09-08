@@ -91,10 +91,28 @@
         </div>
     </div>
 </div>
-<div class="buybacker-bring-money-text flex-100">
-    <h4>Buybackers will come bring you money anywhere in New York City. We're working on launching in San Francisco, Los Angeles, Boston, and many other cities around the world. Stay tuned and we'll see you soon!</h4>
-    {{#paper-button raised=true onClick=(action "scrollToTop")}}Sell Now{{/paper-button}}
+<div class="index-footer-text-logos">
+    <div class="buybacker-bring-money-text flex-50 flex-xs-100">
+        <h4>Buybackers will come bring you money anywhere in New York City. We're working on launching in San Francisco, Los Angeles, Boston, and many other cities around the world. Stay tuned and we'll see you soon!</h4>
+    </div>
+    <div class="index-footer-logos flex-50 flex-xs-100">
+        <div class="layout-column flex">
+            <div class="top-logos flex">
+                <img id="chase" src="assets/images/chase-quickpay.png" alt="chase quickpay" />
+                <img id="paypal" src="assets/images/paypal.png" alt="paypal" />
+            </div>
+            <div class="flex">
+                <img id="venmo-logo" src="assets/images/venmo.jpg" alt="venmo" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-button layout-row">
+    {{#scroll-to href='#index' easing='linear'}}
+        {{#paper-button raised=true}}Sell Now{{/paper-button}}
+    {{/scroll-to}}
 </div>
 
 
 {{liquid-outlet}}
+
