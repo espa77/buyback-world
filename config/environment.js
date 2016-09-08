@@ -9,14 +9,15 @@ module.exports = function(environment) {
         locationType: 'auto',
         contentSecurityPolicy: {
             'default-src': "'none'",
-            'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+            'script-src': "'self' 'unsafe-inline' 'unsafe-eval' www.google-analytics.com",
             'font-src': ["'self'", "https://fonts.gstatic.com"],
             'connect-src': [
                 "'self'",
                 "https://arcane-waters-10630.herokuapp.com/api/devices",
                 "https://arcane-waters-10630.herokuapp.com/api/quotes",
                 "https://arcane-waters-10630.herokuapp.com//api/quotes",
-                "https://arcane-waters-10630.herokuapp.com//api/devices"
+                "https://arcane-waters-10630.herokuapp.com//api/devices",
+                "www.google-analytics.com"
             ],
             'img-src': "'self' data:",
             'report-uri': "'localhost'",
@@ -24,6 +25,16 @@ module.exports = function(environment) {
             'style-src': ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://fonts.gstatic.com data:"],
             'data': "'img-src'"
         },
+        metricsAdapters: [
+            {
+                name: 'GoogleAnalytics',
+                environments: ['production'],
+                config: {
+                    id: 'UA-83882487-2'
+                }
+            }
+            ],
+
 
         EmberENV: {
             FEATURES: {

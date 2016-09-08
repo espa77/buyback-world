@@ -916,12 +916,18 @@ hr {
 }
 
 .icon-text p {
-  font-size: 12px;
+  font-size: 16px;
   margin:0 auto;
   width: 80%;
-  float: right;
+  text-align:center;
+  @include small {
+    text-align:left;
+    float: right;
+    font-size: 12px;
+  }
   @include xs {
     width: 70%;
+    font-size: 12px;
   }
 }
 
@@ -1028,8 +1034,14 @@ hr {
 }
 
 .index-footer-title {
+  font-size: 38px;
+  letter-spacing: 0.1ch;
   animation:colorchange 2s ease-out infinite;
   text-shadow: 1px -1px 1px #FFF;
+  @include small {
+    letter-spacing:0;
+    font-size:30px;
+  }
 }
 
   #buybacker-team-text {
@@ -1058,7 +1070,7 @@ hr {
   }
 
 .index-footer-details {
-  margin-top:1vh;
+  margin-top: -3vh;
   padding:3%;
   text-align:center;
 }
@@ -1069,13 +1081,19 @@ hr {
   margin-right:2%;
 }
 
+.index-footer-description {
+  font-size: 13px;
+  @include xs {
+    font-size: 11px;
+  }
+}
+
 .buybacker-bring-money-text {
   display: flex;
   text-align:center;
   justify-content: center;
   align-items: center;
   min-height: 15vmin;
-  margin-top: -4px;
   color: #FFF;
   background-color: color($accent, '600');
   h4 {
@@ -1457,10 +1475,20 @@ hr {
   }
 
   .footer-button {
-    background: #BCBCBC;
+    background: transparent;
     align-items: center;
     justify-content: center;
     height: 12vmax;
+    a {
+      text-decoration:none;
+    }
+    button {
+      width:148px;
+      border: 2px solid color($accent, '600');
+      border-radius: 5%;
+      color: color($accent, '600');
+      font-weight: bold;
+    }
   }
 
   .index-footer-text-logos {
@@ -1470,14 +1498,17 @@ hr {
   }
 
   .index-footer-logos {
+    background: #BABABA;
     text-align:center;
     align-items: baseline;
     justify-content: center;
+    padding-top: 1vh;
     @include xs {
       display: block;
     }
     @include small {
-      padding-top: 6vh;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
       img {
         width:44%;
       }
@@ -1486,10 +1517,10 @@ hr {
 
 .top-logos {
   width: 100%;
-  padding-top: 3%;
 }
 
 .bottom-logos {
+  padding-top:2vh;
   width:100%;
 }
 
