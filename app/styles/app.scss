@@ -97,6 +97,23 @@ $warn: "brown";
   }
 }
 
+@keyframes colorchange {
+  0% {
+    color: black;
+  }
+  10% {
+    color: color($warn, '600');
+  }
+  50% {
+    color: color($accent, '600');
+  }
+  90% {
+    color: color($warn, '600');
+  }
+  100% {
+    color: black;
+  }
+}
 
 @keyframes material-design-hamburger__icon--slide {
   0% {
@@ -251,7 +268,9 @@ section {
 
 #logo {
   width: 40vh;
+  margin-top:1%;
   margin-left: 1%;
+  filter: drop-shadow(0 0 4px white);
   @include small {
     width:35vh;
       -webkit-transform: scale(1)!important;
@@ -366,7 +385,7 @@ svg {
 
 
 .material-design-hamburger button {
-  filter: drop-shadow(-1px 1px 1px #FFF);
+  filter: drop-shadow(0 1px 1px #FFF);
   display: block;
   border: none;
   background: none;
@@ -1009,29 +1028,30 @@ hr {
 }
 
 .index-footer-title {
-  animation:blur .75s ease-out infinite;
-  text-shadow: 1px -1px 1px color($accent, '600');
+  animation:colorchange 2s ease-out infinite;
+  text-shadow: 1px -1px 1px #FFF;
 }
 
   #buybacker-team-text {
+    margin-bottom: 0.2em;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #FFF;
     background-color: color($accent, '600');
     @include small {
-      margin-bottom:0.6%;
+      margin-bottom:0.2em;
     }
     @include smaller {
-      margin-bottom:1%;
+      margin-bottom:0.3em;
     }
     @include xs {
-      margin-top:-1.2%;
+      margin-top:-0.6em;
     }
     @include small {
       h4 {
-        padding-top: 5%;
-        padding-bottom: 5%;
+        padding-top: 0.6em;
+        padding-bottom: 0.6em;
         font-size: 18px;
       }
     }
@@ -1465,6 +1485,7 @@ hr {
   }
 
 .top-logos {
+  width: 100%;
   padding-top: 3%;
 }
 
