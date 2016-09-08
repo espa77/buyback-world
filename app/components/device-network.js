@@ -15,7 +15,8 @@ export default Component.extend({
             'tMobile': 'tmobile-svg.png',
             'verizon': 'verizon-svg.png',
             'other': 'wireless-tower-svg.png',
-            'unlocked': 'unlocked.png'
+            'unlocked': 'unlocked.png',
+            'wifiOnly': 'wifi.png'
         });
     },
 
@@ -41,6 +42,10 @@ export default Component.extend({
 
     unlocked: function() {
         return get(this, 'network') === 'Unlocked';
+    }.property('network'),
+
+    wifiOnly: function() {
+        return get(this, 'network') === 'WIFI ONLY';
     }.property('network'),
  
     actions: {

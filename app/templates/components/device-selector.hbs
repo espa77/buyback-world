@@ -1,17 +1,10 @@
 <div class="device layout-column flex">
-    {{#if selectedDevice.device_attributes.device}}
-
-    {{else}}
-        <div class="flex" id="device-selection-text">
-
-        </div>
-    {{/if}}
     <div class="layout-row flex index-bottom-buttons">
         <div class="flex buttons" id="iphone-button">
-            {{#paper-button raised=true noink=true onClick=(action "iPhoneSelection")}}Sell iPhone{{/paper-button}}
+            {{#paper-button raised=true onClick=(action "iPhoneSelection")}}Sell iPhone{{/paper-button}}
         </div>
         <div class="flex buttons" id="ipad-button">
-           {{#paper-button raised=true noink=true onClick=(action "transition")}}Sell Other{{/paper-button}}
+           {{#paper-button raised=true onClick=(action "transition")}}Sell Other{{/paper-button}}
         </div>
     </div>
 </div>

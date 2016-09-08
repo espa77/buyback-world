@@ -2,8 +2,7 @@ import Ember from 'ember';
 
 const {
     Controller,
-    inject,
-    get
+    inject
 } = Ember;
 
 export default Controller.extend({
@@ -11,13 +10,9 @@ export default Controller.extend({
 
     actions: {
         iPadSelection() {
-            let deviceVal = "iPad";
-            get(this, 'selectedDevice').addDevice(deviceVal);
             this.transitionToRoute("ipad");
         },
         samsungSelection() {
-            let deviceVal = "Galaxy";
-            get(this, 'selectedDevice').addDevice(deviceVal);
             this.transitionToRoute('samsung');
         }
     }

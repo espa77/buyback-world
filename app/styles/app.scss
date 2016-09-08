@@ -74,6 +74,30 @@ $warn: "brown";
   }
 }
 
+@keyframes blur {
+  from {
+    text-shadow:1px -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    1px -1px 0 color($accent, '600'),
+    1px -1px 0 color($accent, '600'),
+    0 0 1px color($accent, '600'),
+    0 0 1px color($accent, '600'),
+    0 0 4px #FFF,
+    0 0 10px #FFF,
+    0px 4px 6px #FFF,
+    0px 4px 6px #FFF,
+    0px 4px 6px #FFF,
+    0px 4px 6px #FFF,
+    0px -4px 6px #FFF,
+    0px -4px 6px #FFF;
+  }
+}
+
+
 @keyframes material-design-hamburger__icon--slide {
   0% {
   }
@@ -193,6 +217,10 @@ html {
   @include small {
     -webkit-text-size-adjust:none;
   }
+}
+
+:focus {
+  outline: none;
 }
 
 //navigation
@@ -338,6 +366,7 @@ svg {
 
 
 .material-design-hamburger button {
+  filter: drop-shadow(-1px 1px 1px #FFF);
   display: block;
   border: none;
   background: none;
@@ -449,27 +478,27 @@ svg {
   }
 }
 
-#header-bg-video {
-  position: absolute;
-  top: 0;
-  max-height: 100vmax;
-  width: 100vmax;
-  z-index: -100;
-  -webkit-transform: translateX(-50%) translateY(0);
-  transform: translateX(-50%) translateY(0);
-  background-size: contain;
-  background-position: top center;
-  @include large {
-    transform: translateX(-50%) translateY(0);
-  }
-  @include medium {
-    transform: translateX(-50%) translateY(0);
-  }
-  @include small {
-    transform: translateX(-50%) translateY(0);
-  }
-
-}
+//#header-bg-video {
+//  position: absolute;
+//  top: 0;
+//  max-height: 100vmax;
+//  width: 100vmax;
+//  z-index: -100;
+//  -webkit-transform: translateX(-50%) translateY(0);
+//  transform: translateX(-50%) translateY(0);
+//  background-size: contain;
+//  background-position: top center;
+//  @include large {
+//    transform: translateX(-50%) translateY(0);
+//  }
+//  @include medium {
+//    transform: translateX(-50%) translateY(0);
+//  }
+//  @include small {
+//    transform: translateX(-50%) translateY(0);
+//  }
+//
+//}
 
 .index-text {
   width: 90%;
@@ -491,19 +520,24 @@ svg {
   letter-spacing: 0.05ch;
   text-transform: capitalize;
   //text-align:start;
-  font-size: 60px;
+  font-size: 148px;
   padding-bottom:1vmax;
+  @include small {
+    font-size: 60px;
+  }
 }
 
 
 #index-text-one-hour {
   //text-align:start;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 300;
+  padding-top:1.5em;
   //text-shadow: #666 0px 1px 0;
-  @include medium {
-
+  @include small {
+    padding-top:0;
+    font-size: 20px;
   }
   @include medium-xs {
 
@@ -941,7 +975,6 @@ hr {
   }
 }
 
-
   .paper-icon {
     @include small {
       margin: 0;
@@ -957,31 +990,44 @@ hr {
     margin-bottom:100px;
   }
 
-  .buybacker-team img {
-    width: 100%;
-    height: auto;
-    align-items:center;
+  .buybacker-team {
+    @include xs {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
   }
 
 .index-footer-text {
   h4 {
     width: 80%;
-    margin: 0 auto;
     text-align: center;
     font-size: 24px;
     font-weight: 700;
   }
 }
 
+.index-footer-title {
+  animation:blur .75s ease-out infinite;
+  text-shadow: 1px -1px 1px color($accent, '600');
+}
+
   #buybacker-team-text {
-    height:100%;
-    margin-top:-1%;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 15vmin;
     color: #FFF;
     background-color: color($accent, '600');
+    @include small {
+      margin-bottom:0.6%;
+    }
+    @include smaller {
+      margin-bottom:1%;
+    }
+    @include xs {
+      margin-top:-1.2%;
+    }
     @include small {
       h4 {
         padding-top: 5%;
@@ -992,6 +1038,7 @@ hr {
   }
 
 .index-footer-details {
+  margin-top:1vh;
   padding:3%;
   text-align:center;
 }
@@ -1384,6 +1431,49 @@ hr {
     color: color($primary, 'A400');
     text-decoration: none;
   }
+
+  .footer-button {
+    background: #BCBCBC;
+    align-items: center;
+    justify-content: center;
+    height: 12vmax;
+  }
+
+  .index-footer-logos {
+    text-align:center;
+    align-items: baseline;
+    justify-content: center;
+    @include xs {
+      display: block;
+    }
+    @include small {
+      img {
+        width:44%;
+      }
+    }
+  }
+
+.top-logos {
+  padding-top: 3%;
+}
+
+#chase {
+  padding-right:0.8em;
+}
+
+#paypal {
+  padding-bottom: 15px;
+  padding-left: 0.8em;
+}
+
+  #venmo-logo {
+    img {
+      @include small {
+        width: 100%;
+      }
+    }
+  }
+
 
   #copyright {
     width: 80%;

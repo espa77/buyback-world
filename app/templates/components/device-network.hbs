@@ -37,6 +37,13 @@
                 <div class="device_title">
                     <h3>{{network}}</h3>
                 </div>
+
+            {{else if wifiOnly }}
+                <img src="assets/images/{{networkImage.wifiOnly}}" class="img_network" id="{{network}}"/>
+                <div class="device_title">
+                    <h3>{{network}}</h3>
+                </div>
+
             {{/if}}
 
         </div>
