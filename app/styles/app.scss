@@ -1443,6 +1443,12 @@ hr {
     height: 12vmax;
   }
 
+  .index-footer-text-logos {
+    @include xs {
+      display: block;
+    }
+  }
+
   .index-footer-logos {
     text-align:center;
     align-items: baseline;
@@ -1451,6 +1457,7 @@ hr {
       display: block;
     }
     @include small {
+      padding-top: 6vh;
       img {
         width:44%;
       }
@@ -1459,6 +1466,10 @@ hr {
 
 .top-logos {
   padding-top: 3%;
+}
+
+.bottom-logos {
+  width:100%;
 }
 
 #chase {
