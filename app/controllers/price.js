@@ -133,7 +133,7 @@ export default Controller.extend({
                 }).catch((e)=> {
 
                 console.error(e);
-                alert("couldn't save quote.");
+                alert("For some reason we couldn't save your quote. Please try submitting again with a valid text number");
             });
         }
     }

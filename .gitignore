@@ -19,3 +19,7 @@ testem.log
 
 workspace.xml
 tests/unit/routes/device/model/
+/www.buybackers.com.chain.crt
+/www.buybackers.com.key
+/www.buybackers.com.chained.crt
+/www.buybackers.com.crt

@@ -5,27 +5,24 @@ $primary: "light-blue";
 $accent: "amber";
 $warn: "brown";
 
-@import "ember-paper";
-
+@import 'ember-paper';
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:300,400,700);
 
 @mixin small {
   @media only screen and (max-width: 766px) {
     @content;
-
     @keyframes material-design-hamburger__icon--slide-before {
-      0% {}
-
+      0% {
+      }
       100% {
         transform: rotate(-45deg);
         margin: 4% -11%;
         width: 75%;
       }
     }
-
     @keyframes material-design-hamburger__icon--slide-after {
-      0% {}
-
+      0% {
+      }
       100% {
         transform: rotate(45deg);
         margin: 4% -11%;
@@ -37,55 +34,72 @@ $warn: "brown";
 
 @mixin xs-paper {
   @media only screen and (min-width: 600px) and (max-width: 766px) {
-    @content;
+    @content
   }
 }
 
 @mixin large {
   @media only screen and (max-width: 1080px) {
-    @content;
+    @content
   }
 }
 
 @mixin medium {
   @media only screen and (max-width: 930px) {
-    @content;
+    @content
   }
 }
 
 @mixin medium-xs {
   @media only screen and (max-width: 863px) {
-    @content;
+    @content
   }
 }
 
 @mixin smaller {
   @media only screen and (max-width: 650px) {
-    @content;
+    @content
   }
 }
 
 @mixin xs {
   @media only screen and (max-width: 600px) {
-    @content;
+    @content
   }
 }
 
 @mixin xxs {
   @media only screen and (max-width: 500px) {
-    @content;
+    @content
   }
 }
 
 @mixin iphonefive {
   @media only screen and (max-width: 466px) {
-    @content;
+    @content
   }
 }
 
 @keyframes blur {
   from {
-    text-shadow: 1px -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 1px -1px 0 color($accent, "600"), 1px -1px 0 color($accent, "600"), 0 0 1px color($accent, "600"), 0 0 1px color($accent, "600"), 0 0 4px #FFF, 0 0 10px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px -4px 6px #FFF, 0px -4px 6px #FFF;
+    text-shadow:1px -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    0 -1px 0 color($accent, '600'),
+    1px -1px 0 color($accent, '600'),
+    1px -1px 0 color($accent, '600'),
+    0 0 1px color($accent, '600'),
+    0 0 1px color($accent, '600'),
+    0 0 4px #FFF,
+    0 0 10px #FFF,
+    0px 4px 6px #FFF,
+    0px 4px 6px #FFF,
+    0px 4px 6px #FFF,
+    0px 4px 6px #FFF,
+    0px -4px 6px #FFF,
+    0px -4px 6px #FFF;
   }
 }
 
@@ -93,35 +107,31 @@ $warn: "brown";
   0% {
     color: black;
   }
-
   10% {
-    color: color($warn, "600");
+    color: color($warn, '600');
   }
-
   50% {
-    color: color($accent, "600");
+    color: color($accent, '600');
   }
-
   90% {
-    color: color($warn, "600");
+    color: color($warn, '600');
   }
-
   100% {
     color: black;
   }
 }
 
 @keyframes material-design-hamburger__icon--slide {
-  0% {}
-
+  0% {
+  }
   100% {
     transform: rotate(-180deg);
   }
 }
 
 @keyframes material-design-hamburger__icon--slide-before {
-  0% {}
-
+  0% {
+  }
   100% {
     transform: rotate(-45deg);
     margin: 10% -11%;
@@ -130,13 +140,12 @@ $warn: "brown";
 }
 
 @keyframes material-design-hamburger__icon--slide-after {
-  0% {}
-
+  0% {
+  }
   100% {
     transform: rotate(45deg);
     margin: 10% -11%;
     width: 63.5%;
-
     @include small {
       margin: 3% -12%;
       width: 75%;
@@ -148,8 +157,8 @@ $warn: "brown";
   0% {
     transform: rotate(-180deg);
   }
-
-  100% {}
+  100% {
+  }
 }
 
 @keyframes material-design-hamburger__icon--slide-before-from {
@@ -158,8 +167,8 @@ $warn: "brown";
     margin: 3% 37%;
     width: 75%;
   }
-
-  100% {}
+  100% {
+  }
 }
 
 @keyframes material-design-hamburger__icon--slide-after-from {
@@ -168,29 +177,28 @@ $warn: "brown";
     margin: 3% 37%;
     width: 75%;
   }
-
-  100% {}
+  100% {
+  }
 }
 
 @keyframes slide-up {
   from {
     -webkit-transform: none;
     transform: none;
-  }
 
+  }
   to {
     -webkit-transform: translate3d(0, 50%, 0);
     transform: translate3d(0, 50%, 0);
   }
 }
-
 @media only screen and (min-width: 961px) {
   .device-size {
-    width: 50%;
+    width:50%;
   }
 
   .device-condition {
-    width: 50%;
+    width:50%;
   }
 }
 
@@ -211,28 +219,26 @@ $warn: "brown";
 html {
   font-family: 'Comfortaa', cursive;
   width: 1500px;
-  max-width: 100%;
+  max-width:100%;
   margin: 0 auto;
   height: auto;
   background: none;
-
   @include small {
-    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust:none;
   }
 }
 
 .body {
   //padding-top: 105px;
   font-family: 'Comfortaa', cursive;
-  max-width: 100%;
+  max-width:100%;
   padding-left: 0;
   padding-right: 0;
-  display: flex;
+  display:flex;
   background: none;
   -webkit-font-smoothing: antialiased;
-
   @include small {
-    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust:none;
   }
 }
 
@@ -243,18 +249,16 @@ html {
 //navigation
 
 section {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-
-  //background for header
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)); //background for header
   position: fixed;
-  z-index: 999;
+  z-index:999;
   display: flex;
   width: 100%;
   max-width: 1500px;
 }
 
 .main_h {
-  opacity: 0;
+  opacity:0;
   transform: translate3d(0, -82px, 0);
   transition: all 0.4s ease-in-out;
 }
@@ -270,21 +274,19 @@ section {
 
 #logo {
   width: 40vh;
-  margin-top: 1%;
+  margin-top:1%;
   margin-left: 1%;
   filter: drop-shadow(0 0 4px white);
-
   @include small {
-    width: 35vh;
-    -webkit-transform: scale(1) !important;
+    width:35vh;
+      -webkit-transform: scale(1)!important;
   }
 }
 
 svg {
   object-fit: contain;
-
   @include small {
-    -webkit-transform: scale(1) !important;
+    -webkit-transform: scale(1)!important;
   }
 }
 
@@ -300,23 +302,23 @@ svg {
 }
 
 .background--blur {
-  background: color($primary, "50");
+  background: color($primary, '50');
 }
 
 .menu {
-  font-size: 24px;
-  color: color($accent, "600");
+  font-size:24px;
+  color: color($accent, '600');
 }
 
 .menu div {
   border-bottom: 1px solid #ccc;
-  margin: 0;
+  margin:0;
 }
 
 .menu a {
   text-decoration: none;
-  margin: 0;
-  padding: 0;
+  margin:0;
+  padding:0;
   color: #000;
 }
 
@@ -338,7 +340,6 @@ svg {
   background: #eee;
   min-height: 600px;
   transition: all 100ms;
-
   @include small {
     height: 100%;
     right: 56%;
@@ -353,7 +354,7 @@ svg {
 }
 
 .menu--on {
-  padding-top: 0;
+  padding-top:0;
   margin-top: 102px;
   width: 50%;
   display: block;
@@ -363,7 +364,6 @@ svg {
   box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.2);
   transition: all 100ms;
   visibility: visible;
-
   @include small {
     width: 80%;
     margin-top: 4.5rem;
@@ -382,14 +382,13 @@ svg {
   background-color: transparent;
   display: flex;
   justify-content: space-between;
-
   //border-bottom: 1px solid color($primary, 'A400');
   transition: all 0.3s ease;
 }
-
 .material-design-hamburger-hide {
   top: -44px;
 }
+
 
 .material-design-hamburger button {
   filter: drop-shadow(0 1px 1px #FFF);
@@ -402,7 +401,6 @@ svg {
 .material-design-hamburger__icon {
   padding: 3rem 1rem;
   cursor: pointer;
-
   @include small {
     padding: 1.5rem 0.7rem;
   }
@@ -412,14 +410,13 @@ svg {
   display: block;
   width: 60px;
   height: 5px;
-  background: color($accent, "600");
+  background: color($accent, '600');
   position: relative;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
-
   @include small {
     height: 4px;
-    width: 40px;
+    width:40px;
   }
 }
 
@@ -433,7 +430,6 @@ svg {
   content: '';
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
-
   @include small {
     height: 4px;
   }
@@ -442,20 +438,18 @@ svg {
 .material-design-hamburger__layer:before {
   margin-bottom: 0.5rem;
   bottom: 125%;
-
   @include small {
     margin-bottom: 0.3rem;
-    bottom: 200%;
+    bottom: 200%
   }
 }
 
 .material-design-hamburger__layer:after {
   margin-top: 0.5rem;
   top: 125%;
-
   @include small {
     margin-top: 0.3rem;
-    top: 200%;
+    top: 200%
   }
 }
 
@@ -497,15 +491,13 @@ svg {
 }
 
 #index {
-  display: flex;
-
+  display:flex;
   //background: linear-gradient(rgba(255, 176, 25, 0.1), rgba(255, 176, 25, 0.1)), url(../assets/images/iphone-wood.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   z-index: -1;
   margin-bottom: 5%;
-
   @include xs {
     margin-bottom: 1%;
   }
@@ -543,76 +535,67 @@ svg {
   align-self: center;
   text-align: center;
   color: #000;
-
   @include small {
     width: 90%;
   }
 }
 
 #index-text-money {
-  font-weight: 100;
+  font-weight:100;
   letter-spacing: 0.05ch;
   text-transform: capitalize;
-
   //text-align:start;
   font-size: 148px;
-  padding-bottom: 1vmax;
-
+  padding-bottom:1vmax;
   @include small {
     font-size: 60px;
   }
 }
+
 
 #index-text-one-hour {
   //text-align:start;
   margin: 0 auto;
   font-size: 40px;
   font-weight: 300;
-  padding-top: 1.5em;
-
+  padding-top:1.5em;
   //text-shadow: #666 0px 1px 0;
   @include small {
-    padding-top: 0;
+    padding-top:0;
     font-size: 20px;
   }
+  @include medium-xs {
 
-
-  @include medium-xs {}
-
-
+  }
   @include small {
     font-size: 16px;
   }
+  @include xs {
 
-
-  @include xs {}
-
-
+  }
   @include xxs {
     font-size: 14px;
+
   }
 }
 
 #device-selection-text {
   display: none;
-  color: color($accent, "600");
+  color: color($accent, '600');
   font-size: 36px;
   text-align: center;
   justify-content: center;
-  margin: 0 auto;
 
+  margin: 0 auto;
   h3 {
     font-weight: 300;
     margin-bottom: 0;
     letter-spacing: 0.2ch;
-
     @include small {
-      padding-top: 0;
-      margin-top: 0;
+      padding-top:0;
+      margin-top:0;
       font-size: 30px;
     }
-
-
     @include xs {
       margin-top: 0;
       font-size: 26px;
@@ -635,8 +618,8 @@ hr {
   line-height: 0;
   clear: both;
   border: none;
-  border-bottom: 1px solid color($primary, "A400");
-  margin-bottom: -1px;
+  border-bottom: 1px solid color($primary, 'A400');
+  margin-bottom:-1px;
 }
 
 #price-page-hr {
@@ -649,7 +632,6 @@ hr {
   justify-content: center;
   text-align: center;
   margin-top: 70px;
-
   @include small {
     font-size: 14px;
   }
@@ -661,12 +643,9 @@ hr {
   max-width: 90%;
   justify-content: space-around;
   flex-wrap: wrap;
-
   @include xxs {
-    max-width: 100%;
+    max-width:100%;
   }
-
-
   //max-height:10vmax;
 }
 
@@ -676,7 +655,6 @@ hr {
 
 .device-network {
   padding-bottom: 5em;
-
   @include small {
     padding-bottom: 2em;
   }
@@ -695,7 +673,6 @@ hr {
 
 .reset-button {
   padding-bottom: 5em;
-
   button {
     font-size: 24px;
     height: 2em;
@@ -713,24 +690,19 @@ hr {
   height: 50px;
   text-transform: none;
   font-size: 24px;
-
   @include small {
     width: 150px;
     height: 50px;
     font-size: 20px;
   }
-
-
   @include xxs {
     width: 120px;
     height: 45px;
     font-size: 18px;
-    margin-right: 0;
-    margin-left: 0;
-    text-align: center;
+    margin-right:0;
+    margin-left:0;
+    text-align:center;
   }
-
-
   @include iphonefive {
     width: 110px;
     height: 45px;
@@ -743,17 +715,12 @@ hr {
   padding: 1em;
   justify-content: center;
   align-self: center;
-
   @include small {
     margin: 0.7rem;
   }
-
-
   @include xs {
     padding: 0.5em;
   }
-
-
   @include xxs {
     padding: 0;
   }
@@ -763,8 +730,7 @@ hr {
   color: #FFF;
   text-align: center;
   margin-top: 1rem;
-  padding-top: 6%;
-
+  padding-top:6%;
   @include xs {
     padding-top: 2%;
   }
@@ -773,15 +739,12 @@ hr {
 .buttons > .md-button {
   margin-left: 3rem;
   margin-right: 3rem;
-  background-color: color($accent, "600") !important;
-  color: #FFF !important;
-
+  background-color: color($accent, '600')!important;
+  color: #FFF!important;
   @include small {
     margin-left: 2rem;
     margin-right: 2rem;
   }
-
-
   @include smaller {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -789,43 +752,43 @@ hr {
 }
 
 .md-button.md-primary.md-raised {
-  color: #FFFFFF !important;
+  color: #FFFFFF!important;
 }
 
 .buttons > .md-button.md-raised:hover {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, '800')!important;
 }
 
 .buttons > .md-button.md-raised:active {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, '800')!important;
 }
 
 #model-change-text > .md-button.md-raised:hover {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, '800')!important;
 }
 
 #model-change-text > .md-button.md-raised:active {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, '800')!important;
 }
 
 .reset-button > .md-button.md-raised:hover {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, '800')!important;
 }
 
 .reset-button > .md-button.md-raised:active {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, '800')!important;
 }
 
 .md-button.md-raised:hover {
-  background-color: color($accent, "800") !important;
+   background-color: color($accent, '800')!important;
 }
 
 .md-button.md-raised:active {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, '800')!important;
 }
 
 .device * .md-label {
-  margin-left: 0;
+  margin-left:0;
 }
 
 .device * .md-container {
@@ -848,7 +811,6 @@ hr {
 .device_title {
   font-weight: 400;
   letter-spacing: 1px;
-
   @include small {
     font-weight: 300;
     font-size: 12px;
@@ -856,31 +818,25 @@ hr {
 }
 
 .index-bottom {
-  z-index: 999;
+  z-index:999;
   color: #000;
   background-color: #FFFFFF;
   justify-content: center;
   align-items: center;
-
   @include small {
     padding-bottom: 1rem;
-
     //margin-top:-7em;
   }
-
-
   @include smaller {
     margin-top: -3em;
   }
-
-
   @include xs {
     margin-top: 3em;
   }
 }
 
 .index-bottom h1 {
-  color: color($accent, "600");
+  color: color($accent, '600');
   text-align: center;
   letter-spacing: 0.5ch;
 }
@@ -888,15 +844,12 @@ hr {
 #simple-easy {
   display: flex;
   padding-bottom: 3em;
-
   @include xs-paper {
     padding-top: 3rem;
     padding-bottom: 0;
   }
-
-
   @include small {
-    padding-bottom: 0;
+    padding-bottom: 0
   }
 }
 
@@ -904,76 +857,61 @@ hr {
   padding-right: 6.7em;
 }
 
+
 #see-price-text, #appt-text, #paid-text {
   justify-content: center;
   padding-bottom: 2rem;
   align-items: flex-start;
-  padding-right: 1%;
-  padding-top: 4%;
-
+  padding-right:1%;
+  padding-top:4%;
   h2 {
     text-align: center;
     font-size: 30px;
     font-weight: 700;
-
     @include xs-paper {
       text-align: center;
       font-size: 18px;
       margin-top: 0;
     }
-
-
     @include xs {
       text-align: left;
       padding-left: 30%;
     }
   }
-
   @include large {
     img {
       height: 90px;
       width: 90px;
     }
   }
-
-
   @include medium {
-    padding-right: 0;
-    padding-left: 0;
-
+    padding-right:0;
+    padding-left:0;
     h2 {
       font-size: 20px;
     }
   }
-
-
   @include xs-paper {
     align-items: flex-start;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 4%;
-
+    padding-left:1%;
+    padding-right:1%;
+    padding-top:4%;
     h2 {
       font-size: 16px;
     }
-
     img {
       height: 90px;
       width: 90px;
     }
   }
-
-
   @include small {
     align-items: flex-start;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 4%;
-
+    padding-left:1%;
+    padding-right:1%;
+    padding-top:4%;
     h2 {
       font-size: 16px;
     }
-
     img {
       height: 90px;
       width: 90px;
@@ -982,24 +920,19 @@ hr {
 }
 
 .index-icon {
-  align-self: center;
+  align-self:center;
 }
 
 .icon-text {
   width: 100%;
   padding-left: -4%;
-
   @include xs-paper {
     width: 100%;
-    margin-left: -4%;
+    margin-left:-4%;
   }
-
-
   @include xs {
     width: 70vw;
   }
-
-
   @include xxs {
     width: 72vw;
   }
@@ -1007,17 +940,14 @@ hr {
 
 .icon-text p {
   font-size: 16px;
-  margin: 0 auto;
+  margin:0 auto;
   width: 80%;
-  text-align: center;
-
+  text-align:center;
   @include small {
-    text-align: left;
+    text-align:left;
     float: right;
     font-size: 12px;
   }
-
-
   @include xs {
     width: 70%;
     font-size: 12px;
@@ -1029,25 +959,20 @@ hr {
     @include small {
       margin-right: 3%;
     }
-
-
     @include xs-paper {
-      margin-right: 6%;
-      padding: 0;
-      text-align: center;
+      margin-right:6%;
+      padding:0;
+      text-align:center;
     }
   }
-
   h2 {
     @include small {
       padding-left: 27%;
     }
-
-
     @include xs-paper {
-      padding-left: 6%;
-      margin-top: 5vh;
-      text-align: center;
+      padding-left:6%;
+      margin-top:5vh;
+      text-align:center;
     }
   }
 }
@@ -1057,25 +982,20 @@ hr {
     @include small {
       margin-right: 3%;
     }
-
-
     @include xs-paper {
-      margin-right: 6%;
-      padding: 0;
-      text-align: center;
+      margin-right:6%;
+      padding:0;
+      text-align:center;
     }
   }
-
   h2 {
     @include small {
       padding-left: 27%;
     }
-
-
     @include xs-paper {
-      padding-left: 6%;
-      margin-top: 5vh;
-      text-align: center;
+      padding-left:6%;
+      margin-top:5vh;
+      text-align:center;
     }
   }
 }
@@ -1085,54 +1005,47 @@ hr {
     @include small {
       margin-right: 1%;
     }
-
-
     @include xs-paper {
-      margin-right: 4%;
-      padding: 0;
-      text-align: center;
+      margin-right:4%;
+      padding:0;
+      text-align:center;
     }
   }
-
   h2 {
     @include small {
       padding-left: 29%;
     }
-
-
     @include xs-paper {
-      margin-top: 5vh;
-      padding-left: 8%;
-      text-align: center;
+      margin-top:5vh;
+      padding-left:8%;
+      text-align:center;
     }
   }
 }
 
-.paper-icon {
-  @include small {
-    margin: 0;
-  }
-}
-
-.layout-row md-icon.md-default-theme, .md-icon {
-  color: color($accent, "600");
-}
-
-#other-device-buttons {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.buybacker-team {
-  @include xs {
-    display: block;
+  .paper-icon {
+    @include small {
+      margin: 0;
+    }
   }
 
-
-  img {
-    width: 100%;
+  .layout-row md-icon.md-default-theme, .md-icon {
+    color: color($accent, '600');
   }
-}
+
+  #other-device-buttons {
+    margin-top: 100px;
+    margin-bottom:100px;
+  }
+
+  .buybacker-team {
+    @include xs {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
+  }
 
 .index-footer-text {
   h4 {
@@ -1146,67 +1059,56 @@ hr {
 .index-footer-title {
   font-size: 38px;
   letter-spacing: 0.1ch;
-  animation: colorchange 2s ease-out infinite;
+  animation:colorchange 2s ease-out infinite;
   text-shadow: 1px -1px 1px #FFF;
-
   @include small {
-    letter-spacing: 0;
-    font-size: 30px;
+    letter-spacing:0;
+    font-size:30px;
   }
 }
 
-#buybacker-team-text {
-  margin-bottom: 0.2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #FFF;
-  background-color: color($accent, "600");
-
-  @include small {
+  #buybacker-team-text {
     margin-bottom: 0.2em;
-  }
-
-
-  @include smaller {
-    margin-bottom: 0.3em;
-  }
-
-
-  @include xs {
-    margin-top: -0.6em;
-  }
-
-
-  @include small {
-    h4 {
-      padding-top: 0.6em;
-      padding-bottom: 0.6em;
-      font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    background-color: color($accent, '600');
+    @include small {
+      margin-bottom:0.2em;
+    }
+    @include smaller {
+      margin-bottom:0.3em;
+    }
+    @include xs {
+      margin-top:-0.6em;
+    }
+    @include small {
+      h4 {
+        padding-top: 0.6em;
+        padding-bottom: 0.6em;
+        font-size: 18px;
+      }
     }
   }
-}
 
 .index-footer-details {
   margin-top: -3vh;
-  padding: 3%;
-  text-align: center;
+  padding:3%;
+  text-align:center;
 }
 
 .index-footer-details > div > div {
-  padding: 2%;
-  margin-left: 2%;
-  margin-right: 2%;
+  padding:2%;
+  margin-left:2%;
+  margin-right:2%;
 }
 
 .index-footer-description {
   font-size: 20px;
-
   @include smaller {
     font-size: 16px;
   }
-
-
   @include xs {
     font-size: 13px;
   }
@@ -1214,17 +1116,15 @@ hr {
 
 .buybacker-bring-money-text {
   display: flex;
-  text-align: center;
+  text-align:center;
   justify-content: center;
   align-items: center;
   min-height: 15vmin;
   color: #FFF;
-  background-color: color($accent, "600");
-
+  background-color: color($accent, '600');
   h4 {
     width: 80%;
   }
-
   @include small {
     h4 {
       padding-top: 5%;
@@ -1234,459 +1134,420 @@ hr {
   }
 }
 
-.about-text {
-  color: color($primary, "A400");
-  text-align: center;
-}
-
-.contact {
-  text-align: center;
-  background: url(../assets/images/buybacker-contact.jpg);
-  height: 800px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: color($primary, "A400");
-
-  @include small {
-    height: 210px;
-  }
-}
-
-.contact-text ul {
-  list-style: none;
-}
-
-#model-change-text {
-  padding-top: 0;
-  padding-bottom: 2em;
-  margin: 0 auto;
-  width: 50%;
-  text-align: center;
-
-  @include small {
-    display: block;
-    width: 80%;
+  .about-text {
+    color: color($primary, 'A400');
+    text-align: center;
   }
 
-
-  button {
-    color: #FFF;
-    background-color: color($accent, "600");
-    text-transform: none;
-    font-size: 18px;
-    align-self: center;
-    width: 12em;
-    height: 1.5em;
-  }
-}
-
-#model-change-text h3 {
-  padding-bottom: 1em;
-  margin: 0 auto;
-}
-
-.no-model {
-  padding-top: 5em;
-  padding-bottom: 5em;
-  margin: 0 auto;
-}
-
-.no-model h3 {
-  margin: 0 auto;
-  padding-bottom: 2em;
-}
-
-.device-network .md-ink-ripple {
-  display: none;
-}
-
-.device-network .device_title {
-  font-weight: 300;
-  color: color($primary, "A400");
-  text-align: center;
-  text-shadow: 0 0 1px #EEE, 0 0 2px #DDD;
-}
-
-.img_device {
-  padding: 0.2em;
-  height: 200px;
-
-  @include small {
-    height: 100px;
-    padding: 0;
-  }
-}
-
-.img_network {
-  box-sizing: initial;
-  padding: 2em;
-  min-width: 100px;
-  height: 50px;
-
-  @include small {
-    padding: 0;
-  }
-}
-
-#T-Mobile {
-  margin-top: 18%;
-  height: 28px;
-}
-
-.user-selection {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.liquid-container {
-  width: 100%;
-}
-
-.price {
-  margin: 1rem;
-  padding-top: 4rem;
-}
-
-.condition_list {
-  list-style: none;
-  padding: 0;
-}
-
-.device-price {
-  align-self: center;
-  font-size: 64px;
-  font-weight: 300;
-  padding-bottom: 3%;
-
-  @include small {
-    padding-bottom: 0;
-  }
-
-
-  @include xxs {
-    font-size: 48px;
-  }
-}
-
-.device-price span {
-  color: color($accent, "600") !important;
-  font-weight: 400;
-
-  .money-icon, md-icon.md-default-theme {
-    color: color($accent, "600") !important;
-    margin-left: -1.8rem;
-    padding-right: 2.5rem;
-    margin-bottom: 0.7rem;
-
-    @include iphonefive {
-      margin-left: -1.4rem;
-      padding-right: 2.2rem;
-      margin-bottom: 0.5rem;
-      font-size: 64px !important;
-      height: 64px !important;
-    }
-  }
-}
-
-md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
-  color: color($primary, "A400");
-}
-
-.price-page-top {
-  padding-top: 5%;
-}
-
-.name-phone {
-  align-self: center;
-  width: 50%;
-
-  md-input-container > md-icon {
-    color: black;
-  }
-
-  @include xxs {
-    width: 60%;
-  }
-
-
-  @include iphonefive {
-    width: 80%;
-  }
-}
-
-.phone_input {
-  display: flex;
-  justify-content: center;
-
-  .md-input {
-    width: 100%;
-  }
-}
-
-.phone_input input {
-  padding-right: 36%;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.name_input {
-  display: flex;
-  justify-content: center;
-  margin-top: -2rem;
-  padding-top: 0;
-
-  .md-input {
-    width: 100%;
-  }
-}
-
-.name_input input {
-  padding-right: 36%;
-}
-
-.size-condition {
-  padding-top: 1.5rem;
-  padding-bottom: 0;
-  margin-bottom: -0.03em;
-  width: 100%;
-
-  @include small {
-    font-size: 50px;
-  }
-}
-
-.size-condition .md-label span {
-  color: color($accent, "600");
-
-  @include small {
-    font-size: 14px;
-    font-weight: 100;
-    padding-bottom: 25%;
-    text-shadow: #FFF 1px 0 3px;
-  }
-}
-
-.no-size {
-  height: 1em;
-}
-
-.sell_button {
-  text-align: center;
-
-  button {
-    background-color: color($accent, "600") !important;
-    color: #fff !important;
-    text-transform: none;
-    letter-spacing: 0.3ch;
-    width: 80%;
-    height: 2em;
-    font-size: 24px;
-
+  .contact {
+    text-align: center;
+    background: url(../assets/images/buybacker-contact.jpg);
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: color($primary, 'A400');
     @include small {
-      width: 100%;
-      letter-spacing: 0.2ch;
-      font-size: 14px;
-      margin-top: -1rem;
+      height: 210px;
     }
   }
-}
 
-.device-size {
-  text-align: center;
+  .contact-text ul {
+    list-style: none;
 
-  h3 {
-    font-size: 24px;
-    font-weight: bold;
   }
 
-  @include small {
-    border-top: #888 1px solid;
-    margin-top: 13%;
-    width: 120%;
-    margin-left: -5%;
-    background-color: transparent;
-    padding-top: 10%;
-
-    h3 {
-      padding-right: 12%;
-      padding-top: 0;
-      margin-top: -5%;
-      margin-bottom: -2%;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
-      border-color: color($accent, "600");
-    }
-  }
-}
-
-#size-radio {
-  width: 75%;
-  align-self: center;
-
-  @include small {
-    padding-right: 5%;
-  }
-}
-
-.device-condition {
-  text-align: center;
-
-  h3 {
-    font-size: 24px;
-    font-weight: bold;
-    padding-bottom: 3%;
-  }
-
-  @include small {
-    padding-top: 10%;
-    border-top: #888 1px solid;
-    margin-top: 0;
-    width: 110%;
-    margin-left: -5%;
-    background-color: transparent;
-
-    h3 {
-      padding-right: 5%;
-      padding-top: 0;
-      margin-top: -5%;
-      margin-bottom: -2%;
-    }
-
-    md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
-      border-color: color($accent, "600");
-    }
-  }
-}
-
-#condition-radio {
-  text-transform: capitalize;
-  width: 90%;
-  padding-left: 6%;
-  align-self: center;
-
-  @include small {
+  #model-change-text {
+    padding-top: 0;
+    padding-bottom: 2em;
     margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    @include small {
+      display: block;
+      width: 80%;
+    }
+    button {
+      color: #FFF;
+      background-color: color($accent, '600');
+      text-transform: none;
+      font-size: 18px;
+      align-self: center;
+      width: 12em;
+      height: 1.5em;
+    }
+  }
 
-    :nth-child(3) {
-      text-align: start;
+  #model-change-text h3 {
+    padding-bottom: 1em;
+    margin: 0 auto;
+  }
 
-      span {
-        padding-bottom: 12%;
+  .no-model {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    margin: 0 auto;
+  }
+
+  .no-model h3 {
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+
+  .device-network .md-ink-ripple {
+    display: none;
+  }
+
+  .device-network .device_title {
+    font-weight: 300;
+    color: color($primary, 'A400');
+    text-align: center;
+    text-shadow: 0 0 1px #EEE, 0 0 2px #DDD;
+  }
+
+  .img_device {
+    padding: 0.2em;
+    height: 200px;
+    @include small {
+      height: 100px;
+      padding: 0;
+    }
+  }
+
+  .img_network {
+    box-sizing: initial;
+    padding: 2em;
+    min-width: 100px;
+    height: 50px;
+    @include small {
+      padding:0;
+    }
+  }
+
+  #T-Mobile {
+    margin-top: 18%;
+    height: 28px;
+  }
+
+  .user-selection {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .liquid-container {
+    width: 100%;
+  }
+
+  .price {
+    margin: 1rem;
+    padding-top:4rem;
+  }
+
+  .condition_list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .device-price {
+    align-self: center;
+    font-size: 64px;
+    font-weight: 300;
+    padding-bottom: 3%;
+    @include small {
+      padding-bottom: 0;
+    }
+    @include xxs {
+      font-size: 48px;
+    }
+  }
+
+  .device-price span {
+    color: color($accent, '600')!important;
+    font-weight: 400;
+    .money-icon, md-icon.md-default-theme {
+      color: color($accent, '600') !important;
+      margin-left: -1.8rem;
+      padding-right: 2.5rem;
+      margin-bottom: 0.7rem;
+      @include iphonefive {
+        margin-left: -1.4rem;
+        padding-right: 2.2rem;
+        margin-bottom: 0.5rem;
+        font-size: 64px!important;
+        height: 64px!important;
       }
     }
   }
-}
 
-.condition-description {
-  color: color($accent, "600");
-  width: 99%;
-  padding-top: 2%;
-  padding-bottom: 6%;
-  font-size: 14px;
-
-  @include small {
-    padding-left: 18.5%;
-    margin-top: -2em;
-    font-weight: 700;
-    text-align: start;
+  md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
+    color: color($primary, 'A400');
   }
-}
 
-.card-media {
-  text-align: center;
-  padding-top: 1em;
-}
+  .price-page-top {
+    padding-top:5%;
+  }
 
-.contact-page, .about-page {
-  margin-top: 5.5rem;
-}
+  .name-phone {
+    align-self: center;
+    width: 50%;
+    md-input-container > md-icon {
+      color:black;
+    }
+    @include xxs {
+      width: 60%;
+    }
+    @include iphonefive {
+      width: 80%;
+    }
+  }
 
-.reset-button button {
-  background-color: color($accent, "600") !important;
-  color: #FFF !important;
-  width: 40vmax;
-  font-size: 16px;
-  text-transform: none;
-}
+  .phone_input {
+    display: flex;
+    justify-content: center;
+    .md-input {
+      width: 100%;
+    }
+  }
 
-.navigation {
-  color: color($primary, "A400");
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-}
+  .phone_input input {
+    padding-right: 36%;
+  }
 
-.navigation a {
-  color: color($primary, "A400");
-  text-decoration: none;
-}
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-.footer-button {
-  background: transparent;
-  align-items: center;
-  justify-content: center;
-  height: 12vmax;
+  .name_input {
+    display: flex;
+    justify-content: center;
+    margin-top:-2rem;
+    padding-top:0;
+    .md-input {
+      width: 100%;
+    }
+  }
 
-  a {
+  .name_input input {
+    padding-right:36%;
+  }
+
+  .size-condition {
+    padding-top:1.5rem;
+    padding-bottom: 0;
+    margin-bottom: -0.03em;
+    width:100%;
+    @include small {
+      font-size: 50px;
+    }
+  }
+
+  .size-condition .md-label span {
+    color: color($accent, '600');
+    @include small {
+      font-size: 14px;
+      font-weight: 100;
+      padding-bottom: 25%;
+      text-shadow: #FFF 1px 0 3px;
+    }
+  }
+
+  .no-size {
+    height:1em;
+  }
+
+  .sell_button {
+    text-align: center;
+    button {
+      background-color: color($accent, '600')!important;
+      color: #fff!important;
+      text-transform: none;
+      letter-spacing: 0.3ch;
+      width: 80%;
+      height: 2em;
+      font-size: 24px;
+      @include small {
+        width: 100%;
+        letter-spacing: 0.2ch;
+        font-size: 14px;
+        margin-top: -1rem;
+      }
+    }
+  }
+
+  .device-size {
+    text-align: center;
+    h3 {
+      font-size: 24px;
+      font-weight:bold;
+    }
+    @include small {
+      border-top: #888 1px solid;
+      margin-top: 13%;
+      width: 120%;
+      margin-left: -5%;
+      background-color: transparent;
+      padding-top: 10%;
+      h3 {
+        padding-right: 12%;
+        padding-top: 0;
+        margin-top: -5%;
+        margin-bottom: -2%;
+        font-size: 24px;
+        font-weight:bold;
+      }
+      md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
+        border-color: color($accent, '600');
+      }
+    }
+  }
+
+  #size-radio {
+    width: 75%;
+    align-self: center;
+    @include small {
+      padding-right: 5%;
+    }
+  }
+
+  .device-condition {
+    text-align: center;
+    h3 {
+      font-size: 24px;
+      font-weight:bold;
+      padding-bottom: 3%;
+    }
+    @include small {
+      padding-top: 10%;
+      border-top: #888 1px solid;
+      margin-top: 0;
+      width: 110%;
+      margin-left: -5%;
+      background-color: transparent;
+      h3 {
+        padding-right: 5%;
+        padding-top: 0;
+        margin-top: -5%;
+        margin-bottom: -2%;
+      }
+      md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
+        border-color: color($accent, '600');
+      }
+    }
+  }
+
+  #condition-radio {
+    text-transform: capitalize;
+    width: 90%;
+    padding-left: 6%;
+    align-self: center;
+    @include small {
+      margin: 0 auto;
+      :nth-child(3){
+        text-align:start;
+        span {
+          padding-bottom: 12%;
+        }
+      }
+    }
+  }
+
+  .condition-description {
+    color: color($accent, '600');
+    width: 99%;
+    padding-top: 2%;
+    padding-bottom: 6%;
+    font-size: 14px;
+    @include small {
+      padding-left: 18.5%;
+      margin-top: -2em;
+      font-weight: 700;
+      text-align: start;
+    }
+  }
+
+  .card-media {
+    text-align: center;
+    padding-top: 1em;
+  }
+
+  .contact-page, .about-page {
+    margin-top: 5.5rem;
+  }
+
+  .reset-button button {
+    background-color: color($accent, '600')!important;
+    color: #FFF!important;
+    width: 40vmax;
+    font-size: 16px;
+    text-transform: none;
+  }
+
+  .navigation {
+    color: color($primary, 'A400');
+    width: 50%;
+    display:flex;
+    justify-content: space-around;
+  }
+
+  .navigation a {
+    color: color($primary, 'A400');
     text-decoration: none;
   }
 
-  button {
-    width: 148px;
-    border: 2px solid color($accent, "600");
-    border-radius: 5%;
-    color: color($accent, "600");
-    font-weight: bold;
-  }
-}
-
-.index-footer-text-logos {
-  @include xs {
-    display: block;
-  }
-}
-
-.index-footer-logos {
-  background: #BABABA;
-  text-align: center;
-  align-items: baseline;
-  justify-content: center;
-  padding-top: 1vh;
-
-  @include xs {
-    display: block;
-  }
-
-
-  @include small {
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-
-    img {
-      width: 44%;
+  .footer-button {
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    height: 12vmax;
+    a {
+      text-decoration:none;
+    }
+    button {
+      width:148px;
+      border: 2px solid color($accent, '600');
+      border-radius: 5%;
+      color: color($accent, '600');
+      font-weight: bold;
     }
   }
-}
+
+  .index-footer-text-logos {
+    @include xs {
+      display: block;
+    }
+  }
+
+  .index-footer-logos {
+    background: #BABABA;
+    text-align:center;
+    align-items: baseline;
+    justify-content: center;
+    padding-top: 1vh;
+    @include xs {
+      display: block;
+    }
+    @include small {
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      img {
+        width:44%;
+      }
+    }
+  }
 
 .top-logos {
   width: 100%;
 }
 
 .bottom-logos {
-  padding-top: 2vh;
-  width: 100%;
+  padding-top:2vh;
+  width:100%;
 }
 
 #chase {
-  padding-right: 0.8em;
+  padding-right:0.8em;
 }
 
 #paypal {
@@ -1695,16 +1556,21 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #venmo-logo {
-  img {
-    @include small {
-      width: 100%;
+    img {
+      @include small {
+        width: 100%;
+      }
     }
-  }
 }
+
 
 #copyright {
   width: 80%;
   margin: 0 auto;
   display: block;
-  text-align: center;
+  text-align:center;
+
 }
+
+
+
