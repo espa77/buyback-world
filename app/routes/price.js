@@ -19,12 +19,3 @@ export default Ember.Route.extend({
         }
     }
 });
-
-
-// if (device === 'iPad') {
-//     this.transitionTo('ipad');
-// } else if (device === 'Galaxy') {
-//     this.transitionTo('samsung');
-// } else {
-//     this.transitionTo('iphone');
-// }

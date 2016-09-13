@@ -17,7 +17,6 @@ npm-debug.log
 testem.log
 /config/*
 
-workspace.xml
 tests/unit/routes/device/model/
 /www.buybackers.com.chain.crt
 /www.buybackers.com.key
@@ -25,3 +24,5 @@ tests/unit/routes/device/model/
 /www.buybackers.com.crt
 /buybackers_com.csr
 /buybackers_com.key
+
+.idea

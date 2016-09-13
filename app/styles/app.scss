@@ -41,6 +41,7 @@ $warn: "brown";
   }
 }
 
+
 @mixin large {
   @media only screen and (max-width: 1080px) {
     @content;
@@ -93,19 +94,15 @@ $warn: "brown";
   0% {
     color: black;
   }
-
   10% {
     color: color($warn, "600");
   }
-
   50% {
     color: color($accent, "600");
   }
-
   90% {
     color: color($warn, "600");
   }
-
   100% {
     color: black;
   }
@@ -198,7 +195,6 @@ $warn: "brown";
   .device-size {
     width: 80%;
   }
-
   .device-condition {
     width: 80%;
   }
@@ -222,7 +218,6 @@ html {
 }
 
 .body {
-  //padding-top: 105px;
   font-family: 'Comfortaa', cursive;
   max-width: 100%;
   padding-left: 0;
@@ -230,7 +225,6 @@ html {
   display: flex;
   background: none;
   -webkit-font-smoothing: antialiased;
-
   @include small {
     -webkit-text-size-adjust: none;
   }
@@ -244,8 +238,6 @@ html {
 
 section {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-
-  //background for header
   position: fixed;
   z-index: 999;
   display: flex;
@@ -273,7 +265,6 @@ section {
   margin-top: 1%;
   margin-left: 1%;
   filter: drop-shadow(0 0 4px white);
-
   @include small {
     width: 35vh;
     -webkit-transform: scale(1) !important;
@@ -338,7 +329,6 @@ svg {
   background: #eee;
   min-height: 600px;
   transition: all 100ms;
-
   @include small {
     height: 100%;
     right: 56%;
@@ -363,7 +353,6 @@ svg {
   box-shadow: 8px 8px 20px 0 rgba(0, 0, 0, 0.2);
   transition: all 100ms;
   visibility: visible;
-
   @include small {
     width: 80%;
     margin-top: 4.5rem;
@@ -382,8 +371,6 @@ svg {
   background-color: transparent;
   display: flex;
   justify-content: space-between;
-
-  //border-bottom: 1px solid color($primary, 'A400');
   transition: all 0.3s ease;
 }
 
@@ -402,7 +389,6 @@ svg {
 .material-design-hamburger__icon {
   padding: 3rem 1rem;
   cursor: pointer;
-
   @include small {
     padding: 1.5rem 0.7rem;
   }
@@ -416,7 +402,6 @@ svg {
   position: relative;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
-
   @include small {
     height: 4px;
     width: 40px;
@@ -498,18 +483,18 @@ svg {
 
 #index {
   display: flex;
-
   //background: linear-gradient(rgba(255, 176, 25, 0.1), rgba(255, 176, 25, 0.1)), url(../assets/images/iphone-wood.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   z-index: -1;
   margin-bottom: 5%;
-
   @include xs {
     margin-bottom: 1%;
   }
 }
+
+//video background disabled for load speed performance
 
 //#header-bg-video {
 //  position: absolute;
@@ -553,8 +538,6 @@ svg {
   font-weight: 100;
   letter-spacing: 0.05ch;
   text-transform: capitalize;
-
-  //text-align:start;
   font-size: 148px;
   padding-bottom: 1vmax;
 
@@ -564,30 +547,17 @@ svg {
 }
 
 #index-text-one-hour {
-  //text-align:start;
   margin: 0 auto;
   font-size: 40px;
   font-weight: 300;
   padding-top: 1.5em;
-
-  //text-shadow: #666 0px 1px 0;
   @include small {
     padding-top: 0;
     font-size: 20px;
   }
-
-
-  @include medium-xs {}
-
-
   @include small {
     font-size: 16px;
   }
-
-
-  @include xs {}
-
-
   @include xxs {
     font-size: 14px;
   }
@@ -611,8 +581,6 @@ svg {
       margin-top: 0;
       font-size: 30px;
     }
-
-
     @include xs {
       margin-top: 0;
       font-size: 26px;
@@ -649,7 +617,6 @@ hr {
   justify-content: center;
   text-align: center;
   margin-top: 70px;
-
   @include small {
     font-size: 14px;
   }
@@ -661,13 +628,9 @@ hr {
   max-width: 90%;
   justify-content: space-around;
   flex-wrap: wrap;
-
   @include xxs {
     max-width: 100%;
   }
-
-
-  //max-height:10vmax;
 }
 
 .device-type {
