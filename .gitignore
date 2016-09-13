@@ -23,3 +23,5 @@ tests/unit/routes/device/model/
 /www.buybackers.com.key
 /www.buybackers.com.chained.crt
 /www.buybackers.com.crt
+/buybackers_com.csr
+/buybackers_com.key
