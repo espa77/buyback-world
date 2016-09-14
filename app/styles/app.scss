@@ -617,19 +617,41 @@ hr {
   justify-content: center;
   text-align: center;
   margin-top: 70px;
+  @include medium {
+    padding-top: 3rem;
+  }
   @include small {
     font-size: 14px;
   }
 }
 
+#no-network-selection-text {
+  padding-top: 12rem;
+  color: #000;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+}
+
 .selector {
   margin: 0 auto;
   display: flex;
-  max-width: 90%;
   justify-content: space-around;
   flex-wrap: wrap;
+  @include medium {
+    max-width: 98%;
+  }
+  @include small {
+    max-width: 96%;
+  }
+  @include xs {
+    max-width: 94%;
+  }
   @include xxs {
-    max-width: 100%;
+    max-width: 92%;
+  }
+  @include iphonefive {
+    max-width:90%;
   }
 }
 
@@ -642,12 +664,6 @@ hr {
 
   @include small {
     padding-bottom: 2em;
-  }
-}
-
-.device-network.selector {
-  @include xxs {
-    max-width: 98%;
   }
 }
 
@@ -1321,14 +1337,11 @@ hr {
   font-size: 64px;
   font-weight: 300;
   padding-bottom: 3%;
-
   @include small {
     padding-bottom: 0;
   }
-
-
   @include xxs {
-    font-size: 48px;
+    font-size: 46px;
   }
 }
 
@@ -1417,15 +1430,20 @@ input[type=number]::-webkit-outer-spin-button {
   padding-bottom: 0;
   margin-bottom: -0.03em;
   width: 100%;
-
   @include small {
     font-size: 50px;
+  }
+  @include medium {
+    padding-top: 3.8rem;
+    align-items: center;
+  }
+  @include large {
+    padding-top: 3rem;
   }
 }
 
 .size-condition .md-label span {
   color: color($accent, "600");
-
   @include small {
     font-size: 14px;
     font-weight: 100;
@@ -1461,20 +1479,20 @@ input[type=number]::-webkit-outer-spin-button {
 
 .device-size {
   text-align: center;
-
   h3 {
     font-size: 24px;
     font-weight: bold;
   }
-
+  @include medium {
+    width: 65%;
+  }
   @include small {
     border-top: #888 1px solid;
     margin-top: 13%;
-    width: 120%;
-    margin-left: -5%;
+    width: 106%;
+    margin-left: 0;
     background-color: transparent;
     padding-top: 10%;
-
     h3 {
       padding-right: 12%;
       padding-top: 0;
@@ -1483,7 +1501,6 @@ input[type=number]::-webkit-outer-spin-button {
       font-size: 24px;
       font-weight: bold;
     }
-
     md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
       border-color: color($accent, "600");
     }
@@ -1491,7 +1508,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #size-radio {
-  width: 75%;
+  width: 85%;
   align-self: center;
 
   @include small {
@@ -1501,28 +1518,27 @@ input[type=number]::-webkit-outer-spin-button {
 
 .device-condition {
   text-align: center;
-
   h3 {
     font-size: 24px;
     font-weight: bold;
     padding-bottom: 3%;
   }
-
+  @include medium {
+    max-width: 77%;
+  }
   @include small {
     padding-top: 10%;
     border-top: #888 1px solid;
     margin-top: 0;
-    width: 110%;
-    margin-left: -5%;
+    width: 105%;
+    margin-left: 0;
     background-color: transparent;
-
     h3 {
       padding-right: 5%;
       padding-top: 0;
       margin-top: -5%;
       margin-bottom: -2%;
     }
-
     md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
       border-color: color($accent, "600");
     }
@@ -1534,13 +1550,18 @@ input[type=number]::-webkit-outer-spin-button {
   width: 90%;
   padding-left: 6%;
   align-self: center;
-
-  @include small {
-    margin: 0 auto;
-
+  @include medium {
+    padding-left:0;
+    width: 120%;
     :nth-child(3) {
       text-align: start;
-
+    }
+  }
+  @include small {
+    text-align:center;
+    margin-left:-4%;
+    :nth-child(3) {
+      text-align: start;
       span {
         padding-bottom: 12%;
       }
@@ -1550,16 +1571,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 .condition-description {
   color: color($accent, "600");
-  width: 99%;
   padding-top: 2%;
   padding-bottom: 6%;
-  font-size: 14px;
-
+  font-size: 18px;
+  text-align:start;
+  align-self:center;
   @include small {
-    padding-left: 18.5%;
+    font-size: 14px;
     margin-top: -2em;
     font-weight: 700;
-    text-align: start;
   }
 }
 
