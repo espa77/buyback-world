@@ -41,6 +41,11 @@ $warn: "brown";
   }
 }
 
+@mixin largest {
+  @media only screen and (min-width: 1140px) {
+    @content;
+  }
+}
 
 @mixin large {
   @media only screen and (max-width: 1080px) {
@@ -1185,7 +1190,6 @@ hr {
     font-size: 16px;
   }
 
-
   @include xs {
     font-size: 13px;
   }
@@ -1199,12 +1203,23 @@ hr {
   min-height: 15vmin;
   color: #FFF;
   background-color: color($accent, "600");
+  padding-top: 3em;
+  padding-bottom: 3em;
 
   h4 {
     width: 80%;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  @include largest {
+    padding-top:7em;
+    padding-bottom:7em;
   }
 
   @include small {
+    padding-top:0;
+    padding-bottom:0;
     h4 {
       padding-top: 5%;
       padding-bottom: 5%;
@@ -1375,7 +1390,8 @@ md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
 
 .name-phone {
   align-self: center;
-  width: 50%;
+  width: 66%;
+  padding-top: 2em;
 
   md-input-container > md-icon {
     color: black;
@@ -1480,6 +1496,7 @@ input[type=number]::-webkit-outer-spin-button {
 .device-size {
   text-align: center;
   h3 {
+    padding-bottom: 3%;
     font-size: 24px;
     font-weight: bold;
   }
@@ -1494,10 +1511,10 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: transparent;
     padding-top: 10%;
     h3 {
-      padding-right: 12%;
+
       padding-top: 0;
       margin-top: -5%;
-      margin-bottom: -2%;
+      margin-bottom: 1%;
       font-size: 24px;
       font-weight: bold;
     }
@@ -1512,7 +1529,7 @@ input[type=number]::-webkit-outer-spin-button {
   align-self: center;
 
   @include small {
-    padding-right: 5%;
+    padding-left: 5%;
   }
 }
 
@@ -1524,7 +1541,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding-bottom: 3%;
   }
   @include medium {
-    max-width: 77%;
+    width: 77%;
   }
   @include small {
     padding-top: 10%;
@@ -1534,7 +1551,6 @@ input[type=number]::-webkit-outer-spin-button {
     margin-left: 0;
     background-color: transparent;
     h3 {
-      padding-right: 5%;
       padding-top: 0;
       margin-top: -5%;
       margin-bottom: -2%;
@@ -1550,18 +1566,24 @@ input[type=number]::-webkit-outer-spin-button {
   width: 90%;
   padding-left: 6%;
   align-self: center;
+  :nth-child(3) {
+    margin-top: -13px;
+  }
+
   @include medium {
     padding-left:0;
-    width: 120%;
+    width: 80%;
+    margin-right:-40px;
     :nth-child(3) {
       text-align: start;
     }
   }
   @include small {
     text-align:center;
-    margin-left:-4%;
+    margin-left:1px;
+    margin-right:-20px;
     :nth-child(3) {
-      text-align: start;
+      margin-top: 0;
       span {
         padding-bottom: 12%;
       }
@@ -1661,6 +1683,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .top-logos {
   width: 100%;
+  padding-top: 3.5em;
+
+  @include xs {
+    padding-top:0;
+  }
 }
 
 .bottom-logos {

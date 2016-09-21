@@ -22,8 +22,7 @@ module.exports = function(environment) {
             'img-src': "'self' data:",
             'report-uri': "'localhost'",
             'media-src': "'self'",
-            'style-src': ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://fonts.gstatic.com data:"],
-            'data': "'img-src'"
+            'style-src': ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://fonts.gstatic.com data:"]
         },
         metricsAdapters: [
             {
