@@ -1,8 +1,13 @@
 import Ember from 'ember';
 import ResetScroll from '../mixins/reset-scroll';
 
-export default Ember.Route.extend(ResetScroll, {
+const {
+    Route,
+    get
+} = Ember;
+
+export default Route.extend(ResetScroll, {
     model() {
-        return this.get('store').findAll('device');
+        return get(this, 'store').findAll('device');
     }
 });

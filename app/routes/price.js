@@ -1,10 +1,13 @@
 import Ember from 'ember';
 
+const {
+    Route,
+    get
+} = Ember;
 
-export default Ember.Route.extend({
-    
+export default Route.extend({
     model() {
-        return this.get('store').peekAll('device');
+        return get(this, 'store').peekAll('device');
     },
     actions: {
         willTransition: function() {

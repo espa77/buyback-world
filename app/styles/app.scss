@@ -622,6 +622,7 @@ hr {
   justify-content: center;
   text-align: center;
   margin-top: 70px;
+  padding-top:2em;
   @include medium {
     padding-top: 3rem;
   }
@@ -842,7 +843,6 @@ hr {
 .index-bottom {
   z-index: 999;
   color: #000;
-  background-color: #FFFFFF;
   justify-content: center;
   align-items: center;
 
