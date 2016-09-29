@@ -22,7 +22,6 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
     this.route('about');
-    this.route('contact');
     this.route('iphone');
     this.route('other-device');
     this.route('ipad');
