@@ -43,6 +43,7 @@
     "ember-cli-qunit": "^1.4.0",
     "ember-cli-release": "^0.2.9",
     "ember-cli-sass": "5.3.1",
+    "ember-cli-sitemap": "0.0.3",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.6.0",
@@ -60,6 +61,7 @@
     "lodash-es": "3.10.1"
   },
   "dependencies": {
-    "iphone-inline-video": "^1.9.3"
+    "iphone-inline-video": "^1.9.3",
+    "sitemap-generator": "^4.1.1"
   }
 }
