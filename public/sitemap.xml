@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://buybackers.com</loc>
         <image:image>
             <image:loc>https://buybackers.com/assets/images/buybacker-team.jpg</image:loc>
-            <image:caption>Buybackers buying olf cell phones</image:caption>
+            <image:title>Buybackers buying olf cell phones</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/instant-quote.png</image:loc>
-            <image:caption>Buybackers gives instant quotes</image:caption>
+            <image:title>Buybackers gives instant quotes</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/instant-quote.png</image:loc>
-            <image:caption>Buybackers gives instant quotes</image:caption>
+            <image:title>Buybackers gives instant quotes</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/friendly-girl.png</image:loc>
-            <image:caption>Buybackers love helping people</image:caption>
+            <image:title>Buybackers love helping people</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/chase-quickpay.png</image:loc>
-            <image:caption>Chase Quickpay</image:caption>
+            <image:title>Chase Quickpay</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/paypal.png</image:loc>
-            <image:caption>PayPal</image:caption>
+            <image:title>PayPal</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/venmo.jpg</image:loc>
-            <image:caption>Venmo</image:caption>
+            <image:title>Venmo</image:title>
         </image:image>
         <changefreq>weekly</changefreq>
     </url>
@@ -24,19 +37,31 @@
         <loc>https://buybackers.com/about</loc>
         <image:image>
             <image:loc>https://buybackers.com/assets/images/buybacker-team.jpg</image:loc>
-            <image:caption>Buybackers buying olf cell phones</image:caption>
+            <image:title>Buybackers buying olf cell phones</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/instant-quote.png</image:loc>
-            <image:caption>Buybackers gives instant quotes</image:caption>
+            <image:title>Buybackers gives instant quotes</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/instant-quote.png</image:loc>
-            <image:caption>Buybackers gives instant quotes</image:caption>
+            <image:title>Buybackers gives instant quotes</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/friendly-girl.png</image:loc>
-            <image:caption>Buybackers love helping people</image:caption>
+            <image:title>Buybackers love helping people</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/chase-quickpay.png</image:loc>
-            <image:caption>Chase Quickpay</image:caption>
+            <image:title>Chase Quickpay</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/paypal.png</image:loc>
-            <image:caption>PayPal</image:caption>
+            <image:title>PayPal</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/venmo.jpg</image:loc>
-            <image:caption>Venmo</image:caption>
+            <image:title>Venmo</image:title>
         </image:image>
         <changefreq>weekly</changefreq>
     </url>
@@ -44,19 +69,31 @@
         <loc>https://buybackers.com/other-device</loc>
         <image:image>
             <image:loc>https://buybackers.com/assets/images/buybacker-team.jpg</image:loc>
-            <image:caption>Buybackers buying olf cell phones</image:caption>
+            <image:title>Buybackers buying olf cell phones</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/instant-quote.png</image:loc>
-            <image:caption>Buybackers gives instant quotes</image:caption>
+            <image:title>Buybackers gives instant quotes</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/instant-quote.png</image:loc>
-            <image:caption>Buybackers gives instant quotes</image:caption>
+            <image:title>Buybackers gives instant quotes</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/friendly-girl.png</image:loc>
-            <image:caption>Buybackers love helping people</image:caption>
+            <image:title>Buybackers love helping people</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/chase-quickpay.png</image:loc>
-            <image:caption>Chase Quickpay</image:caption>
+            <image:title>Chase Quickpay</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/paypal.png</image:loc>
-            <image:caption>PayPal</image:caption>
+            <image:title>PayPal</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/venmo.jpg</image:loc>
-            <image:caption>Venmo</image:caption>
+            <image:title>Venmo</image:title>
         </image:image>
         <changefreq>weekly</changefreq>
     </url>
@@ -64,21 +101,35 @@
         <loc>https://buybackers.com/iphone</loc>
         <image:image>
             <image:loc>https://buybackers.com/assets/images/iphone5.jpg</image:loc>
-            <image:caption>iPhone 5</image:caption>
+            <image:title>iPhone 5</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/iphone5c.jpg</image:loc>
-            <image:caption>iPhone 5c</image:caption>
+            <image:title>iPhone 5c</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/iphone5s.jpg</image:loc>
-            <image:caption>iPhone 5s</image:caption>
+            <image:title>iPhone 5s</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/iphone6.jpg</image:loc>
-            <image:caption>iPhone 6</image:caption>
+            <image:title>iPhone 6</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/iphone6plus.jpg</image:loc>
-            <image:caption>iPhone 6 Plus</image:caption>
+            <image:title>iPhone 6 Plus</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/iphone-6s.jpg</image:loc>
-            <image:caption>iPhone 6s</image:caption>
+            <image:title>iPhone 6s</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/iphone-6splus.jpg</image:loc>
-            <image:caption>iPhone 6s Plus</image:caption>
+            <image:title>iPhone 6s Plus</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/iphone-se.jpg</image:loc>
-            <image:caption>iPhone SE</image:caption>
+            <image:title>iPhone SE</image:title>
         </image:image>
         <changefreq>weekly</changefreq>
     </url>
@@ -86,29 +137,51 @@
         <loc>https://buybackers.com/ipad</loc>
         <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad.jpg</image:loc>
-            <image:caption>iPad</image:caption>
+            <image:title>iPad</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-2gen.jpg</image:loc>
-            <image:caption>iPad Second Generation</image:caption>
+            <image:title>iPad Second Generation</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-3gen.jpg</image:loc>
-            <image:caption>iPad Third Generation</image:caption>
+            <image:title>iPad Third Generation</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-4gen.jpg</image:loc>
-            <image:caption>iPad Fourth Generation</image:caption>
+            <image:title>iPad Fourth Generation</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-air.jpg</image:loc>
-            <image:caption>iPad Air</image:caption>
+            <image:title>iPad Air</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-air2.jpg</image:loc>
-            <image:caption>iPad Air Two</image:caption>
+            <image:title>iPad Air Two</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-mini.jpg</image:loc>
-            <image:caption>iPad Mini</image:caption>
+            <image:title>iPad Mini</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-mini2.jpg</image:loc>
-            <image:caption>iPad Mini Two</image:caption>
+            <image:title>iPad Mini Two</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-mini3.jpg</image:loc>
-            <image:caption>iPad Mini Three</image:caption>
+            <image:title>iPad Mini Three</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-mini4.jpg</image:loc>
-            <image:caption>iPad Mini Four</image:caption>
+            <image:title>iPad Mini Four</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-pro.jpg</image:loc>
-            <image:caption>iPad Pro</image:caption>
+            <image:title>iPad Pro</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/ipad-pro-9-7.jpg</image:loc>
-            <image:caption>iPad Pro 9.7 inch</image:caption>
+            <image:title>iPad Pro 9.7 inch</image:title>
         </image:image>
         <changefreq>weekly</changefreq>
     </url>
@@ -116,27 +189,47 @@
         <loc>https://buybackers.com/samsung</loc>
         <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-6sedge.jpg</image:loc>
-            <image:caption>Samsung Galaxy Six S Edge</image:caption>
+            <image:title>Samsung Galaxy Six S Edge</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-6sedgeplus.png</image:loc>
-            <image:caption>Samsung Galaxy Six S Edge Plus</image:caption>
+            <image:title>Samsung Galaxy Six S Edge Plus</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-note3.jpg</image:loc>
-            <image:caption>Samsung Galaxy Note Three</image:caption>
+            <image:title>Samsung Galaxy Note Three</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-note4.jpg</image:loc>
-            <image:caption>Samsung Galaxy Note Four</image:caption>
+            <image:title>Samsung Galaxy Note Four</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-note5.jpg</image:loc>
-            <image:caption>Samsung Galaxy Note Five</image:caption>
+            <image:title>Samsung Galaxy Note Five</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-note-edge.jpg</image:loc>
-            <image:caption>Samsung Galaxy Note Edge</image:caption>
+            <image:title>Samsung Galaxy Note Edge</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-s4.jpg</image:loc>
-            <image:caption>Samsung Galaxy S Four</image:caption>
+            <image:title>Samsung Galaxy S Four</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-s5.jpg</image:loc>
-            <image:caption>Samsung Galaxy S Five</image:caption>
+            <image:title>Samsung Galaxy S Five</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-s6.png</image:loc>
-            <image:caption>Samsung Galaxy S Six</image:caption>
+            <image:title>Samsung Galaxy S Six</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-s7.png</image:loc>
-            <image:caption>Samsung Galaxy S Seven</image:caption>
+            <image:title>Samsung Galaxy S Seven</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/galaxy-s7edge.jpg</image:loc>
-            <image:caption>Samsung Galaxy S Seven Edge</image:caption>
+            <image:title>Samsung Galaxy S Seven Edge</image:title>
         </image:image>
         <changefreq>weekly</changefreq>
     </url>
@@ -144,19 +237,31 @@
         <loc>https://buybackers.com/network</loc>
         <image:image>
             <image:loc>https://buybackers.com/assets/images/att-svg.png</image:loc>
-            <image:caption>ATT</image:caption>
+            <image:title>ATT</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/sprint-svg.png</image:loc>
-            <image:caption>Sprint</image:caption>
+            <image:title>Sprint</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/tmobile-svg.png</image:loc>
-            <image:caption>T-Mobile</image:caption>
+            <image:title>T-Mobile</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/unlocked.png</image:loc>
-            <image:caption>Unlocked Network</image:caption>
+            <image:title>Unlocked Network</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/verizon-svg.png</image:loc>
-            <image:caption>Verizon</image:caption>
+            <image:title>Verizon</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/wifi.png</image:loc>
-            <image:caption>WiFi Only</image:caption>
+            <image:title>WiFi Only</image:title>
+        </image:image>
+        <image:image>
             <image:loc>https://buybackers.com/assets/images/wireless-tower-svg.png</image:loc>
-            <image:caption>Other Network - Wireless Tower</image:caption>
+            <image:title>Other Network - Wireless Tower</image:title>
         </image:image>
         <changefreq>weekly</changefreq>
     </url>

@@ -1,8 +1,8 @@
 //background-color: #1EB0DC;
 //background-color: #FFB019;
 
-$primary: "light-blue";
-$accent: "amber";
+$primary: "blue-grey";
+$accent: "cyan";
 $warn: "brown";
 
 @import "ember-paper";
@@ -91,7 +91,7 @@ $warn: "brown";
 
 @keyframes blur {
   from {
-    text-shadow: 1px -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 0 -1px 0 color($accent, "600"), 1px -1px 0 color($accent, "600"), 1px -1px 0 color($accent, "600"), 0 0 1px color($accent, "600"), 0 0 1px color($accent, "600"), 0 0 4px #FFF, 0 0 10px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px -4px 6px #FFF, 0px -4px 6px #FFF;
+    text-shadow: 1px -1px 0 color($accent, "A400"), 0 -1px 0 color($accent, "A400"), 0 -1px 0 color($accent, "A400"), 0 -1px 0 color($accent, "A400"), 0 -1px 0 color($accent, "A400"), 0 -1px 0 color($accent, "A400"), 1px -1px 0 color($accent, "A400"), 1px -1px 0 color($accent, "A400"), 0 0 1px color($accent, "A400"), 0 0 1px color($accent, "A400"), 0 0 4px #FFF, 0 0 10px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px 4px 6px #FFF, 0px -4px 6px #FFF, 0px -4px 6px #FFF;
   }
 }
 
@@ -100,13 +100,13 @@ $warn: "brown";
     color: black;
   }
   10% {
-    color: color($warn, "600");
+    color: color($warn, "A400");
   }
   50% {
-    color: color($accent, "600");
+    color: color($accent, "A400");
   }
   90% {
-    color: color($warn, "600");
+    color: color($warn, "A400");
   }
   100% {
     color: black;
@@ -216,7 +216,7 @@ html {
   margin: 0 auto;
   height: auto;
   background: none;
-
+  color: color($primary, "400");
   @include small {
     -webkit-text-size-adjust: none;
   }
@@ -229,6 +229,7 @@ html {
   padding-right: 0;
   display: flex;
   background: none;
+  color: color($primary, "400");
   -webkit-font-smoothing: antialiased;
   @include small {
     -webkit-text-size-adjust: none;
@@ -266,12 +267,12 @@ section {
 }
 
 #logo {
-  width: 40vh;
+  width: 15vh;
   margin-top: 1%;
   margin-left: 1%;
   filter: drop-shadow(0 0 4px white);
   @include small {
-    width: 35vh;
+    width: 12vh;
     -webkit-transform: scale(1) !important;
   }
 }
@@ -296,12 +297,12 @@ svg {
 }
 
 .background--blur {
-  background: color($primary, "50");
+  background: color($accent, "50");
 }
 
 .menu {
   font-size: 24px;
-  color: color($accent, "600");
+  color: color($accent, "A400");
 }
 
 .menu div {
@@ -313,7 +314,7 @@ svg {
   text-decoration: none;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #78909C;
 }
 
 .menu a:hover {
@@ -403,7 +404,7 @@ svg {
   display: block;
   width: 60px;
   height: 5px;
-  background: color($accent, "600");
+  background: color($accent, "A400");
   position: relative;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
@@ -532,45 +533,58 @@ svg {
   margin-bottom: 2vmin;
   align-self: center;
   text-align: center;
-  color: #000;
+  color: #78909C;
 
   @include small {
     width: 90%;
   }
 }
 
+.check {
+  color: color($accent, "A400");
+}
+
 #index-text-money {
   font-weight: 100;
   letter-spacing: 0.05ch;
   text-transform: capitalize;
-  font-size: 148px;
+  font-size: 68px;
   padding-bottom: 1vmax;
-
   @include small {
-    font-size: 60px;
+    font-size: 36px;
   }
 }
 
 #index-text-one-hour {
+  display: flex;
   margin: 0 auto;
   font-size: 40px;
   font-weight: 300;
   padding-top: 1.5em;
+  justify-content: center;
   @include small {
     padding-top: 0;
-    font-size: 20px;
-  }
-  @include small {
-    font-size: 16px;
+    font-size: 24px;
   }
   @include xxs {
-    font-size: 14px;
+    font-size: 18px;
   }
+}
+
+.index-text-numbers {
+  padding-right: 1.2vh;
+}
+
+.index-text-number-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.2vh;
+  text-align:left;
 }
 
 #device-selection-text {
   display: none;
-  color: color($accent, "600");
+  color: color($accent, "A400");
   font-size: 36px;
   text-align: center;
   justify-content: center;
@@ -608,7 +622,7 @@ hr {
   line-height: 0;
   clear: both;
   border: none;
-  border-bottom: 1px solid color($primary, "A400");
+  border-bottom: 1px solid color($primary, "400");
   margin-bottom: -1px;
 }
 
@@ -619,8 +633,8 @@ hr {
 .price-banner {
   width: 100vw;
   text-align: center;
-  background-color: color($accent, "600");
-  color: #FFF;
+  background-color: color($accent, "A400");
+  color: color($primary, "400");
   font-size: 14px;
   text-shadow: 0px 0px 5px rgba(0,0,0,0.10);
   margin-bottom: 2em;
@@ -631,7 +645,7 @@ hr {
 }
 
 #model-selection-text, #network-selection-text {
-  color: #000;
+  color: #78909C;
   margin: 0 auto;
   justify-content: center;
   text-align: center;
@@ -647,7 +661,7 @@ hr {
 
 #no-network-selection-text {
   padding-top: 12rem;
-  color: #000;
+  color: #78909C;
   margin: 0 auto;
   justify-content: center;
   text-align: center;
@@ -772,7 +786,7 @@ hr {
 .buttons > .md-button {
   margin-left: 3rem;
   margin-right: 3rem;
-  background-color: color($accent, "600") !important;
+  background-color: color($accent, "A400") !important;
   color: #FFF !important;
 
   @include small {
@@ -788,39 +802,39 @@ hr {
 }
 
 .md-button.md-primary.md-raised {
-  color: #FFFFFF !important;
+  color: #FFF !important;
 }
 
 .buttons > .md-button.md-raised:hover {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, "500") !important;
 }
 
 .buttons > .md-button.md-raised:active {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, "500") !important;
 }
 
 #model-change-text > .md-button.md-raised:hover {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, "500") !important;
 }
 
 #model-change-text > .md-button.md-raised:active {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, "500") !important;
 }
 
 .reset-button > .md-button.md-raised:hover {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, "500") !important;
 }
 
 .reset-button > .md-button.md-raised:active {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, "500") !important;
 }
 
 .md-button.md-raised:hover {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, "500") !important;
 }
 
 .md-button.md-raised:active {
-  background-color: color($accent, "800") !important;
+  background-color: color($accent, "500") !important;
 }
 
 .device * .md-label {
@@ -856,7 +870,7 @@ hr {
 
 .index-bottom {
   z-index: 999;
-  color: #000;
+  color: #78909C;
   justify-content: center;
   align-items: center;
 
@@ -878,7 +892,7 @@ hr {
 }
 
 .index-bottom h1 {
-  color: color($accent, "600");
+  color: color($accent, "A400");
   text-align: center;
   letter-spacing: 0.5ch;
 }
@@ -1113,7 +1127,7 @@ hr {
 }
 
 .layout-row md-icon.md-default-theme, .md-icon {
-  color: color($accent, "600");
+  color: color($accent, "A400");
 }
 
 #other-device-buttons {
@@ -1158,8 +1172,8 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFF;
-  background-color: color($accent, "600");
+  color: color($primary, "400");
+  background-color: color($accent, "A400");
 
   @include small {
     margin-bottom: 0.2em;
@@ -1215,8 +1229,8 @@ hr {
   justify-content: center;
   align-items: center;
   min-height: 15vmin;
-  color: #FFF;
-  background-color: color($accent, "600");
+  color: color($primary, "400");
+  background-color: color($accent, "A400");
   padding-top: 3em;
   padding-bottom: 3em;
 
@@ -1243,7 +1257,7 @@ hr {
 }
 
 .about-text {
-  color: color($primary, "A400");
+  color: color($primary, "400");
   text-align: center;
 }
 
@@ -1254,7 +1268,7 @@ hr {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  color: color($primary, "A400");
+  color: color($primary, "400");
 
   @include small {
     height: 210px;
@@ -1279,8 +1293,8 @@ hr {
 
 
   button {
-    color: #FFF;
-    background-color: color($accent, "600");
+    color: color($primary, "400");
+    background-color: color($accent, "A400");
     text-transform: none;
     font-size: 18px;
     align-self: center;
@@ -1311,7 +1325,7 @@ hr {
 
 .device-network .device_title {
   font-weight: 300;
-  color: color($primary, "A400");
+  color: color($primary, "400");
   text-align: center;
   text-shadow: 0 0 1px #EEE, 0 0 2px #DDD;
 }
@@ -1376,11 +1390,11 @@ hr {
 }
 
 .device-price span {
-  color: color($accent, "600") !important;
+  color: color($accent, "A400") !important;
   font-weight: 400;
 
   .money-icon, md-icon.md-default-theme {
-    color: color($accent, "600") !important;
+    color: color($accent, "A400") !important;
     margin-left: -1.8rem;
     padding-right: 2.5rem;
     margin-bottom: 0.7rem;
@@ -1396,7 +1410,7 @@ hr {
 }
 
 md-input-container.md-default-theme > md-icon, md-input-container > md-icon {
-  color: color($primary, "A400");
+  color: color($primary, "400");
 }
 
 .price-page-top {
@@ -1474,7 +1488,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .size-condition .md-label span {
-  color: color($accent, "600");
+  color: color($accent, "A400");
   @include small {
     font-size: 14px;
     font-weight: 100;
@@ -1491,8 +1505,8 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 
   button {
-    background-color: color($accent, "600") !important;
-    color: #fff !important;
+    background-color: color($accent, "A400") !important;
+    color: #FFF !important;
     text-transform: none;
     letter-spacing: 0.3ch;
     width: 80%;
@@ -1534,7 +1548,7 @@ input[type=number]::-webkit-outer-spin-button {
       font-weight: bold;
     }
     md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
-      border-color: color($accent, "600");
+      border-color: color($accent, "A400");
     }
   }
 }
@@ -1571,7 +1585,7 @@ input[type=number]::-webkit-outer-spin-button {
       margin-bottom: -2%;
     }
     md-radio-button.md-default-theme .md-off, md-radio-button .md-off {
-      border-color: color($accent, "600");
+      border-color: color($accent, "A400");
     }
   }
 }
@@ -1607,7 +1621,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .condition-description {
-  color: color($accent, "600");
+  color: color($primary, "400");
   padding-top: 2%;
   padding-bottom: 6%;
   font-size: 18px;
@@ -1630,22 +1644,22 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .reset-button button {
-  background-color: color($accent, "600") !important;
-  color: #FFF !important;
+  background-color: color($accent, "A400") !important;
+  color: color($primary, "400") !important;
   width: 40vmax;
   font-size: 16px;
   text-transform: none;
 }
 
 .navigation {
-  color: color($primary, "A400");
+  color: color($primary, "400");
   width: 50%;
   display: flex;
   justify-content: space-around;
 }
 
 .navigation a {
-  color: color($primary, "A400");
+  color: color($primary, "400");
   text-decoration: none;
 }
 
@@ -1661,9 +1675,9 @@ input[type=number]::-webkit-outer-spin-button {
 
   button {
     width: 148px;
-    border: 2px solid color($accent, "600");
+    border: 2px solid color($accent, "A400");
     border-radius: 5%;
-    color: color($accent, "600");
+    color: color($accent, "A400");
     font-weight: bold;
   }
 }
