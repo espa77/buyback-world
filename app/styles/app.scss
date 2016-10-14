@@ -8,6 +8,7 @@ $warn: "brown";
 @import "ember-paper";
 
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:300,400,700);
+@import url('https://fonts.googleapis.com/css?family=Lalezar');
 
 @mixin small {
   @media only screen and (max-width: 766px) {
@@ -545,14 +546,20 @@ svg {
 }
 
 #index-text-money {
-  font-weight: 100;
+  font-family: 'Lalezar', cursive;
+  font-weight: 400;
   letter-spacing: 0.05ch;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-size: 68px;
   padding-bottom: 1vmax;
   @include small {
     font-size: 36px;
   }
+}
+
+#header-sentance {
+  text-transform: none;
+  font-size: 40px;
 }
 
 #index-text-one-hour {
@@ -643,6 +650,43 @@ hr {
     margin-bottom: 0.5em;
   }
 }
+
+.launch-text {
+  text-align: -webkit-center;
+}
+
+.label-text {
+  padding-bottom: 4px;
+}
+
+.mailing-list-signup {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.chimp-says {
+  padding-bottom: 1em;
+}
+
+button[type=submit] {
+  font-weight: 700;
+  height: 2.8em;
+  text-transform: uppercase;
+  background-color: #AAA;
+  width: 148px;
+  border: 1px solid rgba(0,0,0,0.50);
+  border-radius: 5%;
+  color: #FFF;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+  letter-spacing: 0.1ch;
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+
+input[type=email] {
+  width: 70%;
+}
+
 
 #model-selection-text, #network-selection-text {
   color: #78909C;
